@@ -46,3 +46,7 @@ I used to joke about making a desktop environment, but... nah, this time it is r
 
 #### Are you leaving Vanilla OS?
 Ooof no, absolutely not. Actually, I am working on a full rewrite of all Vanilla OS tools using the new Vanilla OS SDK I created. Orchid is also the base of Singularity OS; I will just be using a different immutability approach instead of ABRoot. I am experimenting with something new, maybe not for Day Zero, but... yeah. I'll take all the good parts from Vanilla while continuing to work on it. =)
+
+---
+
+Oh and I also have a website but I will probably not publish there soon... anyway: [bromb.in](https://bromb.in).
