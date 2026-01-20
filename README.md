@@ -44,6 +44,9 @@ Because... well... it was just cool, ok? Pff.
 #### Is this project real or just a meme?
 I used to joke about making a desktop environment, but... nah, this time it is real.
 
+#### Will Singularity Desktop replace GNOME in Vanilla OS?
+No.
+
 #### Are you leaving Vanilla OS?
 Ooof no, absolutely not. Actually, I am working on a full rewrite of all Vanilla OS tools using the new [Vanilla OS SDK](https://github.com/Vanilla-OS/sdk) I created. Orchid is also the base of Singularity OS; I will just be using a different immutability approach instead of ABRoot. I am experimenting with something new, maybe not for Day Zero, but... yeah. I'll take all the good parts from Vanilla while continuing to work on it. =)
 
