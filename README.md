@@ -47,6 +47,12 @@ I used to joke about making a desktop environment, but... nah, this time it is r
 #### Are you leaving Vanilla OS?
 Ooof no, absolutely not. Actually, I am working on a full rewrite of all Vanilla OS tools using the new [Vanilla OS SDK](https://github.com/Vanilla-OS/sdk) I created. Orchid is also the base of Singularity OS; I will just be using a different immutability approach instead of ABRoot. I am experimenting with something new, maybe not for Day Zero, but... yeah. I'll take all the good parts from Vanilla while continuing to work on it. =)
 
+#### Oh looks so good, can I fund it?
+~~Yeah definitely a frequently asked question, you do not trust me? Pff....~~ Ofc you can, look [here](https://bromb.in/support/).
+
+###### Waaait... how can I fund something I do not see the code?
+Fair. Trust me for projects and contributions I already made or just wait, I will still love you, do not worry <3
+
 ---
 
 Oh and I also have a website but I will probably not publish there soon... anyway: [bromb.in](https://bromb.in).
