@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Singularity OS - A new operating system.">
+    <meta name="keywords" content="Singularity OS, operating system, software, technology">
+    <meta name="author" content="Mirko Brombin">
+    <title>Singularity OS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.svg" alt="Singularity OS Logo">
+        </div>
+        <nav>
+            <a href="#news">News</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>sinty.dev is the home of Singularity OS, a new operating system.</h1>
+            <p>Please note that what you currently see on GitHub is NOT the final product. I have preferred to work
+                locally over the past few months, while this has dramatically accelerated development, it has also
+                resulted in code that requires major revisions before it can be published. Give me some time, and I will
+                be pushing many commits soon.</p>
+        </div>
+
+        <section id="news">
+            <h2 class="section-title">Latest Updates</h2>
+            <div class="updates-container">
+                <blockquote class="twitter-tweet" data-theme="dark"><a
+                        href="https://twitter.com/brombinmirko/status/2013294217372570092"></a></blockquote>
+                <blockquote class="twitter-tweet" data-theme="dark"><a
+                        href="https://twitter.com/brombinmirko/status/2016170001560932509"></a></blockquote>
+                <blockquote class="twitter-tweet" data-theme="dark"><a
+                        href="https://twitter.com/brombinmirko/status/2016812578580599215"></a></blockquote>
+                <blockquote class="twitter-tweet" data-theme="dark"><a
+                        href="https://twitter.com/brombinmirko/status/2018179145004372042"></a></blockquote>
+                <blockquote class="twitter-tweet" data-theme="dark"><a
+                        href="https://twitter.com/brombinmirko/status/2019506941467455961"></a></blockquote>
+                <blockquote class="twitter-tweet" data-theme="dark"><a
+                        href="https://twitter.com/brombinmirko/status/2020079979003002958"></a></blockquote>
+                <blockquote class="twitter-tweet" data-theme="dark"><a
+                        href="https://twitter.com/brombinmirko/status/2020565375948071291"></a></blockquote>
+                <blockquote class="twitter-tweet" data-theme="dark"><a
+                        href="https://twitter.com/brombinmirko/status/2021146989103038969"></a></blockquote>
+                <blockquote class="twitter-tweet" data-theme="dark"><a
+                        href="https://twitter.com/brombinmirko/status/2021156576610975861"></a></blockquote>
+
+                <div class="video-wrapper">
+                    <p style="margin-bottom: 10px; font-size: 0.9rem; color: var(--text-muted);">A YouTube video by
+                        Broodie 😎</p>
+                    <iframe src="https://www.youtube.com/embed/NbRv_urOXeI" title="YouTube video player" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+
+                <div style="text-align: center; padding: 40px 0;">
+                    <p style="color: var(--text-muted);">A cat</p>
+                    <h1 style="font-size: 4rem;">🐈</h1>
+                </div>
+
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="accordion">
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Why does the DE look so much like GNOME?</button>
+                    <div class="accordion-content">
+                        <p>Because I like its workflow and parts of its UI. However, this is going to change. It was
+                            simply easier not to worry about the UI yet and focus on the foundations instead. Of course,
+                            features like the sidebar, topbar, dock, and the ‘fusion mode’ (which merges the topbar and
+                            dock) will stay.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Why GTK?</button>
+                    <div class="accordion-content">
+                        <p>Because I am used to it.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Why Vala?</button>
+                    <div class="accordion-content">
+                        <p>I am looking for performance. I am learning Rust, but I’m not quite ready to use it for a
+                            project as complex as this. It works fine for <a
+                                href="https://usebottles.com/posts/2024-12-27-rust-libcosmic-next/"
+                                style="text-decoration: underline; text-underline-offset: 4px; color: #fff;">Bottles
+                                Next</a> though! :D</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Xorg?</button>
+                    <div class="accordion-content">
+                        <p>No.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">So... Wayland?</button>
+                    <div class="accordion-content">
+                        <p>Absolutely, from Day ZERO.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Blur?</button>
+                    <div class="accordion-content">
+                        <p>Coming soon, but absolutely yes.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Oh no, another GTK4 DE... wait, is it not Adwaita?</button>
+                    <div class="accordion-content">
+                        <p>Yup, no libadwaita at all, just pure GTK4 and a custom set of widgets to keep everything
+                            integrated, named <code
+                                style="background: #111; padding: 2px 6px; border-radius: 4px; border: 1px solid #333; font-family: monospace; color: #ccc;">libsingularity</code>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Why that name, Singularity?</button>
+                    <div class="accordion-content">
+                        <p>Because... well... it was just cool, ok? Pff.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Is this project real or just a meme?</button>
+                    <div class="accordion-content">
+                        <p>I used to joke about making a desktop environment, but... nah, this time it is real.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Will Singularity Desktop replace GNOME in Vanilla OS?</button>
+                    <div class="accordion-content">
+                        <p>No.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Are you leaving Vanilla OS?</button>
+                    <div class="accordion-content">
+                        <p>Ooof no, absolutely not. Actually, I am working on a full rewrite of all Vanilla OS tools
+                            using the new <a href="https://github.com/Vanilla-OS/sdk"
+                                style="text-decoration: underline; text-underline-offset: 4px; color: #fff;">Vanilla OS
+                                SDK</a> I created. Orchid is also the base of Singularity OS; I will just be using a
+                            different immutability approach instead of ABRoot. I am experimenting with something new,
+                            maybe not for Day Zero, but... yeah. I’ll take all the good parts from Vanilla while
+                            continuing to work on it. =)</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Oh looks so good, can I fund it?</button>
+                    <div class="accordion-content">
+                        <p><del style="opacity: 0.6;">Yeah definitely a frequently asked question, you do not trust me?
+                                Pff....</del> Ofc you can, look <a href="https://bromb.in/support/"
+                                style="text-decoration: underline; text-underline-offset: 4px; color: #fff;">here</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-btn">Waaait... how can I fund something I do not see the code?</button>
+                    <div class="accordion-content">
+                        <p>Fair. Trust me for projects and contributions I already made or just wait, I will still love
+                            you, do not worry &lt;3</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Support & Contact</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">
+                I will post any updates on my <a href="https://x.com/brombinmirko"
+                    style="color: #fff; text-decoration: underline; text-underline-offset: 4px;">Twitter</a> and <a
+                    href="https://mastodon.social/@mirkobrombin"
+                    style="color: #fff; text-decoration: underline; text-underline-offset: 4px;">Mastodon</a> accounts.
+                The code will be pushed soon on the dedicated <a href="https://github.com/singularityos-lab"
+                    style="color: #fff; text-decoration: underline; text-underline-offset: 4px;">GitHub</a> org.
+            </p>
+            <p style="color: var(--text-muted);">
+                Want to support the development with funds or just reach out to me? You can do it <a
+                    href="https://bromb.in/support/"
+                    style="color: #fff; text-decoration: underline; text-underline-offset: 4px;">here</a>.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/singularityos-lab">github</a>
+            <a href="https://x.com/brombinmirko">twitter</a>
+            <a href="https://mastodon.social/@mirkobrombin">mastodon</a>
+            <a href="https://github.com/singularityos-lab/brand">brand</a>
+        </div>
+        <div class="footer-logo">
+            <img src="icon.svg" alt="Singularity OS Logo" width="24" height="24">
+        </div>
+        <div class="footer-credit">
+            by <a href="https://bromb.in">Mirko Brombin</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                const isActive = button.classList.contains('active');
+                document.querySelectorAll('.accordion-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.nextElementSibling.style.maxHeight = null;
+                    btn.nextElementSibling.classList.remove('active');
+                });
+                if (!isActive) {
+                    button.classList.add('active');
+                    accordionContent.classList.add('active');
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                }
+            });
+        });
+
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

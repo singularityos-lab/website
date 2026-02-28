@@ -1,0 +1,212 @@
+ /* === RESET & VARIABILI === */
+ :root {
+     --bg-color: #000000;
+     --text-main: #e0e0e0;
+     --text-muted: #888888;
+     --border-color: #333333;
+     --font-serif: 'Georgia', 'Times New Roman', serif;
+     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+     --max-width: 900px;
+ }
+
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ body {
+     background-color: var(--bg-color);
+     color: var(--text-main);
+     font-family: var(--font-serif);
+     line-height: 1.6;
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     -webkit-font-smoothing: antialiased;
+ }
+
+ a {
+     color: var(--text-main);
+     text-decoration: none;
+     transition: color 0.3s ease;
+ }
+
+ a:hover {
+     color: var(--text-muted);
+ }
+
+ /* === HEADER === */
+ header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 40px 5%;
+     max-width: 1200px;
+     margin: 0 auto;
+     width: 100%;
+ }
+
+ .logo {
+     display: flex;
+     align-items: center;
+     font-size: 1.5rem;
+     font-weight: normal;
+ }
+
+ .logo svg {
+     width: 30px;
+     height: 30px;
+     margin-right: 10px;
+     fill: var(--text-main);
+ }
+
+ .logo span {
+     color: #555;
+ }
+
+ nav {
+     display: flex;
+     gap: 30px;
+ }
+
+ nav a {
+     font-size: 1.1rem;
+ }
+
+ /* === MAIN CONTENT === */
+ main {
+     flex: 1;
+     max-width: var(--max-width);
+     margin: 0 auto;
+     padding: 60px 5%;
+     width: 100%;
+ }
+
+ .hero {
+     margin-bottom: 80px;
+ }
+
+ .hero h1 {
+     font-size: 1.8rem;
+     font-weight: normal;
+     margin-bottom: 20px;
+ }
+
+ .hero p {
+     color: var(--text-muted);
+     font-size: 1.1rem;
+     max-width: 800px;
+ }
+
+ section {
+     margin-bottom: 80px;
+     scroll-margin-top: 100px;
+     /* Per l'ancoraggio fluido */
+ }
+
+ h2.section-title {
+     font-size: 1.5rem;
+     font-weight: normal;
+     margin-bottom: 30px;
+     border-bottom: 1px solid var(--border-color);
+     padding-bottom: 10px;
+ }
+
+ /* === NEWS CARDS (TWEET REPLACEMENTS) === */
+ .updates-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .video-wrapper { width: 100%; margin: 20px 0; }
+        .video-wrapper iframe { width: 100%; aspect-ratio: 16/9; border-radius: 8px; border: 1px solid var(--border-color); }
+
+ /* === FAQ ACCORDION === */
+ .accordion-item {
+     border-bottom: 1px solid var(--border-color);
+ }
+
+ .accordion-btn {
+     width: 100%;
+     background: none;
+     border: none;
+     color: var(--text-main);
+     font-family: var(--font-serif);
+     font-size: 1.1rem;
+     text-align: left;
+     padding: 20px 0;
+     cursor: pointer;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     transition: color 0.3s;
+ }
+
+ .accordion-btn:hover {
+     color: #fff;
+ }
+
+ .accordion-btn::after {
+     content: '+';
+     font-size: 1.5rem;
+     font-weight: lighter;
+     color: var(--text-muted);
+     transition: transform 0.3s ease;
+ }
+
+ .accordion-btn.active::after {
+     transform: rotate(45deg);
+     /* Trasforma il + in una x */
+ }
+
+ .accordion-content {
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 0.4s ease, opacity 0.4s ease;
+     opacity: 0;
+ }
+
+ .accordion-content.active {
+     opacity: 1;
+ }
+
+ .accordion-content p {
+     padding-bottom: 20px;
+     color: var(--text-muted);
+     font-size: 1rem;
+ }
+
+ /* === FOOTER === */
+ footer {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 40px 5%;
+     max-width: 1200px;
+     margin: 0 auto;
+     width: 100%;
+     border-top: 1px solid var(--border-color);
+     font-family: var(--font-sans);
+     font-size: 0.9rem;
+     color: var(--text-muted);
+ }
+
+ .footer-links {
+     display: flex;
+     gap: 20px;
+ }
+
+ .footer-logo svg {
+     width: 20px;
+     height: 20px;
+     fill: var(--text-muted);
+ }
+
+ .footer-credit a {
+     text-decoration: underline;
+     text-decoration-color: #333;
+     text-underline-offset: 4px;
+ }
