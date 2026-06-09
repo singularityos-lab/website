@@ -139,7 +139,8 @@ sudo apt install \
   libxkbcommon-dev libwayland-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev \
   libatspi2.0-dev libdbusmenu-glib-dev libsystemd-dev libpng-dev \
   libsodium-dev libgcrypt20-dev libpam0g-dev \
-  libseat-dev libudev-dev libgbm-dev libdisplay-info-dev libliftoff-dev hwdata xwayland
+  libseat-dev libudev-dev libgbm-dev libdisplay-info-dev libliftoff-dev hwdata xwayland \
+  sassc libcrypt-dev cmake libxcb-composite0-dev libxcb-res0-dev
 ```
 
 On Arch:
@@ -154,7 +155,7 @@ sudo pacman -S --needed \
   libgudev librsvg poppler-glib webkitgtk-6.0 libxml2 pango cairo pixman \
   libdrm libinput libxkbcommon wayland libxcb xcb-util-wm at-spi2-core \
   libdbusmenu-glib systemd libpng libsodium libgcrypt pam \
-  seatd mesa libdisplay-info libliftoff hwdata xorg-xwayland
+  seatd mesa libdisplay-info libliftoff hwdata xorg-xwayland sassc
 ```
 
 On Fedora:
@@ -175,7 +176,7 @@ sudo dnf install \
   at-spi2-core-devel libdbusmenu-devel systemd-devel libpng-devel \
   libsodium-devel libgcrypt-devel pam-devel \
   libseat-devel mesa-libgbm-devel libdisplay-info-devel libliftoff-devel hwdata-devel xorg-x11-server-Xwayland-devel \
-  grim cmake
+  grim cmake sassc
 ```
 
 :::note[Qt apps following dark/light and accent]
