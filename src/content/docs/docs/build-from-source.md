@@ -23,6 +23,55 @@ to `PATH`, `LD_LIBRARY_PATH` and `XDG_DATA_DIRS`. This keeps the system clean
 is read-only.
 :::
 
+## Vetro
+
+The build needs the `vetro` transpiler on your `PATH` before you start, since
+meson calls it to turn the `.vetro` files into GTK `.ui`. Install it first.
+
+The `vetro` transpiler is a separate program, kept in
+[its own repository](https://github.com/singularityos-lab/vetro), and the build
+does not fetch it for you. The quickest way is to download the prebuilt binary
+from the latest release, picking the matching architecture:
+
+```sh
+case "$(uname -m)" in
+  x86_64)        arch=amd64 ;;
+  aarch64|arm64) arch=arm64 ;;
+  *) echo "unsupported architecture: $(uname -m)"; exit 1 ;;
+esac
+curl -L -o vetro \
+  "https://github.com/singularityos-lab/vetro/releases/latest/download/vetro-linux-$arch"
+chmod +x vetro
+sudo install -Dm755 vetro /usr/local/bin/vetro
+```
+
+The `releases/latest/download/` path always resolves to the newest release, so
+the command does not need updating between versions. Check the result with
+`vetro --version`.
+
+On immutable distributions, or anywhere `/usr/local/bin` is not writable, install
+it into your home instead:
+
+```sh
+install -Dm755 vetro ~/.local/bin/vetro
+```
+
+Make sure `~/.local/bin` is on your `PATH`; if it is not, add it (for example with
+`export PATH="$HOME/.local/bin:$PATH"` in your shell profile).
+
+Prefer to build it yourself? It is a small Go tool (Go is already in the
+dependency lists below):
+
+```sh
+git clone https://github.com/singularityos-lab/vetro.git
+cd vetro
+go build -o vetro .
+sudo install -Dm755 vetro /usr/local/bin/vetro
+```
+
+Confirm it resolves with `which vetro` before building; meson calls it by name to
+turn the `.vetro` files into GTK `.ui`.
+
 ## The full build
 
 The meta repo wires everything together as submodules:
@@ -129,6 +178,15 @@ sudo dnf install \
   grim cmake sassc
 ```
 
+:::note[Qt apps following dark/light and accent]
+For Qt apps (Dolphin, Konsole, KWrite, and the like) to follow the Singularity
+dark/light and accent settings, the Qt 6 `xdgdesktopportal` platform theme
+plugin must be present at runtime. It ships with Qt 6 qtbase: Debian/Ubuntu
+`qt6-base`, Arch `qt6-base`, Fedora `qt6-qtbase-gui`. The session exports
+`QT_QPA_PLATFORMTHEME=xdgdesktopportal` so Qt reads the colour scheme and accent
+from the Singularity settings portal.
+:::
+
 labwc always builds `wlroots` from source as part of the build and links it
 statically, so a known-good wlroots is used regardless of what the distro
 ships. You do not need a system `wlroots` package (if one is installed it is
@@ -141,52 +199,6 @@ them. On Fedora the pkg-config file for hwdata ships in `hwdata-devel`, not
 `hwdata`, which is why it is listed that way. If `wlroots` reports
 `drm-backend: NO` during the build, one of those is missing. The optional
 Vulkan renderer additionally needs `glslang`.
-
-## Vetro
-
-The `vetro` transpiler is a separate program, kept in
-[its own repository](https://github.com/singularityos-lab/vetro), and the build
-does not fetch it for you. The quickest way is to download the prebuilt binary
-from the latest release, picking the matching architecture:
-
-```sh
-case "$(uname -m)" in
-  x86_64)        arch=amd64 ;;
-  aarch64|arm64) arch=arm64 ;;
-  *) echo "unsupported architecture: $(uname -m)"; exit 1 ;;
-esac
-curl -L -o vetro \
-  "https://github.com/singularityos-lab/vetro/releases/latest/download/vetro-linux-$arch"
-chmod +x vetro
-sudo install -Dm755 vetro /usr/local/bin/vetro
-```
-
-The `releases/latest/download/` path always resolves to the newest release, so
-the command does not need updating between versions. Check the result with
-`vetro --version`.
-
-On immutable distributions, or anywhere `/usr/local/bin` is not writable, install
-it into your home instead:
-
-```sh
-install -Dm755 vetro ~/.local/bin/vetro
-```
-
-Make sure `~/.local/bin` is on your `PATH`; if it is not, add it (for example with
-`export PATH="$HOME/.local/bin:$PATH"` in your shell profile).
-
-Prefer to build it yourself? It is a small Go tool (Go is already in the
-dependency lists above):
-
-```sh
-git clone https://github.com/singularityos-lab/vetro.git
-cd vetro
-go build -o vetro .
-sudo install -Dm755 vetro /usr/local/bin/vetro
-```
-
-Confirm it resolves with `which vetro` before building; meson calls it by name to
-turn the `.vetro` files into GTK `.ui`.
 
 ## Immutable systems: host runtime libraries
 

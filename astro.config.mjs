@@ -29,6 +29,7 @@ export default defineConfig({
             { label: 'Spotlight', slug: 'docs/spotlight' },
             { label: 'Keyboard shortcuts', slug: 'docs/keyboard-shortcuts' },
             { label: 'Appearance', slug: 'docs/appearance' },
+            { label: 'Theming third-party apps', slug: 'docs/app-theming' },
             { label: 'Notifications', slug: 'docs/notifications' },
             { label: 'Bubble navigation', slug: 'docs/bubbles' },
             { label: 'UX research', slug: 'docs/ux-research' },

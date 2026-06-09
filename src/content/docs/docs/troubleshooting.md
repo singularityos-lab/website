@@ -103,6 +103,16 @@ single app did not follow, it may not be reading the shared settings; the
 first-party apps all do. Setting the accent again from
 [Appearance](/docs/appearance/) reapplies it everywhere.
 
+## A GTK app did not recolor when I changed the accent
+
+First-party apps and the window decorations update instantly, and libadwaita
+apps follow live through the portal. Plain GTK3 and GTK4 apps such as Firefox or
+Brave only read their theme colors when they start, so a window that is already
+open keeps the old accent until you close and reopen it. This is how GTK loads
+its per-user style, not something specific to Singularity, so there is nothing
+to fix beyond reopening the app. See
+[Theming third-party apps](/docs/app-theming/) for how each toolkit is themed.
+
 ## A shortcut does not work
 
 Some shortcuts are handled by the shell and some by the compositor. If a custom
