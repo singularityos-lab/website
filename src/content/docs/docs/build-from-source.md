@@ -187,6 +187,18 @@ plugin must be present at runtime. It ships with Qt 6 qtbase: Debian/Ubuntu
 from the Singularity settings portal.
 :::
 
+:::note[Global menu for third-party GTK apps]
+The panel shows the focused window's menu bar. First-party Singularity apps
+export it natively, but third-party GTK apps need the `appmenu-gtk-module` GTK
+module present at runtime, otherwise they never publish a menu and the panel
+falls back to a minimal entry. Package names: Debian/Ubuntu/Vanilla OS
+`appmenu-gtk3-module` (add `appmenu-gtk2-module` for GTK 2 apps), Arch
+`appmenu-gtk-module` (AUR). Fedora does not ship it in the official repositories;
+it is available from COPR. Firefox is a special case: it exports its menu over
+X11 only, so the global menu appears only when Firefox runs under XWayland
+(`MOZ_ENABLE_WAYLAND=0`), not on native Wayland.
+:::
+
 labwc always builds `wlroots` from source as part of the build and links it
 statically, so a known-good wlroots is used regardless of what the distro
 ships. You do not need a system `wlroots` package (if one is installed it is
@@ -221,6 +233,7 @@ libxcb-xinput0
 xdg-desktop-portal-wlr
 libnss3-tools
 libgtksourceview-5-0
+appmenu-gtk3-module
 ```
 
 :::caution

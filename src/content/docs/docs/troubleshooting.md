@@ -113,6 +113,26 @@ its per-user style, not something specific to Singularity, so there is nothing
 to fix beyond reopening the app. See
 [Theming third-party apps](/docs/app-theming/) for how each toolkit is themed.
 
+## The global menu is empty for Firefox and some other apps
+
+Most apps publish their menu to the panel through the `appmenu-gtk-module`, so
+install it if third-party GTK apps show no menu (Debian/Ubuntu
+`appmenu-gtk3-module`, plus `appmenu-gtk2-module` for GTK 2; Arch
+`appmenu-gtk-module` from the AUR; on Fedora it is only in COPR). First-party
+Singularity apps never need it.
+
+Firefox and a few other apps are a harder case: they do not expose their menu in
+a way the panel can read. The only menu they publish is over X11, so it shows
+only under XWayland (`MOZ_ENABLE_WAYLAND=0`), not on native Wayland. The fallback
+that scrapes menus through the accessibility (AT-SPI) tree cannot help here
+either, because those entries only exist once the menus are actually opened on
+screen, which would mean popping every Firefox menu open just to mirror it.
+
+When no real menu can be detected, Singularity falls back to a File menu built
+from the actions the app declares in its desktop entry, shown alongside the
+standard File and Window menus. It is the best that is possible until these apps
+expose their menus to Wayland.
+
 ## A shortcut does not work
 
 Some shortcuts are handled by the shell and some by the compositor. If a custom
