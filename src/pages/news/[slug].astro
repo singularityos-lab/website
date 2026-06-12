@@ -51,15 +51,29 @@ const tg = `https://t.me/share/url?url=${enc(url)}&text=${enc(post.data.title)}`
     .post-cover-inner { max-width: 840px; }
     .post-title,
     .post-date { text-align: center; }
-    .post-body > :global(*),
-    .post-share { max-width: 840px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
+    .post-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+    }
+    .post-body > :global(*) {
+      display: block;
+      width: 100%;
+      max-width: 840px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
     .post-body > :global(p:has(img)) { max-width: 1220px; padding-left: 0; padding-right: 0; }
     .post-body :global(img) {
       display: block;
       width: 100%;
       height: auto;
       margin: 28px auto;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
     }
+    .post-share { max-width: 840px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
   </style>
 
   <script is:inline>
