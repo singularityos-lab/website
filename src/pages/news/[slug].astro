@@ -46,6 +46,22 @@ const tg = `https://t.me/share/url?url=${enc(url)}&text=${enc(post.data.title)}`
     </div>
   </article>
 
+  <style>
+    .post,
+    .post-cover-inner { max-width: 840px; }
+    .post-title,
+    .post-date { text-align: center; }
+    .post-body :global(img) {
+      display: block;
+      width: min(1220px, 92vw);
+      height: auto;
+      margin-top: 28px;
+      margin-bottom: 28px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+
   <script is:inline>
     (function () {
       var b = document.getElementById('copyUrlBtn');
