@@ -72,37 +72,6 @@ sudo install -Dm755 vetro /usr/local/bin/vetro
 Confirm it resolves with `which vetro` before building; meson calls it by name to
 turn the `.vetro` files into GTK `.ui`.
 
-## The full build
-
-The meta repo wires everything together as submodules:
-
-```sh
-git clone --recurse-submodules https://github.com/singularityos-lab/singularity-desktop.git singularity-desktop
-cd singularity-desktop
-make compile
-```
-
-`make install` writes the full install to `/opt/local`: binaries, bundled
-libraries, the portal and systemd wiring, the icon theme, and the session entry.
-(`make deploy-host` is a deprecated alias that now just runs `make install`; the
-two were unified into one process.) Run Singularity from inside its session for
-the `/opt/local` environment to apply.
-
-## Upgrading an existing build
-
-Pull the latest sources (the submodules move too, so update them) and rebuild:
-
-```sh
-git pull --recurse-submodules
-make compile
-make install
-```
-
-If the shell is already running, reload it in place: press `Super+Tab`, type
-`r`, and submit, then wait a moment for the shell to come back. For larger
-changes (compositor, libraries, session) skip the in-place reload and reboot
-instead.
-
 ## What you need
 
 The build is GTK4 and Vala throughout, driven by meson, and it pulls in a fair
@@ -211,6 +180,37 @@ them. On Fedora the pkg-config file for hwdata ships in `hwdata-devel`, not
 `hwdata`, which is why it is listed that way. If `wlroots` reports
 `drm-backend: NO` during the build, one of those is missing. The optional
 Vulkan renderer additionally needs `glslang`.
+
+## The full build
+
+The meta repo wires everything together as submodules:
+
+```sh
+git clone --recurse-submodules https://github.com/singularityos-lab/singularity-desktop.git singularity-desktop
+cd singularity-desktop
+make compile
+```
+
+`make install` writes the full install to `/opt/local`: binaries, bundled
+libraries, the portal and systemd wiring, the icon theme, and the session entry.
+(`make deploy-host` is a deprecated alias that now just runs `make install`; the
+two were unified into one process.) Run Singularity from inside its session for
+the `/opt/local` environment to apply.
+
+## Upgrading an existing build
+
+Pull the latest sources (the submodules move too, so update them) and rebuild:
+
+```sh
+git pull --recurse-submodules
+make compile
+make install
+```
+
+If the shell is already running, reload it in place: press `Super+Tab`, type
+`r`, and submit, then wait a moment for the shell to come back. For larger
+changes (compositor, libraries, session) skip the in-place reload and reboot
+instead.
 
 ## Immutable systems: host runtime libraries
 
