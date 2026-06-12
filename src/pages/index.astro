@@ -97,7 +97,7 @@ const tiles = [
         <span class="line" data-text="A desktop done"></span>
         <span class="line" data-text="the way you expect."></span>
       </h1>
-      <p class="lede">Singularity is a desktop you actually enjoy using: calm, quick, and yours to shape. No clutter, no telemetry, just a focused place to get things done.</p>
+      <p class="lede">Singularity is a desktop you actually enjoy using: calm, fast, and easy to make your own. No clutter, nothing nagging you, and nothing running behind your back you didn't ask for.</p>
       <div class="cta">
         <a class="btn btn-solid" href="https://discord.gg/Bj638UXffN">Join the Community</a>
         <a class="btn" href="/docs/getting-started">Get Started</a>
@@ -139,9 +139,60 @@ const tiles = [
     <p>Nothing fights for your attention. A clean canvas, sensible defaults, and a layout that stays out of the way until you need it. Everything is where you expect it, and nothing you do not ask for runs in the background.</p>
   </section>
 
+  <section class="feature wide pf-section">
+    <h2>Change technology, not habits</h2>
+    <p>Coming from Windows or a Mac? You won't have to relearn how to use your computer. Keep the familiar bar at the top and the dock at the bottom, or merge them into one taskbar like the one you already know. Your habits stay; only what's under them changes.</p>
+    <div class="pf" id="pf">
+      <div class="pf-screen">
+        <div class="pf-desktop" aria-hidden="true">
+          <span class="pf-dicon"><img src="/icons/write.svg" alt="" /><i>Write</i></span>
+          <span class="pf-dicon"><img src="/icons/photos.svg" alt="" /><i>Photos</i></span>
+          <span class="pf-dicon"><img src="/icons/music.svg" alt="" /><i>Music</i></span>
+        </div>
+        <div class="pf-bar">
+          <span class="pf-left">
+            <img class="pf-mark" src="/icon.svg" alt="Singularity" />
+            <span class="pf-menu"><b>Files</b><span>Edit</span><span>View</span></span>
+          </span>
+          <span class="pf-right">
+            <span class="pf-ico" set:html={ICONS.wifi} />
+            <span class="pf-ico" set:html={ICONS.battery} />
+            <span class="pf-clock">09:42</span>
+          </span>
+        </div>
+        <div class="pf-dock">
+          <span class="pf-app"><img src="/icons/files.svg" alt="" /></span>
+          <span class="pf-app"><img src="/icons/edit.svg" alt="" /></span>
+          <span class="pf-app"><img src="/icons/photos.svg" alt="" /></span>
+          <span class="pf-app"><img src="/icons/music.svg" alt="" /></span>
+          <span class="pf-app"><img src="/icons/calendar.svg" alt="" /></span>
+        </div>
+      </div>
+      <p class="pf-caption">
+        <span class="pf-cap-a">A top bar and a dock, just as you know them.</span>
+        <span class="pf-cap-b">Fused into one panel. Your call.</span>
+      </p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var pf = document.getElementById('pf');
+      if (!pf) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var fused = false;
+      function tick() {
+        fused = !fused;
+        pf.classList.toggle('fused', fused);
+        setTimeout(tick, fused ? 3400 : 3000);
+      }
+      setTimeout(tick, 2200);
+    })();
+  </script>
+
   <section class="feature wide">
     <h2>One menu, always in reach</h2>
-    <p>The active app's menus live in a single bar at the top, the same place every time. Less hunting, more doing. Click a menu to open it.</p>
+    <p>Every app's menus, File, Edit, and the rest, sit in one bar at the top, always in the same spot. Less hunting, more doing. Click a menu to open it.</p>
     <div class="showcase">
       <div class="global-menu">
         <img class="gm-mark" src="/icon.svg" alt="Singularity" />
@@ -153,7 +204,7 @@ const tiles = [
 
   <section class="feature wide">
     <h2>A dock that works the way you do</h2>
-    <p>Your apps and live status in one place. Pin what you use and jump anywhere in a click. Right-click an icon to try our context menu.</p>
+    <p>Your apps and live status in one place. Pin what you use and jump anywhere in a click. Right-click an icon to see what it can do.</p>
     <div class="showcase">
       <div class="dock" data-ctx="dock">
         <span class="dock-item ws"><img src="/icons/workspaces.svg" alt="Workspaces" /></span>
@@ -275,7 +326,7 @@ const tiles = [
 
   <section class="launcher-section">
     <h2>Search everything, everywhere</h2>
-    <p>Press <kbd>Super</kbd><kbd>Tab</kbd> from anywhere to summon the spotlight. Find any app, run a command, restart the shell, all without lifting your hands off the keyboard.</p>
+    <p>Press <kbd>Super</kbd> + <kbd>Tab</kbd> (Super is the ⊞ Windows / ⌘ Command key) from anywhere and just start typing. Open any app or jump straight to a setting in a keystroke, no mouse needed.</p>
     <div class="spotlight" id="spot">
       <div class="spotlight-bar">
         <span class="spotlight-ico search" set:html={ICONS.search} />
@@ -292,7 +343,7 @@ const tiles = [
         <div class="sp-res"><img src="/icons/files.svg" alt="" /><span>Files</span></div>
         <div class="sp-res"><img src="/icons/leafs.svg" alt="" /><span>Leafs</span></div>
       </div>
-      <div class="spotlight-hint">r = restart shell, c = restart compositor, n = nested test, Up/Down = history, ESC = close</div>
+      <div class="spotlight-hint">For power users: type a command too, r restarts the shell, c the compositor, Up/Down browse history, Esc closes.</div>
     </div>
   </section>
 

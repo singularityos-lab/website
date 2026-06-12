@@ -203,6 +203,86 @@ a.tier .badge { position: absolute; top: 18px; right: 18px; font-family: var(--f
 .tray-gear { width: 30px; height: 30px; border-radius: 999px; background: #3584e4; border: none; color: #fff; display: grid; place-items: center; cursor: default; flex: none; }
 .tray-gear svg { width: 16px; height: 16px; }
 
+/* Panel Fusion illustration: a top bar and a dock that fuse into one panel. */
+.pf-section .pf { margin-top: 48px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.pf-screen {
+  position: relative; width: min(960px, 94%); aspect-ratio: 16 / 10;
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: #000 url(/singularity-wallpaper.png) center / cover no-repeat;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+}
+.pf-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px; white-space: nowrap;
+  background: transparent; border: none; border-radius: 0;
+  font-size: 0.78rem; color: var(--text-muted); z-index: 2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  transition: top 0.8s cubic-bezier(0.4, 0, 0.2, 1), height 0.8s ease,
+    padding 0.8s ease, background-color 0.8s ease;
+}
+.pf-left { display: inline-flex; align-items: center; gap: 14px; }
+.pf-left .pf-mark { width: 16px; height: 16px; display: block; }
+.pf-menu { display: inline-flex; align-items: center; gap: 14px; transition: opacity 0.4s ease; }
+.pf-menu b { color: var(--hi); font-weight: 700; }
+.pf-right { display: inline-flex; align-items: center; gap: 12px; }
+.pf-ico { display: inline-flex; color: var(--text-muted); }
+.pf-ico svg { width: 14px; height: 14px; }
+.pf-clock { color: #fff; font-weight: 700; }
+
+.pf-dock {
+  position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 8px; border-radius: 16px;
+  background: rgba(30, 30, 30, 0.7); backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  z-index: 3;
+  transition: bottom 0.8s cubic-bezier(0.4, 0, 0.2, 1), padding 0.6s ease,
+    border-radius 0.6s ease, background-color 0.6s ease, border-color 0.6s ease,
+    box-shadow 0.6s ease, backdrop-filter 0.6s ease;
+}
+.pf-app { padding: 4px; border-radius: 9px; }
+.pf-app img { width: 28px; height: 28px; display: block; transition: width 0.6s ease, height 0.6s ease; }
+
+/* Fused: the top bar slides down to the bottom and fills the width into one
+   opaque, edge-to-edge panel (no rounded island), and the dock flattens into
+   it, so left workspaces, centre apps and the tray read as a single bar. */
+.pf.fused .pf-bar {
+  top: calc(100% - 46px); left: 0; right: 0; height: 46px;
+  border-radius: 0; border-color: transparent; padding: 0 16px;
+  background: #000; backdrop-filter: none;
+}
+.pf.fused .pf-menu { opacity: 0; }
+.pf.fused .pf-dock {
+  bottom: 6px; padding: 0; border-radius: 0;
+  background: transparent; border-color: transparent; box-shadow: none;
+  backdrop-filter: none; z-index: 4;
+}
+.pf.fused .pf-app img { width: 26px; height: 26px; }
+
+/* Desktop icons that pop in, with overshoot, once the panel has composed. */
+.pf-desktop { position: absolute; top: 18px; left: 18px; display: flex; flex-direction: column; gap: 18px; z-index: 1; }
+.pf-dicon { display: flex; flex-direction: column; align-items: center; gap: 5px; width: 66px; opacity: 0; transform: scale(0); transform-origin: 50% 50%; }
+.pf-dicon img { width: 42px; height: 42px; display: block; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55)); }
+.pf-dicon i { font-style: normal; font-size: 0.7rem; color: #fff; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); }
+.pf.fused .pf-dicon { animation: pf-pop 0.5s ease-out both; }
+.pf.fused .pf-dicon:nth-child(1) { animation-delay: 0.95s; }
+.pf.fused .pf-dicon:nth-child(2) { animation-delay: 1.2s; }
+.pf.fused .pf-dicon:nth-child(3) { animation-delay: 1.45s; }
+@keyframes pf-pop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.18); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.pf-caption { position: relative; width: 100%; height: 1.4em; margin: 0; }
+.pf-cap-a, .pf-cap-b { position: absolute; left: 0; right: 0; text-align: center; color: var(--text-faint); font-size: 0.85rem; transition: opacity 0.5s ease; }
+.pf-cap-b { opacity: 0; }
+.pf.fused .pf-cap-a { opacity: 0; }
+.pf.fused .pf-cap-b { opacity: 1; }
+
 .cc { --cc-accent: #3584e4; width: 454px; max-width: 100%; height: 680px; overflow: hidden; background: color-mix(in srgb, color-mix(in srgb, var(--cc-accent), #8a8a90 38%) 8%, #131218); border: 1px solid rgba(255, 255, 255, 0.10); border-radius: 20px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6); text-align: left; }
 .cc-slide { display: flex; width: 200%; height: 100%; transition: transform 0.7s cubic-bezier(0.6, 0, 0.2, 1); }
 .cc-slide.show2 { transform: translateX(-50%); }
