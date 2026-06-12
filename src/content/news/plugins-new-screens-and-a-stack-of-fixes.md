@@ -8,7 +8,11 @@ I am changing how I write these. From this one on the devlogs are split into sec
 
 ## Files is now hackable
 
-The Files app can take plugins now. There is a small contract a plugin fills in, and plugins live in the same place as all the others, the Plugins section in settings, where you turn them on. The app only loads the ones you have enabled, nothing gets picked up just because it is sitting on disk. The first plugin I wrote reads the icon stored inside a Windows .exe, so those files show their real icon instead of a blank page, and I wrote the parser for it by hand rather than pull in a library just for that. It comes on by default on fresh installs and you can switch it off like anything else. Honestly I care less about this one plugin than about the fact that there is now a clean way to add the next one ([github.com/.../issues/183](https://github.com/singularityos-lab/singularity-desktop/issues/183)).
+The Files app can take plugins now. There is a small contract a plugin fills in, and plugins live in the same place as all the others, the Plugins section in settings, where you turn them on. The app only loads the ones you have enabled, nothing gets picked up just because it is sitting on disk.
+
+![A Windows .exe showing its real embedded icon in the Files app](/files-exe-icon.png)
+
+The first plugin I wrote reads the icon stored inside a Windows .exe, so those files show their real icon instead of a blank page, and I wrote the parser for it by hand rather than pull in a library just for that. It comes on by default on fresh installs and you can switch it off like anything else. Honestly I care less about this one plugin than about the fact that there is now a clean way to add the next one ([github.com/.../issues/183](https://github.com/singularityos-lab/singularity-desktop/issues/183)).
 
 While I was in there, the file manager and the file picker can now see and mount external disks that are plugged in but not mounted yet, instead of only the ones something else already mounted for you ([github.com/.../issues/185](https://github.com/singularityos-lab/singularity-desktop/issues/185)).
 
@@ -16,11 +20,15 @@ While I was in there, the file manager and the file picker can now see and mount
 
 The greeter is easily the part of Singularity that had gotten the least attention so far: rough design, a couple of graphical glitches, not exactly functional. This session, on top of almost certainly adding a fresh batch of quality bugs of my own, I redesigned it to sit better inside Singularity's experience. The card is compact now: your real avatar and name at the top, the password field under it, a Sign In button next to a small round button for choosing the session, the clock and date moved off to the side of the card, and the wallpaper blurred behind the whole thing.
 
+![The redesigned lock screen](/lockscreen.png)
+
 The lock screen got the same treatment, and it needed it more. Until now it was basically inaccessible, thanks to a bug that met you with a screen of deep, luxurious black and turned away every attempt to get in, even when you did know your password. I rebuilt it from its ashes as a toolkit-less client on ext-session-lock-v1, drawing with Cairo and checking the password through PAM, and dressed it in the greeter's look: the same card, your real avatar, the blurred wallpaper, the password field, and a small chip for the status when you get it wrong. The black, by the way, came from handing the compositor a lock surface with nothing painted on it yet, which it answers by killing the locker and showing its own empty fallback, so it draws first now and only then hands it over. It is the one screen where a mistake locks you out of your own machine, so I am testing it the slow, careful way before I trust it ([github.com/.../issues/35](https://github.com/singularityos-lab/singularity-desktop/issues/35)).
 
 ## Window to workspace, brought back
 
 This one is a regression, not a missing feature, and I want to be honest about it. Dragging a window onto another workspace from the overview used to work. I lost it when I rebased our labwc fork: the protocol underneath changed, the request I relied on no longer fit upstream and would have crashed, so it had been left disabled, and the overview kept asking for a move that never happened. That is part of carrying a compositor fork, things can slip through a rebase without a sound. I added it back as a proper request in labwc that moves a window to a workspace by index, and now it goes where you drop it ([github.com/.../issues/109](https://github.com/singularityos-lab/singularity-desktop/issues/109)).
+
+![Dragging a window onto another workspace in the overview](/overview-workspaces.png)
 
 ## The bugs
 
