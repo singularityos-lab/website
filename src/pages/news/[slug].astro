@@ -47,18 +47,18 @@ const tg = `https://t.me/share/url?url=${enc(url)}&text=${enc(post.data.title)}`
   </article>
 
   <style>
-    .post,
+    .post { max-width: 1220px; padding-left: 0; padding-right: 0; }
     .post-cover-inner { max-width: 840px; }
     .post-title,
     .post-date { text-align: center; }
+    .post-body > :global(*),
+    .post-share { max-width: 840px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
+    .post-body > :global(p:has(img)) { max-width: 1220px; padding-left: 0; padding-right: 0; }
     .post-body :global(img) {
       display: block;
-      width: min(1220px, 92vw);
+      width: 100%;
       height: auto;
-      margin-top: 28px;
-      margin-bottom: 28px;
-      margin-left: 50%;
-      transform: translateX(-50%);
+      margin: 28px auto;
     }
   </style>
 
