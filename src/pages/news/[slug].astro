@@ -67,7 +67,7 @@ const tg = `https://t.me/share/url?url=${enc(url)}&text=${enc(post.data.title)}`
     article.post .post-body > :global(p:has(img)) { max-width: 1220px; padding-left: 0; padding-right: 0; }
     article.post .post-body :global(img) {
       display: block;
-      width: 100%;
+      max-width: 100%;
       height: auto;
       margin: 28px auto;
       border: 1px solid rgba(255, 255, 255, 0.2);
