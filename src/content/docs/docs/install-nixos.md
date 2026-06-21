@@ -9,10 +9,7 @@ desktop and exposes a small NixOS module, so you can enable it with a single
 option. It builds the full desktop from source, updating on a daily basis.
 
 :::danger[Pre-release: install at your own risk]
-Singularity is in active development, and this flake layers a large build on top
-of NixOS. It has been tested on a handful of machines, but carries real risk: try
-it on a spare machine or a virtual machine, and back up anything you care about
-first.
+Singularity is in active development. Building and installing it touches your system and carries real risk: it has been tested on several machines, but there is no guarantee it will not break something, or, worse, leave the device unable to boot. In any case you might need to roll back to a previous generation if your setup is impacted negatively and wait for an update
 :::
 
 :::note[Community maintained]
