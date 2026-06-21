@@ -60,6 +60,7 @@ sudo nixos-rebuild switch --flake .
 ```
 
 Once built, the session shows up in your display manager. Log out then pick the Singularity session and log back in.
+Note: In some cases, when you update the flake, you may need to reboot to see certain changes take effect.
 
 ## Try it without installing
 
