@@ -45,7 +45,10 @@ Add it to your flake inputs, import the NixOS module it ships, and enable it:
 {
   programs.singularity-desktop = {
     enable = true;
-    # more options will be added over time
+    greeter = {
+      enable = true; # Enables the singularity greeter (default = false)
+      background = /path/to/image.jpg # You can also customize greetd by replacing the default background image (default = stock wallpaper)
+    };
   };
 }
 ```
