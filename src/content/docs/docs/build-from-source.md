@@ -109,7 +109,7 @@ sudo apt install \
   libatspi2.0-dev libdbusmenu-glib-dev libsystemd-dev libpng-dev \
   libsodium-dev libgcrypt20-dev libpam0g-dev \
   libseat-dev libudev-dev libgbm-dev libdisplay-info-dev libliftoff-dev hwdata xwayland \
-  sassc
+  sassc libxcb-composite0-dev libxcb-res0-dev
 ```
 
 On Arch:
