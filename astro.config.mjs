@@ -89,6 +89,8 @@ export default defineConfig({
             { label: 'Recovery mode', slug: 'docs/os/recovery' },
             { label: 'Updates & rollback', slug: 'docs/os/updates' },
             { label: 'Hardware security & TPM', slug: 'docs/os/hardware-security' },
+            { label: 'Running apps with ush', slug: 'docs/ush' },
+            { label: 'The dsh developer profile', slug: 'docs/dsh' },
           ],
         },
         {
