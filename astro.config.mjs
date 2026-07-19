@@ -78,6 +78,20 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Sinty OS',
+          items: [
+            { label: 'Overview', slug: 'docs/os/about' },
+            { label: 'Requirements', slug: 'docs/os/requirements' },
+            { label: 'Installing Sinty OS', slug: 'docs/os/install' },
+            { label: 'First boot & your PIN', slug: 'docs/os/first-boot' },
+            { label: 'PIN, password & encryption', slug: 'docs/os/pin-and-encryption' },
+            { label: 'The recovery code', slug: 'docs/os/recovery-code' },
+            { label: 'Recovery mode', slug: 'docs/os/recovery' },
+            { label: 'Updates & rollback', slug: 'docs/os/updates' },
+            { label: 'Hardware security & TPM', slug: 'docs/os/hardware-security' },
+          ],
+        },
+        {
           label: 'The bigger picture',
           items: [
             { label: 'Singularity OS', slug: 'docs/singularity-os' },
