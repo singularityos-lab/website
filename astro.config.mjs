@@ -91,6 +91,7 @@ export default defineConfig({
             { label: 'Hardware security & TPM', slug: 'docs/os/hardware-security' },
             { label: 'Running apps with ush', slug: 'docs/ush' },
             { label: 'The dsh developer profile', slug: 'docs/dsh' },
+            { label: 'Developing in Sinty OS', slug: 'docs/developing-in-sinty' },
           ],
         },
         {
