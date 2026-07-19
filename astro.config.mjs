@@ -95,6 +95,15 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Atom, the init system',
+          items: [
+            { label: 'What atom is, and why', slug: 'docs/atom-init/about' },
+            { label: 'Units and services', slug: 'docs/atom-init/units' },
+            { label: 'Targets and the boot sequence', slug: 'docs/atom-init/targets' },
+            { label: 'Managing services with atomctl', slug: 'docs/atom-init/atomctl' },
+          ],
+        },
+        {
           label: 'The bigger picture',
           items: [
             { label: 'Singularity OS', slug: 'docs/singularity-os' },
