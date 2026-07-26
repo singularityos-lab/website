@@ -94,6 +94,7 @@ export default defineConfig({
             { label: 'MTS for developers', slug: 'docs/os/mts-admin' },
             { label: 'Running apps with ush', slug: 'docs/ush' },
             { label: 'The dsh developer profile', slug: 'docs/dsh' },
+            { label: 'Sinty Debug Bridge (sdb)', slug: 'docs/sdb' },
             { label: 'Developing in Sinty OS', slug: 'docs/developing-in-sinty' },
           ],
         },

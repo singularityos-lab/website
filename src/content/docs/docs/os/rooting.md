@@ -3,6 +3,13 @@ title: Rooting Sinty OS
 description: Why Sinty OS has no root by default, what "rooting" would mean here, and why it is strongly discouraged.
 ---
 
+:::caution[Work in progress: not available in this Alpha]
+Bootloader unlock is designed but **not yet implemented** in the current Alpha.
+No device can be rooted today: there is no unlock switch in Settings, and the
+recovery unlock stops before it changes anything. The flow below describes the
+intended design, not a procedure that works on this release yet.
+:::
+
 :::danger[Rooting is strongly discouraged and voids support stability]
 Sinty OS is designed to run as a sealed, verified system. Rooting it, gaining
 full root and stepping outside that verified system, breaks the guarantees the OS
@@ -52,9 +59,9 @@ That is a different machine from the one Sinty ships. Once you do it:
 
 ## How to unlock the device
 
-Rooting is a deliberate, physically present act, closer to unlocking an Android
-bootloader than to typing a password. The exact keys and prompts depend on your
-device, but the flow is:
+When it ships, rooting will be a deliberate, physically present act, closer to
+unlocking an Android bootloader than to typing a password. The exact keys and
+prompts depend on your device, but the intended flow is:
 
 1. **Arm the unlock in settings.** In the system settings, under the developer or
    advanced section, turn on "Allow bootloader unlock". This asks for your PIN,
