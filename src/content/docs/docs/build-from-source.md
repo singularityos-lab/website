@@ -182,6 +182,26 @@ them. On Fedora the pkg-config file for hwdata ships in `hwdata-devel`, not
 `drm-backend: NO` during the build, one of those is missing. The optional
 Vulkan renderer additionally needs `glslang`.
 
+## Architecture and GPU support
+
+Singularity builds and runs on **aarch64 (arm64)** as well as x86_64. The arm64
+build needs no source changes and no architecture guards: the C Wayland
+bindings, the Vala shell, libsingularity, the portal and the bundled
+labwc/wlroots all compile as-is. It has been built and run on an Arm CIX Sky1
+(CD8180) board with gcc 15.2, valac 0.56.18 and meson 1.10.1.
+
+A Vulkan driver is **not** required. Two independent renderer choices each
+default to something a GLES-only GPU can satisfy:
+
+- the session exports `GSK_RENDERER=gl`, so GTK uses an OpenGL renderer rather
+  than its Vulkan one;
+- wlroots uses GLES2 by default when it is available, so a GPU with no Vulkan
+  driver needs no override.
+
+This has been verified on an Arm Mali-G720 (GLES 3.x, no Vulkan driver present),
+where the full session comes up with no overrides. The optional Vulkan renderer
+noted above is exactly that: optional.
+
 ## The full build
 
 The meta repo wires everything together as submodules:
