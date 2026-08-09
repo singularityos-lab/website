@@ -144,6 +144,26 @@ pushed to the compositor as well, and a conflicting binding can shadow them.
 Check whether Do Not Disturb is on. It suppresses the popups while still keeping
 everything in the [notification center](/docs/notifications/).
 
+## The desktop starts, but everything feels slow
+
+`singularity-labwc-session` has a safety net: if the session exits within 30
+seconds of starting, it retries once with software rendering
+(`GSK_RENDERER=cairo`, `WLR_RENDERER=pixman`, `LIBGL_ALWAYS_SOFTWARE=1`,
+`GALLIUM_DRIVER=llvmpipe`) so you get a usable desktop instead of nothing. See
+[singularity-desktop#78](https://github.com/singularityos-lab/singularity-desktop/issues/78).
+
+The side effect is that a session which crashed early on the hardware GL path
+looks like a working-but-sluggish desktop rather than a failure. Before
+concluding your GPU is unsupported, check the labwc log for the retry line:
+
+```sh
+grep "retrying with software rendering" \
+  "${XDG_STATE_HOME:-$HOME/.local/state}/singularity/labwc.log"
+```
+
+If that line is present, the first attempt crashed and the real problem is
+recorded in the same log above it.
+
 ## Getting help
 
 The project talks in the open. The [news](/news/) covers what is landing, and
