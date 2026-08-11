@@ -3,30 +3,41 @@ title: Spotlight
 description: Launch apps and run commands from one box.
 ---
 
-Spotlight is the box that opens in the center of the screen for launching apps
-and running commands. Press Super and Tab to open it, or Shift, Alt and F2.
+Spotlight is the box that opens in the center of the screen for searching and
+acting on the desktop. Press Super and Tab to open it, or Shift, Alt and F2.
 
 ## Apps or commands
 
-The box does two things, and it tells you which one it is on. While it is empty
-or you are typing a name, it is in search mode, with a lens icon, and it matches
-your apps by name, command, and id, with the closest matches first. It shows up
-to six suggestions; pick one with the arrow keys and Enter, or click it. The
-placeholder reads "Search apps or run a command…".
+The box starts in search mode, with a lens icon. It matches apps by name,
+command, and id, and it also searches files through the system index. It shows
+the closest matches first; pick one with the arrow keys and Enter, or click it.
+When a file has a preview, the selected result opens that preview on the right
+without leaving the palette.
 
-Type something that is not an app and it becomes a command. Press Enter and
-Spotlight runs it in your terminal, leaving the terminal open afterward so you
-can see the output.
+Type something that is not an app or file and it becomes a command. Press Enter
+and Spotlight runs it in your terminal, leaving the terminal open afterward so
+you can see the output. Basic mathematical expressions are evaluated directly;
+for example, typing `19/2` gives `9.5` as a selectable result.
 
-## Built-in commands
+## Desktop actions
 
-A few short commands are built in. The hint bar along the bottom reminds you of
-them:
+Type `!` to switch to action mode. The icon changes with the mode and the list
+shows desktop actions instead of keeping their shortcuts visible during a
+normal search. The available actions include:
 
-- `r` restarts the shell.
+- Customize Panel and Dock
+- Open Settings
+- Lock Screen
+- Workspace Overview
+- Application Launcher
+- Open Terminal
+- Emoji Picker
+- Take Screenshot
+- Enable Tiling
 
-With developer mode turned on, two more appear, and the hint bar grows to list
-them: `c` restarts the compositor, and `n` opens a nested test session.
+Select an action with the arrow keys and Enter, or click it. The right-aligned
+shortcut hint is shown only in this mode, so the normal palette stays focused
+on the thing you are looking for.
 
 ## History
 
@@ -34,11 +45,5 @@ Spotlight remembers the commands you run, up to the last fifty, in your data
 folder. Walk back through them with the Up and Down arrows so the things you do
 often are quick to repeat. Press Escape to close the box.
 
-## Deeper search in the overview
-
-Spotlight is deliberately focused on apps and commands. The richer search lives
-in the overview, which you open with Super and Space. There, the same search box
-also finds your files through the system index, evaluates a math expression and
-copies the answer to the clipboard when you pick it, and runs any custom search
-providers you add. You can write your own: see
-[Search providers](/docs/search-providers/).
+The overview also has its own search surface for richer workflows and custom
+providers. See [Search providers](/docs/search-providers/) for the provider API.

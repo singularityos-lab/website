@@ -73,6 +73,46 @@ const tg = `https://t.me/share/url?url=${enc(url)}&text=${enc(post.data.title)}`
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 4px;
     }
+    article.post .post-body > :global(.post-video) {
+      max-width: 1220px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    article.post .post-body :global(video) {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 28px auto;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      background: #000;
+    }
+    article.post .post-body > :global(.post-gallery) {
+      max-width: 1220px;
+      padding-left: 0;
+      padding-right: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+    article.post .post-body .post-gallery :global(img) {
+      width: 100%;
+      margin: 0;
+    }
+    article.post .post-body .post-gallery :global(img:first-child) {
+      grid-column: 1 / -1;
+      max-width: 820px;
+      justify-self: center;
+    }
+    @media (max-width: 720px) {
+      article.post .post-body > :global(.post-gallery) {
+        grid-template-columns: 1fr;
+      }
+      article.post .post-body .post-gallery :global(img:first-child) {
+        grid-column: auto;
+        max-width: 100%;
+      }
+    }
     article.post .post-share { max-width: 840px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
   </style>
 
