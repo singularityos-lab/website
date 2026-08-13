@@ -23,6 +23,8 @@ export default defineConfig({
           label: 'Using Singularity',
           items: [
             { label: 'Desktop tour', slug: 'docs/desktop-tour' },
+            { label: 'Scrolling tiling', slug: 'docs/scrolling-tiling' },
+            { label: 'Touchpad gestures', slug: 'docs/touchpad-gestures' },
             { label: 'The dock', slug: 'docs/dock' },
             { label: 'The global menu', slug: 'docs/global-menu' },
             { label: 'Control Center', slug: 'docs/control-center' },

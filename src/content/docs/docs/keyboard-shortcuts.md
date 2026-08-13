@@ -14,16 +14,13 @@ Singularity is built to be driven from the keyboard. These are the defaults.
 | Super + Tab | Spotlight |
 | Shift + Alt + F2 | Spotlight |
 | Super + Return | Open a terminal |
+| Super + D | Reveal or restore the desktop |
 
 ## System
 
 | Shortcut | Action |
 | --- | --- |
-| Super + Up | Volume up |
-| Super + Down | Volume down |
-| Super + M | Mute |
-| Super + Right | Brightness up |
-| Super + Left | Brightness down |
+| Super + M | Mute audio |
 | Super + L | Lock the screen |
 
 Volume and brightness changes show an on-screen indicator as you adjust them.
@@ -32,7 +29,9 @@ Volume and brightness changes show an on-screen indicator as you adjust them.
 
 | Shortcut | Action |
 | --- | --- |
-| Super + R | Re-tile the windows |
+| Super + Left / Right | Move one slot in scrolling tiling, otherwise snap left or right |
+| Super + Up / Down | Snap the focused window to the top or bottom half |
+| Super + R | Arrange tiled windows again |
 | Print | Screenshot |
 | Shift + Print | Screenshot a region |
 | Alt + Print | Screenshot the current window |
@@ -42,3 +41,5 @@ Volume and brightness changes show an on-screen indicator as you adjust them.
 You can add your own shortcuts from the keyboard settings. Custom shortcuts are
 applied to the compositor as well, so a binding you set works the same whether
 the shell or labwc handles it.
+
+Touchpad actions are listed separately in [Touchpad gestures](/docs/touchpad-gestures/).

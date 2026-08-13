@@ -12,7 +12,9 @@ Each shell is a leaf, and leaves stack in a window with thin separators between
 them. Add a leaf with `Ctrl+Shift+N`, drag a leaf to reorder it, or detach it
 into its own window, which Leafs calls a flower. Inside a leaf you can also open a
 bug: a smaller secondary terminal that shares the pane, handy for a quick command
-without losing your place.
+without losing your place. A bug appears in the leaf's chip bar; drag that chip
+outside Leafs to turn the running terminal into a flower of its own. The process
+keeps running during the move.
 
 ## Copy, paste, and history
 

@@ -36,6 +36,11 @@ does not push the code down. When you are reading code, the height of the window
 is the thing you are short of, and those few pixels matter. The reasoning behind
 this comes from a small [attention study](/docs/ux-research/).
 
+Drag a file chip outside the window to detach it into another Edit window. The
+same editor buffer moves with it, including unsaved changes. Detached windows
+start with the file browser closed; use the first bubble or F9 to open it. The
+main window remembers its sidebar state for the next launch.
+
 ## Built for bubbles
 
 Edit leans on [bubble navigation](/docs/bubbles/) harder than anything else on the

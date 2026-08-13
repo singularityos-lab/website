@@ -29,7 +29,7 @@ If I pull one sideways, it leaves the stack and becomes its own column again. If
 
 ## Gestures that do not fight each other
 
-Three fingers horizontally belong to the tiling strip. Four fingers horizontally still switch workspaces, while three fingers vertically opens the workspace overview and four fingers vertically opens the app launcher.
+Three fingers horizontally belong to the tiling strip, while four fingers horizontally switch workspaces. The workspace overview and app launcher use opposite four-finger vertical gestures, and both follow the hand before settling. A three-finger swipe down closes the focused window when scrolling tiling is active.
 
 The overview and launcher sit over the desktop without painting a second opaque panel over it, and opening them does not rearrange the tiled windows underneath. The second recording shows those gestures in the same session:
 
@@ -61,4 +61,4 @@ I have spent enough time making this look convincing in a demo. The part I care 
 
 There are still clients and hardware combinations I have not met, so I am not pretending a recording proves the feature is finished. It does prove that the idea has moved out of the prototype stage and into the desktop where I can use it every day, find the sharp edges and keep fixing them ([#227](https://github.com/singularityos-lab/singularity-desktop/issues/227)).
 
-The touchpad work is tracked separately in [#116](https://github.com/singularityos-lab/singularity-desktop/issues/116), and the implementation is available in the current Sinty build.
+The implementation is available in the current Sinty build, with the complete controls documented in [Touchpad gestures](/docs/touchpad-gestures/) and [Scrolling tiling](/docs/scrolling-tiling/).

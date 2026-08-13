@@ -30,6 +30,9 @@ in two styles, a fullscreen grid or a compact menu, so you can choose how much i
 takes over the screen.
 
 For launching by name without the overview, there is [Spotlight](/docs/spotlight/).
+Both the workspace overview and the launcher can be opened and closed with
+[four-finger touchpad gestures](/docs/touchpad-gestures/), with their content
+following the movement before it settles.
 
 ## Workspaces
 
@@ -40,10 +43,15 @@ or a fixed number you set yourself.
 ## Windows
 
 Windows get rounded corners by default, which drop away when a window is
-maximized or tiled. Optional tiling arranges windows into a layout, with Super
-and R to re-tile, though tiling is still experimental and off by default; see
-[Developer mode](/docs/developer-mode/). The app switcher can show as a vertical
-list or a grid of icons.
+maximized or tiled. Optional tiling can use a fixed grid or a horizontal strip
+that moves past the screen edge. In scrolling mode, three fingers move through
+the columns, windows can share a column, and a panel indicator shows your place
+in the strip. See [Scrolling tiling](/docs/scrolling-tiling/) for the full layout
+and its controls. The app switcher can show as a vertical list or a grid of icons.
+
+Press Super and D to reveal the desktop. Current windows move toward the screen
+edges without being minimized, leaving their edges available for restoring the
+layout. A four-finger pinch controls the same action directly.
 
 ## Hot corners
 
@@ -60,6 +68,8 @@ choose which monitor hosts the shell's windows when you have more than one.
 ## Where to go next
 
 - [The dock](/docs/dock/)
+- [Scrolling tiling](/docs/scrolling-tiling/)
+- [Touchpad gestures](/docs/touchpad-gestures/)
 - [The global menu](/docs/global-menu/)
 - [Control Center](/docs/control-center/)
 - [Spotlight](/docs/spotlight/)

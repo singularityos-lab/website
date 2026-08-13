@@ -20,6 +20,22 @@ things you reach for most:
 
 Your avatar and user details sit at the top.
 
+### Edit the quick settings
+
+Press the pencil in the header to edit the tile area. Primary tile actions are
+disabled while editing, so a click or drag cannot change the underlying system
+setting by accident.
+
+Drag active tiles to reorder them. Press the minus button to move one into the
+inactive section, or press the plus button on an inactive tile to return it. You
+can also drag tiles between the two sections and place them at the position shown
+by the drop guide. The order and active set are saved as soon as they change.
+
+The **Compact Mode** switch appears below the tiles while editing. It turns the
+tiles into circular icon controls and fits six on each row. Click an icon for
+its primary action; press and hold it to open its settings page when one is
+available. Press the header button again when you are done.
+
 ## Settings pages
 
 From the Control Center you can step into the full settings, one page per area:

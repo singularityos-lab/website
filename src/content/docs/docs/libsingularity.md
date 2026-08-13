@@ -444,8 +444,11 @@ ChipBar ()
 
 Pill tags. A `ChipBar` holds chips: `add_chip(id, label)`,
 `update_chip_label(id, label)`, `remove_chip(id)`, `set_active(id)`; options
-`ellipsize_labels`, `min_label_chars`, `max_label_chars`, `reorderable`; signals
-`chip_activated`, `chip_closed`, `chips_reordered`.
+`ellipsize_labels`, `min_label_chars`, `max_label_chars`, `reorderable`,
+`detachable`; signals `chip_activated`, `chip_closed`, `chip_detached`,
+`chips_reordered`. Set `detachable` and handle `chip_detached` to move the
+corresponding page into another window when its chip is dropped outside the
+current one.
 
 ### CircularProgress
 
