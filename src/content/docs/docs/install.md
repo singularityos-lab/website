@@ -3,20 +3,13 @@ title: Install
 description: The ways to run Singularity today.
 ---
 
-There are two ways to get Singularity, and only one of them is ready right now.
+There are three ways to get Singularity. The cpak package and source build are
+available today, while the complete OS image is still being built.
 
 :::danger[Pre-release: install at your own risk]
-Singularity is in active development. Building and installing it touches your
-system and carries real risk: it has been tested on several machines, but there is
-no guarantee it will not break something, or, worse, leave the device unable to
-boot. Try it on a spare machine or a virtual machine, and back up anything you
-care about first.
-
-So far it has been tested only on Vanilla OS 2 Orchid, Vanilla OS 3 Reunion,
-Debian Sid, and Ubuntu 26.04 (Resolute Raccoon). Other systems may not work.
-
-On immutable systems, do not install into the system prefix. `make install`
-already deploys to `/opt/local`, the persistent writable prefix.
+Singularity is in public alpha. Expect unfinished behavior and regressions, use
+a spare machine or virtual machine for the first test, and back up anything you
+care about before adding a login session.
 :::
 
 ## The OS image
@@ -26,10 +19,20 @@ ready, an installable image will be the simplest way to run the whole thing.
 For now, see [Singularity OS](/docs/singularity-os/) for what it is and where it
 is going.
 
+## Install with cpak
+
+cpak installs the published Singularity image, keeps its writable profile
+separate and registers it with the display manager after showing the requested
+permissions. This is the shortest way to try the same build maintained by the
+project on another Linux distribution.
+
+Start with [Install with cpak](/docs/install-cpak/) for the host check, package
+installation, login registration, updates and removal.
+
 ## Build from source
 
-Today, the way to run the desktop is to build it. The meta repository wires
-every component together as submodules and builds them with a single command:
+For a native installation, the meta repository wires every component together
+as submodules and builds them with a single command:
 
 ```sh
 git clone --recurse-submodules https://github.com/singularityos-lab/singularity-desktop.git singularity-desktop
@@ -37,6 +40,12 @@ cd singularity-desktop
 make compile
 make install
 ```
+
+The source installation has been tested on Vanilla OS 2 Orchid, Vanilla OS 3
+Reunion, Debian Sid, and Ubuntu 26.04 (Resolute Raccoon). Other systems may need
+dependency or display-manager adjustments. On immutable systems, do not install
+into the system prefix: `make install` deploys to `/opt/local`, the persistent
+writable prefix.
 
 `make install` does the full install to `/opt/local` (binaries, bundled
 libraries, portal and systemd wiring, icon theme, and session entry), and

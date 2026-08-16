@@ -31,6 +31,19 @@ The part that made this useful was not the first frame of the shell, it was open
 
 cpak keeps the package away from the private parts of the home it was never given, but it can discover and launch software installed on the host and expose the familiar user folders declared in its permissions, so the session arrives with boundaries without pretending the rest of the computer disappeared.
 
+## Try it
+
+Install the [latest cpak release](https://cpak.it/docs/install), check the host, then install and register Singularity:
+
+```sh
+cpak doctor
+cpak install github.com/singularityos-lab/singularity-desktop
+cpak system setup
+cpak session enable github.com/singularityos-lab/singularity-desktop dev.sinty.singularity
+```
+
+Log out when the registration finishes, select Singularity from the session menu in your display manager and log back in. The complete installation, update and removal steps are in [Install with cpak](/docs/install-cpak/).
+
 ## One more way to try Singularity
 
 The package is experimental because both alphas now need the kind of testing that starts after the first successful login, when somebody suspends a laptop, reconnects a monitor, opens the applications they actually use and expects tomorrow's update to leave everything where it was.

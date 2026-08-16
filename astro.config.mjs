@@ -15,6 +15,7 @@ export default defineConfig({
           items: [
             { label: 'Getting Started', slug: 'docs/getting-started' },
             { label: 'Install', slug: 'docs/install' },
+            { label: 'Install with cpak', slug: 'docs/install-cpak' },
             { label: 'Install on NixOS (community maintained)', slug: 'docs/install-nixos' },
             { label: 'First boot', slug: 'docs/first-boot' },
           ],
