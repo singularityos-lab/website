@@ -8,9 +8,21 @@ desktop. You will find them in the desktop settings.
 
 ## Wallpaper
 
-Choose from the wallpapers Singularity ships with, point at your own image, or
-pick a recent one from the gallery. The wallpaper you set on the desktop also
-shows up, blurred, on the login screen.
+Wallpapers are organized into **Artist Packs** -- a collection of images from
+a single artist or provider, such as the wallpapers Singularity ships with, a
+Bing picture-of-the-day cache, or a pack you import from an online provider.
+The **Wallpaper Source** selector switches which pack the gallery below shows;
+picking a source only changes what you're browsing, not your current
+wallpaper. Point at your own image, or pick a recent one from the gallery, and
+it shows up, blurred, on the login screen too.
+
+**Browse online...** opens a picker for downloading Artist Packs from
+providers such as pling, openDesktop, KDE Look, and GNOME Look. Importing a
+pack adds it as a new Wallpaper Source without touching whatever wallpaper is
+currently active -- pick one of its images afterwards to actually use it.
+
+**Rotate Wallpapers** cycles through the images in your currently selected
+Artist Pack automatically, at whatever interval you set.
 
 ## Dark mode
 

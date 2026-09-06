@@ -69,6 +69,7 @@ export default defineConfig({
             { label: 'Build an App', slug: 'docs/build-an-app' },
             { label: 'libsingularity primitives', slug: 'docs/libsingularity' },
             { label: 'Theming', slug: 'docs/theming' },
+            { label: 'Creating Artist Packs', slug: 'docs/wallpaper-packs' },
             { label: 'Plugins', slug: 'docs/plugins' },
             { label: 'Widgets', slug: 'docs/widgets' },
             { label: 'Search providers', slug: 'docs/search-providers' },
