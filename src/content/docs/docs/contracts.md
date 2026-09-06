@@ -40,6 +40,29 @@ Shared look-and-feel preferences live in the `dev.sinty.desktop` GSettings
 schema (accent, dark mode, wallpaper, enabled plugins, and more). Always read
 it defensively, since standalone apps may run without it installed.
 
+## Artist Packs
+
+A wallpaper source -- built-in, a provider cache, or something imported from
+online -- is described by a `.collection` file: a `GLib.KeyFile` with one
+`[Collection]` group. The shell discovers packs by scanning a list of search
+directories for `*.collection` files, in priority order -- the first root a
+given `Id` is found in wins, so a later root can't silently override an
+earlier one.
+
+| Key | Meaning |
+| --- | --- |
+| `Id` | Stable identifier for the pack. Falls back to the filename (without `.collection`) when absent. |
+| `Name` | Display name shown in the Wallpaper Source selector. |
+| `Artist` | Attribution shown alongside the name, when different from it. |
+| `Dir` | Absolute path to the directory of images this pack scans. |
+| `Type` | Free-form pack kind (for example `static`); defaults to `static` when absent. |
+
+Only `Dir` is required -- a `.collection` file missing it is skipped. `Dir` is
+scanned recursively, bounded to a few levels deep, into any subdirectory other
+than another registered pack's own `Dir` (so a provider cache with its own
+subdirectories works, without pulling a separately-registered pack into its
+parent's gallery).
+
 ## AccountsService vendor extension
 
 Per-user appearance is published to the `com.singularity.Desktop` AccountsService
