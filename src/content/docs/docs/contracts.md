@@ -40,6 +40,27 @@ Shared look-and-feel preferences live in the `dev.sinty.desktop` GSettings
 schema (accent, dark mode, wallpaper, enabled plugins, and more). Always read
 it defensively, since standalone apps may run without it installed.
 
+## Wallpaper providers
+
+Wallpaper plugins implement `WallpaperProvider`. The interface exposes an
+`id`, a `display_name`, and these asynchronous operations:
+
+| Operation | Purpose |
+| --- | --- |
+| `choices(category_index, ...)` | List choices for a provider category. |
+| `browse(choice_id, query, page, ...)` | Return a page of wallpaper items. |
+| `import_item(item, ...)` | Import a selected item and return its local path. |
+
+Plugins register providers with `PluginContext.add_wallpaper_provider()`.
+The built-in provider has the ID `singularity`. Shipped provider plugins are
+`wallpapers-stock`, `wallpapers-bing`, and `wallpapers-ocs`. The OCS and Bing
+providers are opt-in and disabled by default.
+
+Wallpaper pack metadata is discovered below
+`singularity/wallpaper-collections` in each XDG system data directory,
+followed by the same path in the user data directory. See
+[Wallpaper packs](/docs/wallpaper-packs/) for the on-disk format.
+
 ## AccountsService vendor extension
 
 Per-user appearance is published to the `com.singularity.Desktop` AccountsService

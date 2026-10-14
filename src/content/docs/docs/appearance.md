@@ -8,9 +8,15 @@ desktop. You will find them in the desktop settings.
 
 ## Wallpaper
 
-Choose from the wallpapers Singularity ships with, point at your own image, or
-pick a recent one from the gallery. The wallpaper you set on the desktop also
-shows up, blurred, on the login screen.
+Choose a **Theme pack** and then a **Wallpaper pack**, or select your own
+image. The wallpaper you set on the desktop also shows up, blurred, on the
+login screen.
+
+Wallpaper sources are providers supplied by plugins. Singularity ships stock,
+Bing, and OCS wallpaper plugins. The OCS and Bing sources are opt-in and
+disabled by default. After enabling one in Plugins, use **Explore Wallpaper
+Sources**, described in the interface as **Browse sources enabled from
+Plugins**.
 
 ## Dark mode
 
