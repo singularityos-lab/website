@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560">
+  <rect width="1200" height="560" fill="#000"/>
+  <g font-family="Montserrat, Inter, sans-serif" fill="#e0e0e0">
+    <text x="60" y="56" font-size="24" font-weight="600">A glass pill seen from the side</text>
+    <path d="M200 200 Q200 120 280 120 L920 120 Q1000 120 1000 200 Z" fill="#ffffff" fill-opacity="0.07" stroke="#e0e0e0" stroke-width="2"/>
+    <g stroke="#888" stroke-width="1.5" fill="none">
+      <line x1="320" y1="70" x2="320" y2="200"/>
+      <line x1="440" y1="70" x2="440" y2="200"/>
+      <line x1="560" y1="70" x2="560" y2="200"/>
+      <line x1="680" y1="70" x2="680" y2="200"/>
+      <line x1="800" y1="70" x2="800" y2="200"/>
+      <line x1="320" y1="200" x2="320" y2="300"/>
+      <line x1="440" y1="200" x2="440" y2="300"/>
+      <line x1="560" y1="200" x2="560" y2="300"/>
+      <line x1="680" y1="200" x2="680" y2="300"/>
+      <line x1="800" y1="200" x2="800" y2="300"/>
+    </g>
+    <g stroke="#ffffff" stroke-width="2" fill="none">
+      <path d="M220 70 L220 160 L262 300"/>
+      <path d="M250 70 L250 136 L276 300"/>
+      <path d="M980 70 L980 160 L938 300"/>
+      <path d="M950 70 L950 136 L924 300"/>
+    </g>
+    <rect x="160" y="300" width="880" height="34" fill="none" stroke="#555" stroke-width="2"/>
+    <g fill="#555">
+      <rect x="180" y="300" width="20" height="34"/><rect x="240" y="300" width="20" height="34"/>
+      <rect x="300" y="300" width="20" height="34"/><rect x="360" y="300" width="20" height="34"/>
+      <rect x="420" y="300" width="20" height="34"/><rect x="480" y="300" width="20" height="34"/>
+      <rect x="540" y="300" width="20" height="34"/><rect x="600" y="300" width="20" height="34"/>
+      <rect x="660" y="300" width="20" height="34"/><rect x="720" y="300" width="20" height="34"/>
+      <rect x="780" y="300" width="20" height="34"/><rect x="840" y="300" width="20" height="34"/>
+      <rect x="900" y="300" width="20" height="34"/><rect x="960" y="300" width="20" height="34"/>
+      <rect x="1000" y="300" width="20" height="34"/>
+    </g>
+    <text x="600" y="368" font-size="17" fill="#888" text-anchor="middle">what is behind the glass</text>
+    <text x="1030" y="160" font-size="17" fill="#e0e0e0">near the rim, light</text>
+    <text x="1030" y="182" font-size="17" fill="#e0e0e0">bends inward</text>
+    <text x="600" y="100" font-size="17" fill="#888" text-anchor="middle">in the middle it passes straight</text>
+    <text x="60" y="430" font-size="20" font-weight="600">How far each pixel is pulled</text>
+    <line x1="200" y1="520" x2="1000" y2="520" stroke="#555" stroke-width="2"/>
+    <path d="M200 450 C230 470 260 512 300 518 L900 518 C940 512 970 470 1000 450" fill="none" stroke="#e0e0e0" stroke-width="3"/>
+    <text x="200" y="548" font-size="15" fill="#888">edge</text>
+    <text x="600" y="548" font-size="15" fill="#888" text-anchor="middle">center</text>
+    <text x="1000" y="548" font-size="15" fill="#888" text-anchor="end">edge</text>
+  </g>
+</svg>
