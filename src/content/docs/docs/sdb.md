@@ -14,6 +14,9 @@ It is two binaries built from one source tree:
 | `sdbd` | the device | daemon that accepts paired hosts and serves the on-device control API |
 | `sdb` | the development host | client that pairs with a device and drives it over that pairing |
 
+The `sdb` client runs on Linux and macOS. On a Mac, build it from the source tree
+with `GOOS=darwin go build ./cmd/sdb`.
+
 Unlike a USB debug bridge, `sdbd` works over TCP, so it fits a laptop with no
 device-mode USB controller. The first connection to a device is authorized by a
 one-time code shown on the device's own screen; every later connection uses the
@@ -21,16 +24,17 @@ stored key alone.
 
 :::caution[Off by default]
 The bridge never runs on its own. `sdbd` starts only when both switches are on:
-developer options in Settings (marker `/etc/atom/dev.enabled`) and the bridge
-itself (marker `/var/lib/sinty-sdb/enabled`). Turn either off and the daemon
+[developer mode](/docs/developer-mode/) and **Debug bridge** on the Developer page
+of Settings. Turn either off and the daemon
 stops, so a device carries no network listener until its owner asks for one.
 :::
 
 ## Pairing
 
-The first time a host talks to a device, it pairs. The device shows a short,
-single-use code and the host key fingerprint; you read the code into the host and
-check the fingerprint by eye. The code proves you are physically at the device,
+The first time a host talks to a device, it pairs. Run `sdb pair` on the host:
+the device opens its pairing window by itself and shows a short, single-use code
+and the host key fingerprint. Type the code into the host and check the
+fingerprint by eye. The code proves you are physically at the device,
 the fingerprint proves no one interposed a key. Both are required, and pairing is
 rate limited with progressive backoff.
 
@@ -45,7 +49,8 @@ is refused, with no first-connection grace.
 
 ## Working with a device
 
-Each command runs over one multiplexed session with a paired device:
+Each command runs over one multiplexed session with a paired device. When only
+one paired device is online, commands pick it without being told which:
 
 ```sh
 sdb shell [--root] [cmd...]     run a command or an interactive shell
@@ -57,12 +62,17 @@ sdb forward -R <bind> <target>  reverse tunnel: the device binds and reaches bac
 sdb assist                      run a read-only diagnostic session in memory
 ```
 
+With no command, `sdb shell` opens an interactive shell with a terminal. A
+command run from a terminal gets one too, so full-screen programs work.
+
 ## Shell tiers
 
 A shell runs at one of three tiers:
 
 - **The logged-in user**, by default. A paired host is the owner's own machine on
-  the owner's own device, so an ordinary shell is just the owner's session.
+  the owner's own device, so an ordinary shell is just the owner's session: it
+  starts in the home folder, has the user's groups, and joins the running desktop
+  session, so an app started from it opens on the device's screen.
 - **An isolated bridge account**, when no one is logged in. It carries no
   privileged groups and cannot read the owner's encrypted home or reach the
   display seat.

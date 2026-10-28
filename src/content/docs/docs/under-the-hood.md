@@ -46,3 +46,5 @@ couple of Singularity-specific ones for previews, tiling, and blur.
 The rest of the documentation covers [building an app](/docs/build-an-app/),
 [plugins](/docs/plugins/), [widgets](/docs/widgets/), [theming](/docs/theming/),
 and the [contracts](/docs/contracts/).
+
+*Five pieces, so far. Some say there is a sixth.*

@@ -29,6 +29,14 @@ system, and the previous one held as the fallback.
 If there is no good version left to fall back to, the machine drops into
 [recovery](/docs/os/recovery/) rather than leaving you at a dead screen.
 
+## The startup loader is updated too
+
+The loader that starts Sinty OS before the system itself is updated the same way.
+A new loader is first started on trial. If it does not get the system up, the
+computer goes back to the previous loader on its own at the next start, so a bad
+loader update cannot leave the machine unable to boot. Settings shows the loader
+version in use.
+
 ## Your files are never touched
 
 Updates replace the system, not your data. Your encrypted home lives separately

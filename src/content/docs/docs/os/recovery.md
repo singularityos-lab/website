@@ -9,16 +9,15 @@ ends up unable to start normally, recovery can **repair** it or **reinstall** a
 fresh Sinty OS, and it can do so **over wifi**, with no second computer and no
 network cable.
 
-:::note[Status]
-The recovery agent and its interface exist and are developed in the open. A fully
-independent, always-bootable recovery image is still being proven for the first
-release. Treat this page as how recovery is designed to work.
-:::
+Recovery lives in its own slot on the boot partition, separate from the system it
+repairs, and system updates keep it up to date.
 
 ## When it starts
 
-- **On demand.** You can choose recovery from the boot menu (for example by holding
-  a key as the machine starts).
+- **On demand.** Press any key while the loading screen first appears. A small
+  menu offers **1** to start the current system, **2** to start the previous one
+  and **3** to start recovery. With no choice, the current system starts after a
+  few seconds.
 - **Automatically.** If a new system fails to boot enough times, the machine falls
   back on its own rather than leaving you stuck. See
   [Updates and rollback](/docs/os/updates/).

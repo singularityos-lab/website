@@ -50,3 +50,15 @@ destroying your data. The only way back in is your **recovery code**, the one-ti
 string shown at [first boot](/docs/os/first-boot/). Keep it safe. Without both the
 PIN and the recovery code, encrypted data is gone for good, which is the point:
 your data is genuinely yours.
+
+## How it works underneath
+
+- Your files are encrypted with a key of your own. The key is sealed in the TPM,
+  the security chip of the computer, and only your PIN unseals it.
+- There is no password file. Your PIN is checked by unsealing the key, not by
+  comparing it with a stored hash, so a copy of the disk read on another machine
+  gives nothing to attack, and the TPM slows down repeated wrong PINs.
+- A second copy of the key is sealed under your [recovery code](/docs/os/recovery-code/),
+  for a forgotten PIN or a reset TPM.
+- On a computer without a TPM, Sinty OS asks for a passphrase instead of a PIN,
+  and the key is protected by the passphrase alone.

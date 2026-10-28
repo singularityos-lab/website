@@ -65,6 +65,66 @@ comforts you expect: auto-indent, smart backspace, bracket matching, and a
 configurable tab width. Edit reads your desktop dark mode and accent color and
 regenerates its theme when you change either.
 
+## Projects
+
+**Open Folder** shows a project's files in the sidebar, next to the documents you
+have open. **Search in Project** searches every file in it. Recent folders are
+kept in the menu, and **Close Folder** goes back to plain documents.
+
+On Sinty OS, Edit can also open a project that lives in the
+[developer shell](/docs/dsh/), and run its builds, language servers and
+debuggers with the tools installed there.
+
+## Code intelligence
+
+For the main languages Edit starts a language server and shows errors and
+warnings as you type, with completion, go to definition and hover information.
+It uses `clangd` for C and C++, `gopls` for Go, `pylsp` for Python,
+`rust-analyzer` for Rust, `typescript-language-server` for JavaScript and
+TypeScript, and `vala-language-server` for Vala, whenever they are installed.
+Syntax highlighting uses tree-sitter where a grammar is available.
+
+## Debugging
+
+Set breakpoints with **Toggle Breakpoint**, then **Start Debugging**. Edit runs
+the program under `lldb` or `gdb`, stops on breakpoints and shows variables and
+the call stack. Save the file first. When no debugger is installed for the
+language, Edit tells you which one to install.
+
+## Plugins
+
+Git, the terminal and the agents are plugins, turned on and off from the Edit
+section of the system settings.
+
+- **Git** adds a Source Control panel with the changed files, reverting a change
+  and committing everything with a message. For history and conflicts it opens the
+  project in the Git app.
+- **Terminal** shows a terminal below the editor. It comes from Leafs, and can
+  open the project in Leafs or in the developer shell.
+- **Agents** is installed but off by default. See below.
+
+## Agents
+
+With the Agents plugin on, a panel lets a coding agent work on the project: Claude
+Code, Codex, Gemini CLI, GitHub Copilot, OpenCode with local models through
+Ollama, and more agents from the ACP registry. An agent downloaded by Edit is
+checked against its checksum before it runs.
+
+Each agent signs in with your account, in a terminal, or with an API key that
+Edit keeps in your keyring. Each session has a mode:
+
+| Mode | What the agent may do |
+|---|---|
+| Plan | read only, no changes and no commands |
+| Ask First | asks before every change |
+| Auto Edit | edits project files, asks before commands |
+| Autopilot | works until done inside the project |
+
+Autopilot makes a restore point first, reads and writes only inside the project,
+and stops at a time limit. **Restore the project to before Autopilot** puts every
+file back. **Follow the agent in the editor** opens the files as the agent
+changes them.
+
 ## Keyboard shortcuts
 
 | Shortcut | Action |
