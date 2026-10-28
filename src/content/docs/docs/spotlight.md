@@ -6,6 +6,8 @@ description: Launch apps and run commands from one box.
 Spotlight is the box that opens in the center of the screen for searching and
 acting on the desktop. Press Super and Tab to open it, or Shift, Alt and F2.
 
+![The empty Spotlight palette](/spotlight-empty.png)
+
 ## Apps or commands
 
 The box starts in search mode, with a lens icon. It matches apps by name,
@@ -14,10 +16,16 @@ the closest matches first; pick one with the arrow keys and Enter, or click it.
 When a file has a preview, the selected result opens that preview on the right
 without leaving the palette.
 
+![Spotlight searching installed applications](/spotlight-app-search.png)
+
+![Spotlight searching files with a preview](/spotlight-file-preview.png)
+
 Type something that is not an app or file and it becomes a command. Press Enter
 and Spotlight runs it in your terminal, leaving the terminal open afterward so
 you can see the output. Basic mathematical expressions are evaluated directly;
 for example, typing `19/2` gives `9.5` as a selectable result.
+
+![Spotlight evaluating a calculation](/spotlight-math.png)
 
 ## Desktop actions
 
@@ -38,6 +46,8 @@ normal search. The available actions include:
 Select an action with the arrow keys and Enter, or click it. The right-aligned
 shortcut hint is shown only in this mode, so the normal palette stays focused
 on the thing you are looking for.
+
+![Spotlight action mode with desktop commands](/spotlight-actions.png)
 
 ## History
 

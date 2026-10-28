@@ -19,6 +19,8 @@ deployment engine underneath.
   untouched, so a download interrupted by a lost connection or a power cut is a
   non-event.
 
+![An update is three images: the kernel cache, the root, and the firmware for NVIDIA or AMD graphics](/firmware-is-an-image-too.png)
+
 ## Rollback: a bad update undoes itself
 
 If a new version fails to boot, Sinty OS returns to the last version that worked on

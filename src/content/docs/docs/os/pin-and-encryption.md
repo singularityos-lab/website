@@ -31,6 +31,8 @@ technology Android uses), not a single whole-disk passphrase:
   machine's hardware security. Both are needed to unlock, which is why the same
   data will not simply decrypt on another machine even with the right PIN.
 
+![The PIN goes to the TPM, which unseals the user key](/tpm-sealing.png)
+
 ## What the PIN unlocks
 
 The one PIN is used, never duplicated, for three things:

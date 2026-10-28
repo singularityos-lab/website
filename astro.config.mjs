@@ -123,6 +123,8 @@ export default defineConfig({
             { label: 'Search providers', slug: 'docs/search-providers' },
             { label: 'Contracts', slug: 'docs/contracts' },
             { label: 'Exposing app settings', slug: 'docs/exposing-settings' },
+            { label: 'App pause for developers', slug: 'docs/pause-api' },
+            { label: 'Sinty Compute for developers', slug: 'docs/compute-api' },
             { label: 'How the global menu works', slug: 'docs/global-menu-internals' },
             { label: 'The compositor', slug: 'docs/compositor' },
             { label: 'Server-side decorations', slug: 'docs/server-side-decorations' },

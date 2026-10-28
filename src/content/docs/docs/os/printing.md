@@ -7,6 +7,8 @@ Printing on Sinty OS is handled by **torchio**. Apps print exactly as they would
 with CUPS: print dialogs, browsers and the `lp` and `lpstat` commands all work,
 because torchio speaks the same protocol.
 
+![How a print job flows through torchio](/blog/torchio-flow.svg)
+
 ## Adding a printer
 
 Open **Printers** and choose **Add Printer**. Printers found on your network are

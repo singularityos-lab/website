@@ -48,6 +48,7 @@ everything as usual.
 ## For developers
 
 The `sinty-compute status` command prints the state of the module and its
-counters. Apps use the feature through the `libsintycompute` library. The source
+counters. Apps use the feature through the `libsintycompute` library, described in
+[Sinty Compute for developers](/docs/compute-api/). The source
 and the details of how invalidation works are in the
 [sinty-compute repository](https://github.com/singularityos-lab/sinty-compute).
