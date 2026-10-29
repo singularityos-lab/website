@@ -3,9 +3,6 @@ title: Under the Hood
 description: Wayland, labwc, and the technical foundations of Singularity, for the curious.
 ---
 
-This page is for the curious. The rest of the site sells the experience; here we
-talk about what runs underneath.
-
 ## Wayland and labwc
 
 Singularity is a Wayland desktop. Rather than writing a compositor from scratch,
@@ -37,9 +34,31 @@ It keeps interface code short and readable without giving up native widgets.
 
 ## Wayland protocols in use
 
-Singularity uses a focused set of protocols: foreign-toplevel management,
-output management, workspaces, screencopy, gamma control, session lock, and a
-couple of Singularity-specific ones for previews, tiling, and blur.
+The compositor is Singularity's own fork of labwc. Besides the standard
+protocols, it implements a few of its own, whose XML files live in the
+`protocols` directory of the labwc fork:
+
+| Protocol | Used for |
+|---|---|
+| `wlr-foreign-toplevel-management`, `ext-foreign-toplevel-list` | the dock, the overview and the window switcher |
+| `ext-workspace-v1` | workspaces in the panel and overview |
+| `ext-image-copy-capture-v1`, `wlr-screencopy` | screenshots and screen sharing |
+| `ext-session-lock-v1` | the lock screen |
+| `ext-idle-notify-v1` | dimming and locking when idle |
+| `wlr-output-management`, `wlr-output-power-management`, `wlr-gamma-control` | displays, display power and night light |
+| `ext-data-control-v1` | clipboard history |
+| `input-method-v2`, `virtual-keyboard-v1` | the on-screen keyboard and input methods |
+| `ext-background-effect-v1`, `singularity-blur-v1` | blur and window materials behind surfaces |
+| `singularity-preview-v1` | live window previews in the dock and overview |
+| `singularity-tiling-v1`, `singularity-snap-v1` | tiling and the snap layout picker |
+| `singularity-stage-v1` | window groups shown one at a time |
+| `singularity-gesture-v1` | touchpad gesture progress for the shell |
+| `singularity-motion-v1` | motion hints for window animations |
+| `singularity-key-hold-v1` | a modifier key pressed and released alone |
+| `singularity-process-v1` | the process that owns a window |
+
+The `singularity-*` protocols are unstable and change with the desktop. Apps do
+not need them: they are for the shell and system components.
 
 ## Want more?
 

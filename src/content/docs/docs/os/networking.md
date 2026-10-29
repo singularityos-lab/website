@@ -29,6 +29,31 @@ The settings also accept OpenVPN files. On Sinty OS only WireGuard connections c
 be used. The desktop on other distributions uses whatever its NetworkManager
 supports.
 
+## From the terminal
+
+`nmcli` is installed and talks to sinty-nm:
+
+```bash
+nmcli device                                   # devices and their state
+nmcli device wifi list                         # networks in range
+nmcli device wifi connect "Home" password "secret"
+nmcli connection show                          # saved connections, VPNs included
+nmcli connection up "Office VPN"               # turn a saved connection on
+nmcli connection down "Office VPN"
+nmcli device disconnect wlp0s20f3              # leave the current network
+nmcli connection delete "Old network"          # forget it
+```
+
+Saved connections are keyfiles in `/etc/NetworkManager/system-connections`, in
+the format NetworkManager uses. Supported connection types are Wi-Fi, Ethernet,
+bridge and WireGuard.
+
+For apps, the D-Bus interface is the NetworkManager one at
+`org.freedesktop.NetworkManager`, usable through libnm or directly. These calls
+are implemented: `ActivateConnection`, `AddAndActivateConnection`,
+`DeactivateConnection`, `AddConnection`, `Update`, `Update2`, `Delete`,
+`GetSecrets`, `RequestScan` and the device `Disconnect`.
+
 ## Under the hood
 
 sinty-nm answers the NetworkManager interface on the system bus, so `nmcli`, the
