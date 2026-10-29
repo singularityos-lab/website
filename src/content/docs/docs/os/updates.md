@@ -46,6 +46,12 @@ from the system image (see
 [Your PIN, password, and encryption](/docs/os/pin-and-encryption/)), so an update
 never merges into your files or risks them.
 
+## Update history
+
+Settings, under **Updates**, lists every update installed on this
+computer under **Update History**: the version, the build, when it was installed,
+and whether it succeeded. Firmware updates are listed in a group of their own.
+
 ## Under the hood
 
 The transactional model, the signing chain, and the automatic rollback are

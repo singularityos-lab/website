@@ -46,6 +46,21 @@ before suggesting again.
 
 Nothing is ever paused without you choosing it.
 
+## Lighter background apps
+
+Apps you are not looking at can also keep running with less. Turn on **Lighter
+Background Apps** in Settings, under **Performance**. It is off until you turn it
+on, and it appears only on Sinty OS.
+
+When every window of an app has been minimized or covered for a few seconds, its
+windows stop drawing. After ten seconds the app gets a smaller share of the
+processor and the disk, and after a minute part of its memory is handed back to
+the system. As soon as one of its windows is visible again, it gets everything
+back. Apps that are playing audio or video are left alone.
+
+Unlike a pause, the app keeps working: messages arrive, downloads continue and
+timers fire, only more slowly.
+
 ## What to expect
 
 - A paused app does not receive messages, play audio or finish downloads until

@@ -15,6 +15,9 @@ boot a signed image and to hold a key in hardware.
   that means roughly a 2009-or-newer processor (SSE4.2). Older CPUs are not
   supported and will refuse to run parts of the system.
 
+32-bit x86 programs run too, through the kernel's compatibility layer. Wine,
+Bottles and many older games need it.
+
 Other architectures (ARM, RISC-V) are a direction for the underlying deployment
 engine, but Sinty OS itself targets x86_64 today.
 

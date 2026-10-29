@@ -43,6 +43,15 @@ desktop and wallpaper, sound, network, displays, keyboard, accounts, apps,
 bluetooth, region and language, date and time, notifications, accessibility,
 plugins, and system information.
 
+## Loud volume on headphones
+
+When headphones or a headset are connected and the volume goes above 80%, the
+system warns that listening this loud for a long time can damage your hearing.
+The warning appears in the volume indicator when you change the volume with the
+keyboard, and under the volume slider in the Control Center. While the volume
+stays that high, a headphones icon remains in the panel. Lower the volume below
+80% and the warning goes away.
+
 ## The panel cluster
 
 Some of this is mirrored in the panel itself. The cluster on the right shows the
