@@ -1,0 +1,15 @@
+---
+import Modal from './Modal.astro';
+
+const DISCORD = 'https://discord.gg/Bj638UXffN';
+const GITHUB_ORG = 'https://github.com/singularityos-lab';
+---
+
+<Modal id="dlModal" title="Not quite ready">
+  <p>There is no downloadable image yet. Singularity is still in heavy development, and we would rather ship something you can trust than something half-baked.</p>
+  <p>You can already build the desktop from source and try it today. Everything lives in the open on our GitHub organization, and the community is the best place to get unstuck.</p>
+  <div class="modal-actions">
+    <a class="btn btn-solid" href={GITHUB_ORG} target="_blank" rel="noopener">Build from source</a>
+    <a class="btn btn-discord" href={DISCORD} target="_blank" rel="noopener">Join the Discord</a>
+  </div>
+</Modal>

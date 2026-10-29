@@ -1,0 +1,18 @@
+{
+  "name": "singularity-website",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/starlight": "^0.34.0",
+    "@fontsource-variable/montserrat": "^5.0.0",
+    "astro": "^5.7.0",
+    "sharp": "^0.33.5"
+  }
+}

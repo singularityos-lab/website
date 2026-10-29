@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640">
+  <rect width="1200" height="640" fill="#000"/>
+  <g font-family="Montserrat, Inter, sans-serif" fill="#e0e0e0" font-size="20">
+    <rect x="80" y="40" width="380" height="90" rx="14" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+    <text x="270" y="80" text-anchor="middle" font-weight="600">Singularity apps</text>
+    <text x="270" y="108" text-anchor="middle" font-size="16" fill="#888">use the extensions through sit-1.0</text>
+    <rect x="520" y="40" width="380" height="90" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="710" y="80" text-anchor="middle" font-weight="600">Any other GTK 4 app</text>
+    <text x="710" y="108" text-anchor="middle" font-size="16" fill="#888">unchanged, not rebuilt</text>
+    <g stroke="#555" stroke-width="2">
+      <line x1="270" y1="130" x2="270" y2="190"/>
+      <line x1="710" y1="130" x2="710" y2="190"/>
+    </g>
+    <rect x="80" y="190" width="820" height="170" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#e0e0e0" stroke-width="2"/>
+    <text x="110" y="232" font-weight="600" font-size="22">libgtk-4.so.1, provided by SIT</text>
+    <text x="110" y="262" font-size="16" fill="#888">GTK 4.22.4, same ABI, checked on every change</text>
+    <rect x="110" y="282" width="760" height="56" rx="10" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="130" y="316" font-size="16">visual transform, opacity and clip</text>
+    <text x="420" y="316" font-size="16">window border</text>
+    <text x="580" y="316" font-size="16">frame statistics</text>
+    <text x="760" y="316" font-size="16">glass</text>
+    <line x1="490" y1="360" x2="490" y2="420" stroke="#555" stroke-width="2"/>
+    <rect x="80" y="420" width="820" height="70" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="490" y="463" text-anchor="middle">GSK renders on the GPU (Vulkan or GL)</text>
+    <line x1="490" y1="490" x2="490" y2="540" stroke="#555" stroke-width="2"/>
+    <rect x="80" y="540" width="820" height="70" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="490" y="583" text-anchor="middle">labwc compositor, draws the liquid glass behind surfaces</text>
+    <path d="M960 225 L1120 225 L1120 575 L900 575" fill="none" stroke="#e0e0e0" stroke-width="2" stroke-dasharray="4 6"/>
+    <text x="1130" y="390" font-size="16" fill="#888" transform="rotate(90 1130 390)" text-anchor="middle">singularity-blur, liquid mode</text>
+  </g>
+</svg>

@@ -1,0 +1,80 @@
+---
+import '../styles/tokens.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank you - Singularity OS</title>
+    <meta name="description" content="Thank you for supporting Singularity." />
+    <link rel="icon" href="/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Sacramento&display=swap" rel="stylesheet" />
+    <style>
+      body.thanks { margin: 0; min-height: 100vh; background: #0a0a0a; color: #fff; overflow-x: hidden; display: grid; place-items: center; font-family: var(--font-sans); }
+      .thx-glow { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(42% 50% at 50% 32%, rgba(255, 77, 109, 0.20), transparent 70%), radial-gradient(40% 42% at 72% 62%, rgba(53, 132, 228, 0.16), transparent 70%), radial-gradient(40% 42% at 28% 64%, rgba(255, 143, 163, 0.14), transparent 70%); animation: glow 8s ease-in-out infinite alternate; }
+      @keyframes glow { from { opacity: 0.7; transform: scale(1); } to { opacity: 1; transform: scale(1.06); } }
+      .thx-wrap { position: relative; z-index: 1; text-align: center; padding: 56px 20px; }
+      .heart-stage { position: relative; width: 100%; height: 190px; display: flex; align-items: center; justify-content: center; }
+      .heart-main { width: 76px; height: 76px; fill: #ff4d6d; transform-origin: center center; filter: drop-shadow(0 0 28px rgba(255, 77, 109, 0.6)); animation: beat 1.4s ease-in-out infinite; position: relative; z-index: 2; }
+      @keyframes beat { 0%, 100% { transform: scale(1); } 25% { transform: scale(1.13); } 40% { transform: scale(1.02); } 55% { transform: scale(1.09); } }
+      .heart-particle { position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; z-index: 1; animation: burst 2s var(--delay, 0s) ease-out forwards; }
+      .heart-particle svg { width: 100%; height: 100%; fill: currentColor; }
+      @keyframes burst {
+        0% { transform: translate(-50%, -50%) scale(0.2); opacity: 0; }
+        15% { opacity: 1; }
+        100% { transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(var(--s)) rotate(var(--r)); opacity: 0; }
+      }
+      .letter { margin: 44px auto 0; max-width: 520px; background: #f6f1e7; color: #2a2620; border-radius: 14px; padding: 36px 40px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); transform: rotate(-1.1deg); font-family: 'Caveat', cursive; }
+      .letter p { font-size: 1.55rem; line-height: 1.5; margin: 0 0 14px; }
+      .letter .sign { font-family: 'Sacramento', cursive; font-size: 2.8rem; color: #16130e; margin-top: 16px; text-align: right; line-height: 1; }
+      .thx-back { display: inline-block; margin-top: 40px; color: rgba(255, 255, 255, 0.6); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; text-decoration: none; }
+      .thx-back:hover { color: #fff; }
+    </style>
+  </head>
+  <body class="thanks">
+    <div class="thx-glow"></div>
+    <div class="thx-wrap">
+      <div class="heart-stage" id="heartStage">
+        <svg class="heart-main" viewBox="0 0 24 24"><path d="M12 21s-7.6-5.1-10-9.6A5.4 5.4 0 0112 4.8 5.4 5.4 0 0122 11.4C19.6 15.9 12 21 12 21z" /></svg>
+      </div>
+      <div class="letter">
+        <p>Thank you. Truly.</p>
+        <p>Singularity is built late at night and on weekends, for the love of it. Your support is what lets it keep going, and that means more than I could fit on this little page.</p>
+        <p>From the bottom of my heart, thank you for believing in it.</p>
+        <div class="sign">Mirko Brombin</div>
+      </div>
+      <a class="thx-back" href="/">Back to Singularity</a>
+    </div>
+
+    <script is:inline>
+      (function () {
+        var stage = document.getElementById('heartStage');
+        var COLORS = ['#ff4d6d', '#ff8fa3', '#ffb3c1', '#ff758f', '#c9184a', '#3584e4'];
+        var HEART = '<svg viewBox="0 0 24 24"><path d="M12 21s-7.6-5.1-10-9.6A5.4 5.4 0 0112 4.8 5.4 5.4 0 0122 11.4C19.6 15.9 12 21 12 21z"/></svg>';
+        function burst() {
+          for (var i = 0; i < 22; i++) {
+            var h = document.createElement('span');
+            h.className = 'heart-particle';
+            h.innerHTML = HEART;
+            var a = Math.random() * Math.PI * 2;
+            var d = 80 + Math.random() * 190;
+            h.style.setProperty('--tx', (Math.cos(a) * d) + 'px');
+            h.style.setProperty('--ty', (Math.sin(a) * d - 30) + 'px');
+            h.style.setProperty('--r', (Math.random() * 120 - 60) + 'deg');
+            h.style.setProperty('--s', (0.5 + Math.random() * 1.1));
+            h.style.setProperty('--delay', (Math.random() * 0.25) + 's');
+            h.style.color = COLORS[i % COLORS.length];
+            stage.appendChild(h);
+            (function (el) { setTimeout(function () { el.remove(); }, 2300); })(h);
+          }
+        }
+        burst();
+        setInterval(burst, 2600);
+      })();
+    </script>
+  </body>
+</html>

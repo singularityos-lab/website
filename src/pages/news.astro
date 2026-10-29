@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const fmt = (d) => d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+---
+
+<Base title="News - Singularity OS">
+  <section class="hero">
+    <h1>News</h1>
+    <p class="lede">Development log and announcements from the Singularity project.</p>
+  </section>
+
+  <section class="section">
+    <div class="news-list">
+      {posts.map((p) => (
+        <a class="news-item" href={`/news/${p.id}`}>
+          <div class="news-date">{fmt(p.data.date)}</div>
+          <h2 class="news-title">{p.data.title}</h2>
+          <p>{p.data.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,30 @@
+---
+const { id, title, label } = Astro.props;
+---
+<div class="modal" id={id} hidden aria-hidden="true">
+  <div class="modal-scrim" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label={label ?? title}>
+    <button class="modal-x" data-close aria-label="Close" type="button">&#215;</button>
+    {title && <h3>{title}</h3>}
+    <slot />
+  </div>
+</div>
+
+<script is:inline define:vars={{ id }}>
+  (function () {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+    function show() { modal.hidden = false; modal.setAttribute('aria-hidden', 'false'); }
+    function hide() {
+      modal.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+      modal.dispatchEvent(new CustomEvent('modal:close'));
+    }
+    modal.addEventListener('click', function (e) { if (e.target.closest('[data-close]')) hide(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) hide(); });
+    document.querySelectorAll('[data-modal-open="' + id + '"]').forEach(function (el) {
+      el.addEventListener('click', function (e) { e.preventDefault(); show(); });
+    });
+    modal.addEventListener('modal:open', show);
+  })();
+</script>

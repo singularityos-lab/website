@@ -1,0 +1,37 @@
+---
+---
+<header class="site">
+  <a class="logo" href="/">
+    <img class="logo-full" src="/logo.svg" alt="Singularity OS" />
+    <img class="logo-mark" src="/icon.svg" alt="Singularity OS" />
+  </a>
+  <nav id="siteNav">
+    <a href="/#features">Features</a>
+    <a href="/os">OS</a>
+    <a href="/news">News</a>
+    <a class="nav-docs-inline" href="/docs/getting-started">Docs</a>
+    <a href="/download">Download</a>
+    <a href="/sponsor">Sponsor</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="btn nav-docs-btn" href="/docs/getting-started">Docs</a>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var b = document.getElementById('navBurger');
+      var n = document.getElementById('siteNav');
+      if (!b || !n) return;
+      function close() { n.classList.remove('open'); b.classList.remove('is-open'); b.setAttribute('aria-expanded', 'false'); }
+      b.addEventListener('click', function () {
+        var open = n.classList.toggle('open');
+        b.classList.toggle('is-open', open);
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      n.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+    })();
+  </script>
+</header>

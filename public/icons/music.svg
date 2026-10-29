@@ -1,0 +1,77 @@
+<svg width="236" height="236" viewBox="0 0 236 236" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip_music)">
+
+<!-- Drop shadow -->
+<circle cx="120" cy="122" r="96" fill="rgba(0,0,0,0.35)"/>
+
+<!-- Record body back layer (3D depth) -->
+<circle cx="118" cy="119" r="96" fill="#111115"/>
+
+<!-- Record body main -->
+<circle cx="118" cy="118" r="96" fill="url(#record_body)"/>
+
+<!-- Vinyl grooves (concentric rings with slight sheen) -->
+<circle cx="118" cy="118" r="88" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"/>
+<circle cx="118" cy="118" r="82" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"/>
+<circle cx="118" cy="118" r="76" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"/>
+<circle cx="118" cy="118" r="70" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"/>
+<circle cx="118" cy="118" r="64" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"/>
+<circle cx="118" cy="118" r="58" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"/>
+<circle cx="118" cy="118" r="52" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"/>
+<circle cx="118" cy="118" r="46" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"/>
+
+<!-- Groove band - dark ring separating label from grooves -->
+<circle cx="118" cy="118" r="42" fill="#0d0d12"/>
+<circle cx="118" cy="118" r="40" fill="url(#record_body)"/>
+
+<!-- Center label -->
+<circle cx="118" cy="118" r="36" fill="url(#label_bg)"/>
+
+<!-- Label inner shadow ring -->
+<circle cx="118" cy="118" r="36" fill="url(#label_shadow)"/>
+
+<!-- Label light bloom -->
+<ellipse cx="108" cy="108" rx="18" ry="13" fill="rgba(255,255,255,0.18)" transform="rotate(-30 108 108)"/>
+
+<!-- Center spindle hole -->
+<circle cx="118" cy="118" r="5.5" fill="#0d0d12"/>
+<circle cx="118" cy="118" r="4" fill="#1a1a22"/>
+<circle cx="118" cy="118" r="2.5" fill="#0a0a0f"/>
+
+<!-- Vinyl gloss reflection -->
+<mask id="mask_music" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="22" y="22" width="192" height="192">
+  <circle cx="118" cy="118" r="96" fill="white"/>
+</mask>
+<g mask="url(#mask_music)">
+  <ellipse cx="84" cy="76" rx="72" ry="44" fill="url(#vinyl_gloss)" transform="rotate(-20 84 76)"/>
+</g>
+
+</g>
+<defs>
+  <radialGradient id="record_body" cx="118" cy="118" r="96" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#252530"/>
+    <stop offset="60%" stop-color="#18181f"/>
+    <stop offset="100%" stop-color="#0d0d12"/>
+  </radialGradient>
+
+  <radialGradient id="label_bg" cx="104" cy="106" r="50" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#a855f7"/>
+    <stop offset="45%" stop-color="#7c3aed"/>
+    <stop offset="100%" stop-color="#4c1d95"/>
+  </radialGradient>
+
+  <radialGradient id="label_shadow" cx="128" cy="128" r="36" gradientUnits="userSpaceOnUse">
+    <stop offset="55%" stop-color="transparent"/>
+    <stop offset="100%" stop-color="rgba(0,0,0,0.45)"/>
+  </radialGradient>
+
+  <radialGradient id="vinyl_gloss" cx="50%" cy="50%" r="50%" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="white" stop-opacity="0.14"/>
+    <stop offset="100%" stop-color="white" stop-opacity="0"/>
+  </radialGradient>
+
+  <clipPath id="clip_music">
+    <rect width="236" height="236" fill="white"/>
+  </clipPath>
+</defs>
+</svg>

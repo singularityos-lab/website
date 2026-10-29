@@ -1,0 +1,58 @@
+---
+import Modal from './Modal.astro';
+---
+
+<Modal id="bizModal" label="Company sponsorship">
+  <div class="modal-step" data-step="1">
+    <h3>For companies</h3>
+    <p>This form is for companies and teams that want to back Singularity and have their logo shown in the sponsors row on the home page. Reach out and we'll set up the details together, from the tier to how your brand appears.</p>
+    <button class="btn btn-solid" id="bizNext" type="button">Continue</button>
+  </div>
+
+  <form class="modal-step" data-step="2" id="bizForm" action="https://formsubmit.co/brombin94@gmail.com" method="POST" hidden>
+    <input type="hidden" name="_subject" value="Singularity sponsor inquiry" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" />
+    <input type="text" name="Company" required placeholder="Company name" />
+    <input type="email" name="Email" required placeholder="Your email" />
+    <input type="url" name="Website" placeholder="Website (optional)" />
+    <textarea name="Message" rows="3" placeholder="Tell us how you'd like to support Singularity, and link your logo."></textarea>
+    <div class="captcha">
+      <label for="capA">Quick check, what is <b id="capQ">3 + 4</b>?</label>
+      <input type="text" id="capA" inputmode="numeric" autocomplete="off" placeholder="?" />
+    </div>
+    <button class="btn btn-solid" type="submit" id="bizSend" disabled>Send</button>
+  </form>
+</Modal>
+
+<script is:inline>
+  (function () {
+    var modal = document.getElementById('bizModal');
+    var next = document.getElementById('bizNext');
+    var s1 = modal.querySelector('[data-step="1"]');
+    var form = document.getElementById('bizForm');
+    var capQ = document.getElementById('capQ');
+    var capA = document.getElementById('capA');
+    var send = document.getElementById('bizSend');
+    var answer = 0;
+
+    function reset() { s1.hidden = false; form.hidden = true; capA.value = ''; send.disabled = true; }
+    modal.addEventListener('modal:close', reset);
+
+    next.addEventListener('click', function () {
+      s1.hidden = true;
+      form.hidden = false;
+      var a = 2 + Math.floor(Math.random() * 7);
+      var b = 2 + Math.floor(Math.random() * 7);
+      answer = a + b;
+      capQ.textContent = a + ' + ' + b;
+      capA.focus();
+    });
+    capA.addEventListener('input', function () {
+      send.disabled = parseInt(capA.value, 10) !== answer;
+    });
+    form.addEventListener('submit', function (e) {
+      if (parseInt(capA.value, 10) !== answer) { e.preventDefault(); }
+    });
+  })();
+</script>

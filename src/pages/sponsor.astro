@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import SponsorModal from '../components/SponsorModal.astro';
+
+const methods = [
+  { name: 'PayPal', tag: 'One-time or recurring', desc: 'The quickest way to chip in, once or every month.', href: 'https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J', preferred: true },
+  { name: 'GitHub Sponsors', tag: 'Monthly tiers', desc: 'Sponsor on GitHub, with tiers and public recognition.', href: 'https://github.com/sponsors/singularityos-lab' },
+  { name: 'LiberaPay', tag: 'Flexible recurring', desc: 'Recurring support, your amount, no platform fees.', href: 'https://liberapay.com/bottles' },
+  { name: 'Patreon', tag: 'Monthly', desc: 'Back development month to month on Patreon.', href: 'https://www.patreon.com/MirkoBrombin' },
+  { name: 'Polar.sh', tag: 'One-time', desc: 'A simple one-time contribution through Polar.', href: 'https://buy.polar.sh/polar_cl_bDuhFpNilzWGZ8l7CO2f3wHiE3PEEJsiYGIIS1Op7hv' },
+  { name: 'Crypto', tag: 'BTC, ETH, XMR and more', desc: 'Prefer crypto? Find the addresses below.', href: '#crypto' },
+];
+
+const crypto = [
+  { name: 'Ethereum (ETH)', net: 'ERC20', addr: '0xef6a653c63db31403f507bca277f719d2f3d44f8' },
+  { name: 'Bitcoin (BTC)', net: 'BTC, SegWit', addr: 'bc1q2svx64v90hyyd7jt8xamvqm9vc5248l5rgzwpm' },
+  { name: 'Monero (XMR)', net: 'XMR', addr: '4B19Gr6aaoE7TbPN7XbZHaaMDf1SjM2xaiVvK9M6v6HcHZiwvMdAsVs8Hftw5miQinjTVotYXAEQs6vLDsV8hJTiDHi49kf' },
+  { name: 'Litecoin (LTC)', net: 'LTC', addr: 'LWqpd2411CQTuWD15bcPP7bfAw3wmYHScm' },
+  { name: 'Ripple (XRP)', net: 'XRP, memo 420078619', addr: 'rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV' },
+];
+---
+
+<Base title="Sponsor - Singularity OS">
+  <section class="hero">
+    <h1>Back an independent desktop.</h1>
+    <p class="lede">Singularity has no company behind it. Sponsorship is what turns nights and weekends into a real, shipping product. Pick whatever works for you.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Ways to give</h2>
+    <div class="tiers">
+      {methods.map((m) => (
+        <a class={"tier" + (m.preferred ? " preferred" : "")} href={m.href} target={m.href.startsWith("#") ? "_self" : "_blank"} rel="noopener">
+          {m.preferred && <span class="badge">Preferred</span>}
+          <h3>{m.name}</h3>
+          <div class="per">{m.tag}</div>
+          <p>{m.desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" id="crypto">
+    <h2 class="section-title">Crypto addresses</h2>
+    <div class="crypto-list">
+      {crypto.map((c) => (
+        <div class="crypto-row">
+          <div class="cn">{c.name}<span class="net">{c.net}</span></div>
+          <code>{c.addr}</code>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Are you a company?</h2>
+    <p class="sub">Support Singularity and get your logo featured in the sponsors row on the home page. We work with companies and teams that believe in independent software.</p>
+    <button class="btn btn-solid" type="button" data-modal-open="bizModal">Get in touch</button>
+  </section>
+
+  <SponsorModal />
+</Base>

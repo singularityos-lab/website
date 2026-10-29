@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import OsModal from '../components/OsModal.astro';
+
+const DISCORD = 'https://discord.gg/Bj638UXffN';
+const GITHUB_ORG = 'https://github.com/singularityos-lab';
+---
+
+<Base title="OS - Singularity OS">
+  <section class="hero cinematic">
+    <div class="hero-planet os-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1>An OS built around Singularity.</h1>
+      <p class="lede">We are building the operating system Singularity deserves. Damn lightweight, portable and compatible, and above all secure and locked down like never before. It is early, but the direction is set.</p>
+      <div class="cta">
+        <button class="btn btn-solid is-disabled" type="button" data-modal-open="osModal">Download</button>
+        <a class="btn" href="/docs/getting-started">Run the desktop now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" style="margin-top: 20px">
+    <h2>Light, portable, compatible</h2>
+    <p>A system that gets out of the way. Small on disk, quick to boot, and happy to run on the hardware you already own. It speaks the standards the Linux world already knows, so your tools and your files come along without a fight.</p>
+  </section>
+
+  <section class="feature wide os-secure">
+    <figure class="secure-img">
+      <img src="/os-secure.png" alt="Secure by design" />
+    </figure>
+    <div class="os-secure-text">
+      <h2>Secure, and sealed shut</h2>
+      <p>The core is immutable and locked down by design. What ships is exactly what runs, nothing can quietly rewrite the system underneath you. Apps stay sandboxed and the base stays untouchable, so the machine you trust today is the machine you trust tomorrow.</p>
+    </div>
+  </section>
+
+  <section class="feature wide os-atom">
+    <div class="os-atom-text">
+      <h2>Powered by Atom Loops</h2>
+      <p>Atom Loops is the technology at the heart of the system. Every update rebuilds a clean, known-good state, so the machine feels exactly as fresh as the day you first installed it. No drift, no rot, no slow decay over the months. Just a system that stays new.</p>
+    </div>
+    <figure class="atom-logo">
+      <img src="/atom-loops.svg" alt="Atom Loops" />
+    </figure>
+  </section>
+
+  <section class="apps-showcase more-section">
+    <h2>Singularity OS is on its way</h2>
+    <p>There is no image to download yet, but it is being built in the open. Jump into the community to follow along, or dig into the code on GitHub.</p>
+    <div class="more-cta">
+      <a class="btn btn-solid" href={DISCORD} target="_blank" rel="noopener">Join the Discord</a>
+      <a class="btn" href={GITHUB_ORG} target="_blank" rel="noopener">Browse the code</a>
+    </div>
+  </section>
+
+  <OsModal />
+</Base>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660">
+  <rect width="1200" height="660" fill="#000"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#888"/>
+    </marker>
+  </defs>
+  <g font-family="Montserrat, Inter, sans-serif" fill="#e0e0e0" font-size="18">
+    <rect x="40" y="60" width="240" height="150" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="160" y="100" text-anchor="middle" font-weight="600">Anything that prints</text>
+    <text x="160" y="132" text-anchor="middle" font-size="15" fill="#888">GTK and Qt dialogs</text>
+    <text x="160" y="156" text-anchor="middle" font-size="15" fill="#888">lp, lpstat, browsers</text>
+    <text x="160" y="180" text-anchor="middle" font-size="15" fill="#888">the print portal</text>
+    <line x1="280" y1="135" x2="370" y2="135" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+    <text x="325" y="122" text-anchor="middle" font-size="13" fill="#888">CUPS socket</text>
+    <rect x="375" y="40" width="470" height="380" rx="16" fill="#ffffff" fill-opacity="0.04" stroke="#e0e0e0" stroke-width="2"/>
+    <text x="400" y="78" font-weight="600" font-size="21">torchiod, one per user</text>
+    <rect x="400" y="100" width="420" height="120" rx="10" fill="none" stroke="#555" stroke-width="2"/>
+    <text x="420" y="128" font-size="16" font-weight="600">Plan the cheapest conversion</text>
+    <circle cx="450" cy="180" r="18" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+    <text x="450" y="185" text-anchor="middle" font-size="12">PDF</text>
+    <circle cx="610" cy="160" r="18" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="610" y="165" text-anchor="middle" font-size="12">PNG</text>
+    <circle cx="770" cy="180" r="18" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+    <text x="770" y="185" text-anchor="middle" font-size="11">PWG</text>
+    <line x1="468" y1="182" x2="750" y2="182" stroke="#e0e0e0" stroke-width="2" marker-end="url(#a)"/>
+    <line x1="466" y1="174" x2="592" y2="162" stroke="#555" stroke-width="1.5"/>
+    <line x1="628" y1="162" x2="752" y2="174" stroke="#555" stroke-width="1.5"/>
+    <rect x="400" y="240" width="420" height="160" rx="10" fill="none" stroke="#e0e0e0" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="420" y="270" font-size="16" font-weight="600">WebAssembly sandbox</text>
+    <rect x="430" y="290" width="160" height="50" rx="8" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="510" y="321" text-anchor="middle" font-size="15">pdfium.wasm</text>
+    <rect x="620" y="290" width="170" height="50" rx="8" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="705" y="321" text-anchor="middle" font-size="15">raster encoder</text>
+    <text x="420" y="378" font-size="14" fill="#888">reads stdin, writes stdout, no files, no network, no clock</text>
+    <line x1="845" y1="135" x2="935" y2="135" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+    <text x="890" y="122" text-anchor="middle" font-size="13" fill="#888">IPP</text>
+    <rect x="940" y="60" width="220" height="150" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="1050" y="100" text-anchor="middle" font-weight="600">Printer</text>
+    <text x="1050" y="132" text-anchor="middle" font-size="15" fill="#888">network, driverless</text>
+    <text x="1050" y="156" text-anchor="middle" font-size="15" fill="#888">or IPP over USB</text>
+    <rect x="40" y="480" width="1120" height="140" rx="14" fill="none" stroke="#555" stroke-width="2"/>
+    <text x="70" y="516" font-weight="600">Finding printers</text>
+    <rect x="70" y="536" width="230" height="60" rx="10" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="185" y="572" text-anchor="middle" font-size="15">mDNS on the network</text>
+    <line x1="300" y1="566" x2="390" y2="566" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+    <rect x="395" y="536" width="230" height="60" rx="10" fill="none" stroke="#888" stroke-width="2"/>
+    <text x="510" y="572" text-anchor="middle" font-size="15">a list of what was seen</text>
+    <line x1="625" y1="566" x2="715" y2="566" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+    <rect x="720" y="536" width="190" height="60" rx="10" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+    <text x="815" y="572" text-anchor="middle" font-size="15">you confirm</text>
+    <line x1="910" y1="566" x2="1000" y2="566" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+    <text x="1010" y="572" font-size="15">printer added</text>
+  </g>
+</svg>

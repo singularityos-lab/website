@@ -1,0 +1,526 @@
+---
+import Base from '../layouts/Base.astro';
+import wifi from '../cc-icons/wifi.svg?raw';
+import bluetooth from '../cc-icons/bluetooth.svg?raw';
+import moon from '../cc-icons/moon.svg?raw';
+import sun from '../cc-icons/sun.svg?raw';
+import airplane from '../cc-icons/airplane.svg?raw';
+import keyboard from '../cc-icons/keyboard.svg?raw';
+import audio from '../cc-icons/audio.svg?raw';
+import gauge from '../cc-icons/gauge.svg?raw';
+import dnd from '../cc-icons/dnd.svg?raw';
+import vpn from '../cc-icons/vpn.svg?raw';
+import camera from '../cc-icons/camera.svg?raw';
+import gear from '../cc-icons/gear.svg?raw';
+import lock from '../cc-icons/lock.svg?raw';
+import logout from '../cc-icons/logout.svg?raw';
+import power from '../cc-icons/power.svg?raw';
+import battery from '../cc-icons/battery.svg?raw';
+import bell from '../cc-icons/bell.svg?raw';
+import shield from '../cc-icons/shield.svg?raw';
+import chev from '../cc-icons/chev.svg?raw';
+import chevd from '../cc-icons/chevd.svg?raw';
+import bright from '../cc-icons/bright.svg?raw';
+import kbdbright from '../cc-icons/kbdbright.svg?raw';
+import apps from '../cc-icons/apps.svg?raw';
+import users from '../cc-icons/users.svg?raw';
+import accounts from '../cc-icons/accounts.svg?raw';
+import displays from '../cc-icons/displays.svg?raw';
+import region from '../cc-icons/region.svg?raw';
+import datetime from '../cc-icons/datetime.svg?raw';
+import desktop from '../cc-icons/desktop.svg?raw';
+import developer from '../cc-icons/developer.svg?raw';
+import a11y from '../cc-icons/a11y.svg?raw';
+import plugins from '../cc-icons/plugins.svg?raw';
+import perf from '../cc-icons/perf.svg?raw';
+import system from '../cc-icons/system.svg?raw';
+import search from '../cc-icons/search.svg?raw';
+import back from '../cc-icons/back.svg?raw';
+import clear from '../cc-icons/clear.svg?raw';
+import results from '../cc-icons/results.svg?raw';
+
+const dock = [
+  'files', 'edit', 'calculator', 'photos', 'music', 'calendar',
+  'monitor', 'store', 'leafs', 'write', 'git', 'videos',
+];
+const menu = ['File', 'Edit', 'View', 'Window'];
+
+const ICONS = { wifi, bluetooth, moon, sun, airplane, keyboard, audio, gauge, dnd, vpn, camera, gear, lock, logout, power, battery, bell, shield, chev, chevd, bright, kbdbright, apps, users, accounts, displays, region, datetime, desktop, developer, a11y, plugins, perf, system, search, back, clear, results, speaker: audio };
+
+const setList = [
+  { icon: 'wifi', name: 'Network' },
+  { icon: 'apps', name: 'Apps' },
+  { icon: 'users', name: 'Users' },
+  { icon: 'accounts', name: 'Online Accounts' },
+  { icon: 'displays', name: 'Displays' },
+  { icon: 'region', name: 'Region & Language' },
+  { icon: 'datetime', name: 'Date & Time' },
+  { icon: 'desktop', name: 'Desktop' },
+  { icon: 'audio', name: 'Sound' },
+  { icon: 'bluetooth', name: 'Bluetooth' },
+  { icon: 'keyboard', name: 'Keyboard' },
+  { icon: 'developer', name: 'Developer' },
+  { icon: 'a11y', name: 'Accessibility' },
+  { icon: 'plugins', name: 'Plugins' },
+  { icon: 'perf', name: 'Performance' },
+  { icon: 'system', name: 'System' },
+];
+
+const setResults = [
+  { name: 'Dock', path: 'Desktop' },
+  { name: 'Always Visible', path: 'Desktop / Dock' },
+  { name: 'Autohide', path: 'Desktop / Dock' },
+  { name: 'Hide if Maximized', path: 'Desktop / Dock' },
+  { name: 'Position', path: 'Desktop / Dock' },
+  { name: 'Advanced Dock', path: 'Desktop' },
+];
+
+const tiles = [
+  { icon: 'wifi', name: 'Wi-Fi', sub: 'Sinty-WiFi', on: true },
+  { icon: 'bluetooth', name: 'Bluetooth', sub: 'On', on: true },
+  { icon: 'moon', name: 'Dark Style', sub: 'On', on: true },
+  { icon: 'sun', name: 'Night Light', sub: 'Off', on: false },
+  { icon: 'airplane', name: 'Airplane Mode', sub: 'Off', on: false },
+  { icon: 'keyboard', name: 'Keyboard', sub: 'On', on: true },
+  { icon: 'audio', name: 'Audio', sub: 'Built-in Audio', on: true },
+  { icon: 'gauge', name: 'Power Profile', sub: 'Balanced', on: false },
+  { icon: 'dnd', name: 'Do Not Disturb', sub: 'On', on: true },
+  { icon: 'vpn', name: 'VPN', sub: 'MyVPN', on: true },
+];
+---
+
+<Base title="Singularity OS">
+  <section class="hero cinematic">
+    <div class="hero-planet" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1 class="type" aria-label="A desktop done the way you expect.">
+        <span class="line" data-text="A desktop done"></span>
+        <span class="line" data-text="the way you expect."></span>
+      </h1>
+      <p class="lede">Singularity is a desktop you actually enjoy using: calm, fast, and easy to make your own. No clutter, nothing nagging you, and nothing running behind your back you didn't ask for.</p>
+      <div class="cta">
+        <a class="btn btn-solid" href="https://discord.gg/Bj638UXffN">Join the Community</a>
+        <a class="btn" href="/docs/getting-started">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sponsors">
+    <p class="sponsors-label">Backed by people who believe in it</p>
+    <div class="sponsors-row">
+      <a href="https://vanillaos.org" target="_blank" rel="noopener"><img src="/sponsors/vanillaos.svg" alt="Vanilla OS" /></a>
+      <a href="https://usebottles.com" target="_blank" rel="noopener"><img src="/sponsors/bottles.svg" alt="Bottles" /></a>
+      <a href="https://fabricators.ltd" target="_blank" rel="noopener"><img src="/sponsors/fabricators.svg" alt="Fabricators" /></a>
+      <a class="sp-cta" href="/sponsor">Become a sponsor <svg class="arr" viewBox="0 0 24 24"><path d="M5 12h12M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var lines = document.querySelectorAll('.hero h1.type .line');
+      if (!lines.length) return;
+      function type(el, text, done) {
+        el.classList.add('typing');
+        var i = 0;
+        (function step() {
+          el.textContent = text.slice(0, i);
+          if (i++ < text.length) { setTimeout(step, 58); }
+          else { el.classList.remove('typing'); if (done) done(); }
+        })();
+      }
+      type(lines[0], lines[0].getAttribute('data-text'), function () {
+        setTimeout(function () { type(lines[1], lines[1].getAttribute('data-text')); }, 600);
+      });
+    })();
+  </script>
+
+  <section class="feature" id="features">
+    <h2>Calm by default</h2>
+    <p>Nothing fights for your attention. A clean canvas, sensible defaults, and a layout that stays out of the way until you need it. Everything is where you expect it, and nothing you do not ask for runs in the background.</p>
+  </section>
+
+  <section class="feature wide pf-section">
+    <h2>Change technology, not habits</h2>
+    <p>Coming from Windows or a Mac? You won't have to relearn how to use your computer. Keep the familiar bar at the top and the dock at the bottom, or merge them into one taskbar like the one you already know. Your habits stay; only what's under them changes.</p>
+    <div class="pf" id="pf">
+      <div class="pf-screen">
+        <div class="pf-desktop" aria-hidden="true">
+          <span class="pf-dicon"><img src="/icons/write.svg" alt="" /><i>Write</i></span>
+          <span class="pf-dicon"><img src="/icons/photos.svg" alt="" /><i>Photos</i></span>
+          <span class="pf-dicon"><img src="/icons/music.svg" alt="" /><i>Music</i></span>
+        </div>
+        <div class="pf-bar">
+          <span class="pf-left">
+            <img class="pf-mark" src="/icon.svg" alt="Singularity" />
+            <span class="pf-menu"><b>Files</b><span>Edit</span><span>View</span></span>
+          </span>
+          <span class="pf-right">
+            <span class="pf-ico" set:html={ICONS.wifi} />
+            <span class="pf-ico" set:html={ICONS.battery} />
+            <span class="pf-clock">09:42</span>
+          </span>
+        </div>
+        <div class="pf-dock">
+          <span class="pf-app"><img src="/icons/files.svg" alt="" /></span>
+          <span class="pf-app"><img src="/icons/edit.svg" alt="" /></span>
+          <span class="pf-app"><img src="/icons/photos.svg" alt="" /></span>
+          <span class="pf-app"><img src="/icons/music.svg" alt="" /></span>
+          <span class="pf-app"><img src="/icons/calendar.svg" alt="" /></span>
+        </div>
+      </div>
+      <p class="pf-caption">
+        <span class="pf-cap-a">A top bar and a dock, just as you know them.</span>
+        <span class="pf-cap-b">Fused into one panel. Your call.</span>
+      </p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var pf = document.getElementById('pf');
+      if (!pf) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var fused = false;
+      function tick() {
+        fused = !fused;
+        pf.classList.toggle('fused', fused);
+        setTimeout(tick, fused ? 3400 : 3000);
+      }
+      setTimeout(tick, 2200);
+    })();
+  </script>
+
+  <section class="feature wide">
+    <h2>One menu, always in reach</h2>
+    <p>Every app's menus, File, Edit, and the rest, sit in one bar at the top, always in the same spot. Less hunting, more doing. Click a menu to open it.</p>
+    <div class="showcase">
+      <div class="global-menu">
+        <img class="gm-mark" src="/icon.svg" alt="Singularity" />
+        <span class="app">Edit</span>
+        {menu.map((m) => <span class="mi" data-menu={m}>{m}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="feature wide">
+    <h2>A dock that works the way you do</h2>
+    <p>Your apps and live status in one place. Pin what you use and jump anywhere in a click. Right-click an icon to see what it can do.</p>
+    <div class="showcase">
+      <div class="dock" data-ctx="dock">
+        <span class="dock-item ws"><img src="/icons/workspaces.svg" alt="Workspaces" /></span>
+        <span class="sep"></span>
+        <span class="dock-item running"><img src="/icons/files.svg" alt="Files" /></span>
+        <span class="dock-item"><img src="/icons/edit.svg" alt="Edit" /></span>
+        <span class="dock-item"><img src="/icons/calculator.svg" alt="Calculator" /></span>
+        <span class="dock-item"><img src="/icons/photos.svg" alt="Photos" /></span>
+        <span class="sep"></span>
+        <span class="dock-item music running">
+          <div class="music-pill">
+            <span class="cover" aria-hidden="true"><img class="src" src="/icons/music.svg" alt="" /></span>
+            <button class="mctl" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M7 6h2v12H7zM20 6v12l-9-6z"/></svg></button>
+            <button class="mctl" aria-label="Pause"><svg viewBox="0 0 24 24"><path d="M8 6h3v12H8zM13 6h3v12h-3z"/></svg></button>
+            <button class="mctl" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M15 6h2v12h-2zM4 6l9 6-9 6z"/></svg></button>
+          </div>
+        </span>
+        <span class="dock-item"><img src="/icons/calendar.svg" alt="Calendar" /></span>
+        <span class="dock-item"><img src="/icons/monitor.svg" alt="Monitor" /></span>
+        <span class="dock-item"><img src="/icons/store.svg" alt="Store" /></span>
+        <span class="sep"></span>
+        <span class="dock-item"><img src="/icons/leafs.svg" alt="Terminal" /></span>
+        <span class="dock-item"><img src="/icons/write.svg" alt="Write" /></span>
+        <span class="dock-item"><img src="/icons/git.svg" alt="Git" /></span>
+        <span class="dock-item"><img src="/icons/videos.svg" alt="Videos" /></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature wide sticky-block" id="control">
+    <div class="sb-text">
+      <div class="sb-block">
+        <h2>Everything, under control</h2>
+        <p>Your whole system in one place. No digging through menus, no hunting for that one toggle. Wi-Fi, sound, brightness, power, every switch you reach for is right here, a click away. And the little status icons up in the bar? Exactly where you'd expect them. Need a specific setting? Search finds it in a keystroke.</p>
+      </div>
+      <div class="sb-block">
+        <h2>Make it yours</h2>
+        <p>Pick an accent and the whole desktop follows, this panel included. Try it: tap a colour and watch it change.</p>
+        <div class="accent-row" id="accentRow">
+          <button class="accent-dot" data-accent="#3584e4" style="--c:#3584e4" aria-label="Blue"></button>
+          <button class="accent-dot" data-accent="#2190a4" style="--c:#2190a4" aria-label="Teal"></button>
+          <button class="accent-dot" data-accent="#3a944a" style="--c:#3a944a" aria-label="Green"></button>
+          <button class="accent-dot" data-accent="#c88800" style="--c:#c88800" aria-label="Yellow"></button>
+          <button class="accent-dot" data-accent="#e66100" style="--c:#e66100" aria-label="Orange"></button>
+          <button class="accent-dot" data-accent="#e01b24" style="--c:#e01b24" aria-label="Red"></button>
+          <button class="accent-dot" data-accent="#d56199" style="--c:#d56199" aria-label="Pink"></button>
+          <button class="accent-dot" data-accent="#9141ac" style="--c:#9141ac" aria-label="Purple"></button>
+          <button class="accent-dot" data-accent="#6f8396" style="--c:#6f8396" aria-label="Slate"></button>
+          <button class="accent-dot custom" id="accentCustom" aria-label="Custom colour"><input type="color" id="accentPicker" value="#3584e4" /></button>
+          <button class="accent-dot bg" data-accent="#333333" aria-label="From wallpaper"></button>
+        </div>
+      </div>
+    </div>
+    <div class="cc-illus sb-illus">
+      <div class="cc-stack">
+        <div class="tray-bar">
+          <span class="tray-ico" set:html={ICONS.wifi} />
+          <span class="tray-ico" set:html={ICONS.speaker} />
+          <span class="tray-ico" set:html={ICONS.battery} />
+          <span class="tray-ico" set:html={ICONS.bell} />
+          <span class="tray-clock">Wed, Jun 3  09:42</span>
+        </div>
+        <div class="cc">
+          <div class="cc-slide" id="ccSlide">
+          <div class="cc-pane">
+          <div class="cc-head">
+            <span class="cc-batt"><span class="bi" set:html={ICONS.battery} /> 75%</span>
+            <span class="cc-acts">
+              <button aria-label="Screenshot" set:html={ICONS.camera} />
+              <button aria-label="Settings" set:html={ICONS.gear} />
+              <button aria-label="Lock" set:html={ICONS.lock} />
+              <button aria-label="Log out" set:html={ICONS.logout} />
+              <button class="pw" aria-label="Power" set:html={ICONS.power} />
+            </span>
+          </div>
+          <div class="cc-grid">
+            {tiles.map((t) => (
+              <div class={"cc-tile" + (t.on ? " on" : "")}>
+                <div class="cc-tile-main">
+                  <span class="ti" set:html={ICONS[t.icon]} />
+                  <span class="tl"><b>{t.name}</b><i>{t.sub}</i></span>
+                </div>
+                <div class="cc-tile-nav" set:html={ICONS.chev} />
+              </div>
+            ))}
+          </div>
+          <div class="cc-group">
+            <div class="cc-prow"><span class="si" set:html={ICONS.speaker} /><span class="cc-scale"><span class="hl" style="width:14%"></span><span class="knob" style="left:14%"></span></span></div>
+            <div class="cc-prow"><span class="si" set:html={ICONS.audio} /><span class="rl"><b>Output Device</b><i>Built-in Audio</i></span><span class="tc" set:html={ICONS.chevd} /></div>
+            <div class="cc-prow"><span class="si" set:html={ICONS.bright} /><span class="cc-scale"><span class="hl" style="width:100%"></span><span class="knob" style="left:100%"></span></span><span class="pct">100%</span></div>
+            <div class="cc-prow"><span class="si" set:html={ICONS.kbdbright} /><span class="cc-scale marks"><span class="hl" style="width:78%"></span><span class="knob" style="left:78%"></span></span></div>
+          </div>
+          </div>
+          <div class="cc-pane cc-settings">
+            <div class="set-head"><span class="set-back" set:html={ICONS.back} /><b>Settings</b></div>
+            <div class="set-search">
+              <span class="si" set:html={ICONS.search} />
+              <span class="set-q" id="setQ"></span><span class="set-cur" id="setCur"></span>
+              <span class="set-clear" id="setClear" set:html={ICONS.clear}></span>
+            </div>
+            <div class="set-scroll">
+              <div class="set-list" id="setList">
+                {setList.map((s) => (
+                  <div class="set-row"><span class="sr-ico" set:html={ICONS[s.icon]} /><span class="sr-name">{s.name}</span><span class="sr-chev" set:html={ICONS.chev} /></div>
+                ))}
+              </div>
+              <div class="set-results" id="setResults" hidden>
+                {setResults.map((r) => (
+                  <div class="set-row"><span class="sr-ico" set:html={ICONS.results} /><span class="sr-rl"><b>{r.name}</b><i>{r.path}</i></span></div>
+                ))}
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="launcher-section">
+    <h2>Search everything, everywhere</h2>
+    <p>Press <kbd>Super</kbd> + <kbd>Tab</kbd> (Super is the ⊞ Windows / ⌘ Command key) from anywhere and just start typing. Open any app or jump straight to a setting in a keystroke, no mouse needed.</p>
+    <div class="spotlight" id="spot">
+      <div class="spotlight-bar">
+        <span class="spotlight-ico search" set:html={ICONS.search} />
+        <span class="spotlight-ico cog" set:html={ICONS.gear} />
+        <span class="spotlight-q" id="spotQ"></span>
+        <span class="spotlight-caret"></span>
+        <span class="spotlight-ph">Search apps or run a command...</span>
+      </div>
+      <div class="spotlight-results" id="spotResults">
+        <div class="sp-res"><img src="/icons/git.svg" alt="" /><span>Git</span></div>
+        <div class="sp-res"><img src="/icons/videos.svg" alt="" /><span>Videos</span></div>
+        <div class="sp-res"><img src="/icons/browser.svg" alt="" /><span>Browser</span></div>
+        <div class="sp-res"><img src="/icons/calculator.svg" alt="" /><span>Calculator</span></div>
+        <div class="sp-res"><img src="/icons/files.svg" alt="" /><span>Files</span></div>
+        <div class="sp-res"><img src="/icons/leafs.svg" alt="" /><span>Leafs</span></div>
+      </div>
+      <div class="spotlight-hint">For power users: type a command too, r restarts the shell, c the compositor, Up/Down browse history, Esc closes.</div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var spot = document.getElementById('spot');
+      var q = document.getElementById('spotQ');
+      if (!spot || !q) return;
+      var TXT = 'singu';
+      var t = [];
+      function after(ms, fn) { t.push(setTimeout(fn, ms)); }
+      function clearAll() { t.forEach(clearTimeout); t = []; }
+      function run() {
+        clearAll();
+        q.textContent = '';
+        spot.classList.remove('typing', 'open');
+        after(1300, function () {
+          spot.classList.add('typing');
+          var i = 0;
+          (function typeNext() {
+            if (i < TXT.length) {
+              q.textContent += TXT[i++];
+              after(155, typeNext);
+            } else {
+              after(260, function () { spot.classList.add('open'); });
+              after(2900, run);
+            }
+          })();
+        });
+      }
+      run();
+    })();
+  </script>
+
+  <section class="apps-showcase">
+    <h2>Apps made to belong...</h2>
+    <p>A curated set of apps, designed together rather than collected. Same shapes, same gestures, same calm, so the whole system feels like one thing, not a folder of strangers.</p>
+    <figure class="apps-shot">
+      <img src="/apps-showcase.png" alt="Singularity apps" />
+    </figure>
+  </section>
+
+  <section class="apps-showcase">
+    <h2>...but it's still yours</h2>
+    <p>Curated is a starting point, not a cage. Theme the whole thing to taste, keep the classic window decorations everyone already knows, or write your own look from scratch in plain CSS.</p>
+    <div class="yours-grid">
+      <div class="yours-card">
+        <h3>Themes, your way</h3>
+        <p>Ship with a set of themes and switch on a whim, light or dark, accented or quiet.</p>
+      </div>
+      <div class="yours-card">
+        <h3>Classic decorations</h3>
+        <p>Title bars and window buttons right where your muscle memory expects them. No relearning how to close a window.</p>
+      </div>
+      <div class="yours-card">
+        <h3>Write it in CSS</h3>
+        <p>Build a fully custom theme directly in CSS. If you can style a webpage, you can restyle the whole desktop.</p>
+      </div>
+      <div class="yours-card">
+        <h3>Every toolkit, themed</h3>
+        <p>It doesn't matter if your favourite apps are Qt, GTK or Singularity. You pick the theme, and every toolkit follows.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="apps-showcase more-section">
+    <h2>And this is only the beginning</h2>
+    <p>What you have seen is just a slice. Singularity is a whole lot more, and it is growing fast. The best way to understand it is to try it, talk to the people building it, and follow along as it takes shape.</p>
+    <div class="more-cta">
+      <a class="btn" href="/download">Try it yourself</a>
+      <a class="btn btn-solid" href="https://discord.gg/Bj638UXffN">Join the community</a>
+      <a class="btn" href="/docs/getting-started">Read the docs</a>
+    </div>
+    <div class="more-social">
+      <a href="https://x.com/brombinmirko" aria-label="Follow on X" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://mastodon.social/@mirkobrombin" aria-label="Follow on Mastodon" target="_blank" rel="me noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="feature">
+    <h2>For the curious</h2>
+    <p>Want to know what runs underneath? Wayland, labwc, the shell and the framework, all of it is open to read.</p>
+    <div class="cta-center"><a class="btn" href="/docs/under-the-hood">Go under the hood</a></div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var slide = document.getElementById('ccSlide');
+      if (!slide) return;
+      var search = document.querySelector('.cc-settings .set-search');
+      var q = document.getElementById('setQ');
+      var list = document.getElementById('setList');
+      var res = document.getElementById('setResults');
+      var t = [];
+      function clearAll() { t.forEach(clearTimeout); t = []; }
+      function after(ms, fn) { t.push(setTimeout(fn, ms)); }
+      function reset() {
+        slide.classList.remove('show2');
+        if (search) search.classList.remove('typing', 'has-q');
+        if (q) q.textContent = '';
+        if (list) list.hidden = false;
+        if (res) res.hidden = true;
+      }
+      function typeText(text, done) {
+        if (search) search.classList.add('typing');
+        var i = 0;
+        (function step() {
+          if (q) q.textContent = text.slice(0, i);
+          if (i++ < text.length) after(150, step);
+          else { if (search) { search.classList.remove('typing'); search.classList.add('has-q'); } done(); }
+        })();
+      }
+      function cycle() {
+        clearAll();
+        reset();
+        after(3000, function () { slide.classList.add('show2'); });
+        after(6700, function () {
+          typeText('dock', function () {
+            if (list) list.hidden = true;
+            if (res) res.hidden = false;
+            after(2800, function () {
+              if (search) search.classList.remove('has-q');
+              if (q) q.textContent = '';
+              if (res) res.hidden = true;
+              if (list) list.hidden = false;
+              after(500, function () { slide.classList.remove('show2'); });
+              after(4200, cycle);
+            });
+          });
+        });
+      }
+      var ANIMATE = true;
+      if (ANIMATE) cycle();
+    })();
+  </script>
+
+  <section class="os-teaser">
+    <div class="os-teaser-inner">
+      <h2>And there is a whole OS coming.</h2>
+      <p>Singularity is the desktop. Next comes the system around it: lightweight, portable, and locked down like never before, kept forever fresh by Atom Loops.</p>
+      <a class="btn btn-solid" href="/os">Meet Singularity OS</a>
+    </div>
+  </section>
+
+  <section class="feature">
+    <h2>Support the project</h2>
+    <p>Singularity is independent. Sponsorship is what keeps it moving.</p>
+    <div class="cta-center"><a class="btn btn-solid" href="/sponsor">Become a sponsor</a></div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var cc = document.querySelector('.sb-illus .cc');
+      var row = document.getElementById('accentRow');
+      var picker = document.getElementById('accentPicker');
+      var custom = document.getElementById('accentCustom');
+      if (!cc || !row) return;
+      function setAccent(c, dot) {
+        cc.style.setProperty('--cc-accent', c);
+        var all = row.querySelectorAll('.accent-dot');
+        for (var i = 0; i < all.length; i++) all[i].classList.remove('active');
+        if (dot) dot.classList.add('active');
+      }
+      row.addEventListener('click', function (e) {
+        var d = e.target.closest('.accent-dot');
+        if (!d) return;
+        if (d === custom) { if (picker) picker.click(); return; }
+        var c = d.getAttribute('data-accent');
+        if (c) setAccent(c, d);
+      });
+      if (picker) picker.addEventListener('input', function () { setAccent(picker.value, custom); });
+      var first = row.querySelector('.accent-dot[data-accent="#3584e4"]');
+      if (first) first.classList.add('active');
+    })();
+  </script>
+</Base>

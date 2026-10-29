@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import DownloadModal from '../components/DownloadModal.astro';
+---
+
+<Base title="Download - Singularity OS">
+  <section class="hero">
+    <h1>Try it on your machine.</h1>
+    <p class="lede">Singularity ships as part of Singularity OS. Grab the image, or build the desktop from source.</p>
+    <div class="cta">
+      <button class="btn btn-solid is-disabled" type="button" data-modal-open="dlModal">Download the image</button>
+      <a class="btn" href="/docs/getting-started">Build from source</a>
+    </div>
+  </section>
+
+  <section class="section" id="image">
+    <h2 class="section-title">Ways to run it</h2>
+    <div class="grid">
+      <div class="cell"><span class="k">Requirements</span><h3>What you need</h3><p>A 64-bit machine, a Wayland-capable GPU, and a few GB of free space.</p></div>
+      <a class="cell" href="/os"><span class="k">Coming soon</span><h3>The OS image</h3><p>The image is the recommended way to run Singularity end to end. Read about Singularity OS.</p></a>
+      <div class="cell"><span class="k">Developers</span><h3>From source</h3><p>Build the desktop with meson. See the documentation to get started.</p></div>
+      <div class="cell"><span class="k">Status</span><h3>Pre-release</h3><p>Singularity is under active development. Expect rapid change.</p></div>
+    </div>
+  </section>
+
+  <DownloadModal />
+</Base>

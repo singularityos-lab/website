@@ -1,0 +1,205 @@
+---
+title: Build an App
+description: Create a Singularity app with libsingularity, meson, and vetro.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+A Singularity app is a GTK4 application that builds against `libsingularity`, uses
+its UI primitives, authors its interface in [vetro](/docs/vetro/), and follows the
+desktop conventions.
+
+## Start from the demo
+
+The fastest way in is `singularity-demo`, the template app. It is small, it puts
+the [primitives](/docs/libsingularity/) on screen, and it shows the exact wiring
+of vetro, Vala, meson, resources, and the `.desktop` file. Read it and copy from
+it:
+
+- Source: [github.com/singularityos-lab/singularity-demo](https://github.com/singularityos-lab/singularity-demo)
+
+The rest of this page is a complete hello world that mirrors how the demo is put
+together.
+
+## The project
+
+A minimal app is a handful of files. The interface is described in
+`ui/main.vetro`, the behavior lives in Vala, and meson runs the
+[vetro](/docs/vetro/) transpiler and bundles the result. The `.vetro` file is
+optional, you could hand-write the GTK `.ui`, but it is the recommended way to
+author UI.
+
+```
+hello/
+  meson.build
+  resources/hello.gresource.xml
+  ui/main.vetro
+  src/main.vala
+  src/app.vala
+  src/window.vala
+```
+
+<Tabs>
+<TabItem label="ui/main.vetro">
+
+```text
+Template(class: "HelloWindow", parent: "SingularityWidgetsWindow") {
+    VBox(id: "content", hexpand: true, vexpand: true,
+         halign: "center", valign: "center", spacing: 12) {
+        Label(id: "greeting", label: "Hello, Singularity").cssClass("title-1")
+    }
+}
+```
+
+</TabItem>
+<TabItem label="src/window.vala">
+
+```vala
+using Gtk;
+
+[GtkTemplate (ui = "/dev/example/hello/ui/main.ui")]
+public class HelloWindow : Singularity.Widgets.Window {
+    [GtkChild] private unowned Gtk.Box   content;
+    [GtkChild] private unowned Gtk.Label greeting;
+
+    public HelloWindow (Gtk.Application app) {
+        Object (application: app);
+        set_title ("Hello");
+        set_default_size (480, 320);
+        set_content (content);
+
+        add_bubble_icon ("face-smile-symbolic", "Wave", () => {
+            greeting.label = "Hello again";
+        });
+    }
+}
+```
+
+</TabItem>
+<TabItem label="src/app.vala">
+
+```vala
+using Gtk;
+
+public class HelloApp : Singularity.Application {
+    public HelloApp () {
+        Object (application_id: "dev.example.hello",
+                flags: ApplicationFlags.DEFAULT_FLAGS);
+    }
+
+    protected override void activate () {
+        new HelloWindow (this).present ();
+    }
+}
+```
+
+</TabItem>
+<TabItem label="src/main.vala">
+
+```vala
+int main (string[] args) {
+    return new HelloApp ().run (args);
+}
+```
+
+</TabItem>
+<TabItem label="resources/hello.gresource.xml">
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/dev/example/hello">
+    <file>ui/main.ui</file>
+  </gresource>
+</gresources>
+```
+
+</TabItem>
+<TabItem label="ui/meson.build">
+
+```text
+vetro = find_program('vetro')
+
+main_ui = custom_target('main_ui',
+  input: 'main.vetro',
+  output: 'main.ui',
+  command: [vetro, '--in', '@INPUT@', '--out', '@OUTPUT@'],
+)
+```
+
+</TabItem>
+<TabItem label="meson.build">
+
+```text
+project('hello', ['vala', 'c'])
+
+gtk_dep = dependency('gtk4')
+libsingularity_dep = dependency('singularity-1.0',
+  fallback: ['libsingularity', 'libsingularity_dep'],
+)
+
+if not meson.is_subproject() and libsingularity_dep.type_name() == 'internal'
+  add_project_arguments(
+    '--vapidir=' + join_paths(meson.project_build_root(), 'subprojects', 'libsingularity'),
+    language: 'vala')
+endif
+
+subdir('ui')
+
+gnome = import('gnome')
+resources = gnome.compile_resources('hello-resources',
+  'resources/hello.gresource.xml',
+  source_dir: [meson.current_source_dir(), meson.current_build_dir()],
+  dependencies: main_ui,
+)
+
+executable('hello',
+  files('src/main.vala', 'src/app.vala', 'src/window.vala') + [resources],
+  dependencies: [gtk_dep, libsingularity_dep],
+  install: true,
+)
+```
+
+</TabItem>
+</Tabs>
+
+The `meson.build` depends on `singularity-1.0` with a subproject fallback for
+in-tree builds. The `--vapidir` line points `valac` at libsingularity's API when
+it is built in-tree, and the resource's `source_dir` includes the build directory
+because `main.ui` is generated there. When building standalone, `libsingularity`
+must be installed and
+visible to `pkg-config`. Its installed `singularity-1.0.pc` pulls in the C
+dependencies, and the shipped `singularity-1.0.deps` tells `valac` which Vala
+packages to add transitively (including `gtksourceview-5`), so you do not have to
+list them by hand. If `pkg-config --exists singularity-1.0` fails, add the install
+prefix:
+
+```sh
+export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH
+```
+
+The demo's `meson.build` shows the full picture, including the `.desktop` file, the
+icon, and translations.
+
+## Use the primitives
+
+`libsingularity` provides the building blocks every app should reuse: rows and
+groups, the search entry, context menus, the source view wrapper, cards, chips,
+and the accent-aware style system. App-specific classes are for genuinely unique
+widgets only. The full set is in the [primitives reference](/docs/libsingularity/).
+
+## Settings, safely
+
+Read shared preferences from the `dev.sinty.desktop` schema, but never assume it
+is installed. Construct settings through the safe helper so a missing schema
+degrades to defaults instead of aborting:
+
+```vala
+var settings = Singularity.Core.safe_settings ("dev.sinty.desktop");
+if (settings != null) {
+    // read keys
+}
+```
+
+To let users change your app's own settings from the desktop's Apps page, see
+[Exposing app settings](/docs/exposing-settings/).
