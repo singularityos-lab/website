@@ -14,6 +14,13 @@ a camera, it receives the picture from the service, so two apps can use the same
 webcam at the same time, for example a call and a recording. Each camera runs in
 its own isolated process.
 
+## Hardware video
+
+On Intel graphics, Broadwell and newer, video is decoded and encoded by the GPU
+through VA-API and the Intel media driver. Video players and the web engine use
+it, which keeps the processor free and the battery longer. On other GPUs video is
+handled by the processor.
+
 ## Why replace GStreamer
 
 - **Shared devices.** The camera service above.

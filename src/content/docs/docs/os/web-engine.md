@@ -18,9 +18,12 @@ platform on top.
 - **Media.** Video and calls go through [Sinty Media](/docs/os/media/), and
   protected content such as streaming services works after you agree to download
   the decryption module the first time a site asks for it.
-- **Memory.** Tabs you are not using go to sleep and wake up instantly. Compiled
-  JavaScript is kept on disk and shared by every app, so a large web app opens
-  faster the second time.
+- **Memory.** Tabs you are not using go to sleep and wake up instantly. The web
+  pages of one app share a budget of a quarter of your RAM: above it, the oldest
+  hidden tab of the site with the most open tabs goes to sleep first, while tabs
+  playing audio or using the camera, microphone or screen sharing stay awake. Set
+  `FOTONE_WEB_MEMORY_MIB` to choose the budget in MiB. Compiled JavaScript is kept
+  on disk and shared by every app, so a large web app opens faster the second time.
 - **Sandboxing.** Each web process is confined with Landlock and seccomp before it
   starts.
 
