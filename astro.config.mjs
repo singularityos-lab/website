@@ -141,6 +141,7 @@ export default defineConfig({
             { label: 'PIN, password & encryption', slug: 'docs/os/pin-and-encryption' },
             { label: 'The recovery code', slug: 'docs/os/recovery-code' },
             { label: 'Recovery mode', slug: 'docs/os/recovery' },
+            { label: 'When Sinty OS cannot start', slug: 'docs/os/startup-problems' },
             { label: 'Updates & rollback', slug: 'docs/os/updates' },
             { label: 'Hardware security & TPM', slug: 'docs/os/hardware-security' },
             { label: 'Rooting Sinty OS', slug: 'docs/os/rooting' },
