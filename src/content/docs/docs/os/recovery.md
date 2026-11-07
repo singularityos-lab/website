@@ -21,6 +21,10 @@ repairs, and system updates keep it up to date.
 - **Automatically.** If a new system fails to boot enough times, the machine falls
   back on its own rather than leaving you stuck. See
   [Updates and rollback](/docs/os/updates/).
+- **When the system cannot start.** A damaged system image, a refused kernel or
+  a data partition that cannot be repaired automatically opens recovery, with
+  the reason on its first screen. See
+  [When Sinty OS cannot start](/docs/os/startup-problems/).
 
 ## What it can do
 
