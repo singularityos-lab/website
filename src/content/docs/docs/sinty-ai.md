@@ -43,6 +43,20 @@ When a phone is driving Sinty AI, an indicator in the panel names it. Click it
 to stop. A stopped agent refuses every request until you resume it with
 `sinty-agent resume`.
 
+## Talking
+
+The microphone next to the field, or **Super + Shift + A**, offers two ways to
+talk:
+
+- **Voice Message**: say your request; it is sent when you stop talking, or
+  when you press the microphone again.
+- **Continuous Conversation**: Sinty AI reads each answer aloud and listens
+  again, so you can go back and forth. Press the microphone to hang up.
+
+Speech is recognized on the computer with the engine chosen in **Settings,
+Keyboard, Dictation**, in the dictation language. The microphone turns the
+accent colour while it listens.
+
 ## From a phone
 
 In **Settings, Connected Devices**, turn on Sinty AI for a paired phone. The
