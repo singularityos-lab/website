@@ -12,6 +12,7 @@ Singularity is built to be driven from the keyboard. These are the defaults.
 | Super + Space | Open the overview |
 | Super + W | Workspace overview |
 | Super + Tab | Spotlight |
+| Super + A | Ask [Sinty AI](/docs/sinty-ai/) |
 | Shift + Alt + F2 | Spotlight |
 | Super + Return | Open a terminal |
 | Super + D | Reveal or restore the desktop |
