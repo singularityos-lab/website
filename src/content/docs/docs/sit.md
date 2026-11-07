@@ -19,6 +19,8 @@ app uses them only on purpose:
   touching layout. Slides, scaling on press and fades work the same in every app.
 - **A real window border**, drawn by the toolkit at the right radius and scale.
 - **Frame statistics**: how long each frame took to lay out, render and present.
+- **Background work**: a task engine that runs work off the main thread and
+  hands results back between frames.
 - **Glass**: a widget and a drawing call that refract and blur what is behind
   them.
 - **The web view**: the widget that shows web pages, drawn by
@@ -26,6 +28,59 @@ app uses them only on purpose:
 
 To use them, link `sit-1.0` next to `gtk4` and include `sit.h`. Where SIT is not
 installed the app does not link, so you always know which toolkit you have.
+
+## Background work
+
+SIT runs slow work on its own worker threads so the window keeps drawing while
+it happens. GTK itself uses them to decode large PNG and JPEG images, load icons
+and themes, sort long lists, list folders, and search folders in the file chooser.
+Apps get the same engine through `sit.h`.
+
+Work is queued by class of service:
+
+| Class | For | Threads |
+|---|---|---|
+| `SIT_QOS_INTERACTIVE` | what the user is waiting for right now | one per core, taken first |
+| `SIT_QOS_USER` | work the user started | the same threads, after interactive work |
+| `SIT_QOS_UTILITY` | long jobs with visible progress | the same threads, at most half of them, after user work |
+| `SIT_QOS_BACKGROUND` | prefetching, indexing, cleanup | its own threads, a quarter of the cores, at idle CPU priority |
+
+Results come back on the main thread after the frame is drawn, in batches,
+interactive results first, at most 2 ms of delivery per main loop iteration. A
+burst of finished work therefore cannot make a frame late.
+
+Every piece of work belongs to a scope. `sit_widget_get_scope()` returns a scope
+that is cancelled when the widget is destroyed, so a result never reaches a
+widget that is gone. Scopes nest: cancelling one cancels the scopes made from it
+with `sit_scope_new()`.
+
+The C interface has three shapes:
+
+- `sit_task_run()`: one piece of work, one result.
+- `SitFuture`: a result you can wait on later, give a timeout, or combine with
+  others through `sit_future_all()`, `sit_future_any()` and `sit_future_race()`.
+- `SitStream`: a producer on a worker thread pushes items, and the main thread
+  reads everything pushed since its last read in one batch.
+
+### From Vala
+
+[libsingularity](/docs/libsingularity/) wraps the engine in `Singularity.Async`.
+Without SIT the same calls run on the GLib thread pool, and
+`Singularity.Async.accelerated()` tells you which one you have.
+
+```vala
+var text = yield Singularity.Async.run<string> ((c) => {
+    uint8[] data;
+    file.load_contents (c, out data, null);
+    return (string) (owned) data;
+}, Singularity.Async.Qos.USER, Singularity.Async.scope_of (this));
+buffer.text = text;
+```
+
+The work function must not touch widgets: it returns data, and the code after
+`yield` applies it. For many results, `Singularity.Async.Feed.spawn()` runs a
+producer and `yield feed.next()` returns each batch, or null once the producer
+has finished.
 
 ## Liquid Glass
 
