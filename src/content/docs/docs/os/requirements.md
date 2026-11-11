@@ -18,8 +18,8 @@ boot a signed image and to hold a key in hardware.
 32-bit x86 programs run too, through the kernel's compatibility layer. Wine,
 Bottles and many older games need it.
 
-Other architectures (ARM, RISC-V) are a direction for the underlying deployment
-engine, but Sinty OS itself targets x86_64 today.
+Sinty OS is also built for 64-bit ARM boards and laptops. See
+[Sinty OS on ARM](/docs/os/arm/) for the supported hardware.
 
 ## Security hardware (TPM)
 

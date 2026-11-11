@@ -137,6 +137,7 @@ export default defineConfig({
           items: [
             { label: 'Overview', slug: 'docs/os/about' },
             { label: 'Requirements', slug: 'docs/os/requirements' },
+            { label: 'Sinty OS on ARM', slug: 'docs/os/arm' },
             { label: 'Installing Sinty OS', slug: 'docs/os/install' },
             { label: 'First boot & your PIN', slug: 'docs/os/first-boot' },
             { label: 'PIN, password & encryption', slug: 'docs/os/pin-and-encryption' },
