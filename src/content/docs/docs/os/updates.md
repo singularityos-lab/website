@@ -72,6 +72,47 @@ from the system image (see
 [Your PIN, password, and encryption](/docs/os/pin-and-encryption/)), so an update
 never merges into your files or risks them.
 
+## Checking, downloading and installing
+
+**Settings, Updates** shows the state of the system: up to date, an update to
+download, one downloading, or one ready. You can keep working while it
+downloads.
+
+- **Install on Restart** installs a downloaded update the next time the computer
+  starts. Updates are never installed while you work.
+- **Install Another Time** keeps the download without installing it on restart.
+- **Newer Update** looks for a version released after the one you downloaded.
+
+When the desktop can take the update without a restart, Settings and the dock
+offer **Apply Now** instead, or ask you to log out and back in. See
+[Updates without a restart](#updates-without-a-restart).
+
+**Automatic Updates** sets how often Sinty OS looks for updates, every day or
+every week, and whether it downloads them in the background. Downloads wait on
+metered connections.
+
+## Update channel
+
+**Update Channel** chooses which builds this computer receives:
+
+- **Stable**, the default;
+- **Canary**, which receives every build as soon as it is signed, before it
+  reaches Stable.
+
+The channel is shown with the version in **About**, under the progress bar while
+the computer starts, and on the loading screen after you log in.
+
+## Firmware
+
+**Firmware** in the same page lists the devices whose firmware can be updated,
+such as the system board, docks and drives, with their drivers and security
+metadata. A firmware update finishes when the computer restarts.
+
+## App updates
+
+Apps are updated in **Store**, not in Settings. See
+[Store](/docs/apps/store/).
+
 ## Update history
 
 Settings, under **Updates**, lists every update installed on this

@@ -1,0 +1,209 @@
+---
+import { getCollection } from 'astro:content';
+
+const pages = await getCollection('docs');
+const byId = new Map(pages.map((p) => [p.id.replace(/\/index$/, ''), p]));
+const entry = (slug) => {
+  const p = byId.get(slug);
+  return p ? { href: `/${slug}/`, title: p.data.title, description: p.data.description ?? '' } : null;
+};
+
+const popular = [
+  'docs/os/install',
+  'docs/os/first-boot',
+  'docs/os/updates',
+  'docs/os/recovery',
+  'docs/os/lock-screen',
+  'docs/keyboard-shortcuts',
+  'docs/os/networking',
+  'docs/os/devices',
+  'docs/apps/store',
+  'docs/troubleshooting',
+].map(entry).filter(Boolean);
+
+const quick = [
+  ['Install Sinty OS', 'install'],
+  ['Updates', 'update'],
+  ['Recovery', 'recovery'],
+  ['Pattern unlock', 'pattern'],
+  ['Wi-Fi', 'wifi'],
+];
+
+const topics = [
+  {
+    name: 'Start here',
+    links: ['docs/getting-started', 'docs/os/requirements', 'docs/os/install', 'docs/install-cpak', 'docs/first-boot'],
+  },
+  {
+    name: 'Sinty OS',
+    links: ['docs/os/about', 'docs/os/updates', 'docs/os/pin-and-encryption', 'docs/os/recovery', 'docs/os/startup-problems'],
+  },
+  {
+    name: 'Devices',
+    links: ['docs/os/devices', 'docs/os/mobile', 'docs/os/arm', 'docs/os/devices/pixel-7-pro', 'docs/os/sinty-flash'],
+  },
+  {
+    name: 'Using Singularity',
+    links: ['docs/desktop-tour', 'docs/dock', 'docs/spotlight', 'docs/sinty-ai', 'docs/appearance'],
+  },
+  {
+    name: 'Apps',
+    links: ['docs/apps', 'docs/apps/store', 'docs/os/sxi-apps', 'docs/apps/browser', 'docs/apps/files'],
+  },
+  {
+    name: 'Build for Singularity',
+    links: ['docs/build-an-app', 'docs/libsingularity', 'docs/developer-mode', 'docs/sdb', 'docs/contributing'],
+  },
+].map((t) => ({ ...t, links: t.links.map(entry).filter(Boolean) }));
+---
+
+<div class="docs-home not-content">
+  <section class="dh-hero">
+    <p class="dh-kicker">Singularity docs</p>
+    <h2 class="dh-title">How can we help?</h2>
+    <form class="dh-search" role="search" action="#" data-dh-search>
+      <svg class="dh-search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4a6.5 6.5 0 1 0 4.03 11.6l4.43 4.43 1.41-1.41-4.43-4.43A6.5 6.5 0 0 0 10.5 4zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9z"/></svg>
+      <input type="search" name="q" placeholder="Search guides, apps and settings" aria-label="Search the docs" autocomplete="off" />
+      <kbd class="dh-kbd" aria-hidden="true">/</kbd>
+    </form>
+    <ul class="dh-quick" aria-label="Common searches">
+      {quick.map(([label, q]) => <li><button type="button" data-q={q}>{label}</button></li>)}
+    </ul>
+  </section>
+
+  <div class="dh-cover" aria-hidden="true"><img src="/docs-cover.svg" alt="" width="1600" height="450" /></div>
+
+  <section class="dh-section">
+    <h2 class="dh-h">Most read</h2>
+    <ol class="dh-popular">
+      {popular.map((p, i) => (
+        <li>
+          <a href={p.href}>
+            <span class="dh-num">{String(i + 1).padStart(2, '0')}</span>
+            <span class="dh-text">
+              <span class="dh-ptitle">{p.title}</span>
+              <span class="dh-pdesc">{p.description}</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="dh-section">
+    <h2 class="dh-h">Browse by topic</h2>
+    <div class="dh-topics">
+      {topics.map((t) => (
+        <div class="dh-topic">
+          <h3>{t.name}</h3>
+          <ul>
+            {t.links.map((l) => <li><a href={l.href}>{l.title}</a></li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="dh-help">
+    <p>Still stuck? <a href="/docs/troubleshooting/">Troubleshooting</a> covers the common problems, and <a href="https://github.com/singularityos-lab" rel="noopener">GitHub</a> is where to report the rest.</p>
+  </section>
+</div>
+
+<script>
+  const openWith = (q: string) => {
+    const opener = document.querySelector<HTMLButtonElement>('site-search button[data-open-modal]');
+    if (!opener) return;
+    opener.click();
+    const started = performance.now();
+    const fill = () => {
+      const input = document.querySelector<HTMLInputElement>('#starlight__search input');
+      if (input) {
+        input.value = q;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.focus();
+        return;
+      }
+      if (performance.now() - started < 3000) requestAnimationFrame(fill);
+    };
+    requestAnimationFrame(fill);
+  };
+
+  const form = document.querySelector<HTMLFormElement>('[data-dh-search]');
+  const field = form?.querySelector<HTMLInputElement>('input');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    openWith(field?.value.trim() ?? '');
+  });
+  field?.addEventListener('input', () => {
+    const q = field.value;
+    field.value = '';
+    openWith(q);
+  });
+  document.querySelectorAll<HTMLButtonElement>('.dh-quick button').forEach((b) =>
+    b.addEventListener('click', () => openWith(b.dataset.q ?? '')),
+  );
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+    const t = e.target as HTMLElement;
+    if (t.closest('input, textarea, [contenteditable]')) return;
+    e.preventDefault();
+    field?.focus();
+  });
+</script>
+
+<style>
+  :global(.content-panel:has(h1#_top):has(+ .content-panel .docs-home)) { display: none; }
+  :global(.content-panel:has(.docs-home)) { border-top: 0; padding-top: 0; }
+
+  .docs-home { --dh-line: color-mix(in srgb, var(--sl-color-white) 12%, transparent); }
+
+  .dh-hero { position: relative; z-index: 1; text-align: center; padding: clamp(2.5rem, 7vw, 5rem) 0 0; }
+  .dh-kicker { margin: 0 0 0.75rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sl-color-gray-3); }
+  .dh-title { margin: 0 0 1.75rem; font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--sl-color-white); }
+
+  .dh-search { position: relative; max-width: 640px; margin: 0 auto; }
+  .dh-search input { width: 100%; box-sizing: border-box; height: 3.5rem; padding: 0 3.25rem 0 3.25rem; font: inherit; font-size: 1.05rem; color: var(--sl-color-white); background: color-mix(in srgb, #000 70%, var(--sl-color-gray-6)); border: 1px solid var(--sl-color-gray-5); border-radius: 999px; outline: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+  .dh-search input::placeholder { color: var(--sl-color-gray-3); }
+  .dh-search input:focus-visible { border-color: var(--sl-color-gray-2); box-shadow: 0 0 0 4px color-mix(in srgb, var(--sl-color-white) 10%, transparent); }
+  .dh-search-icon { position: absolute; left: 1.2rem; top: 50%; width: 1.25rem; height: 1.25rem; transform: translateY(-50%); fill: var(--sl-color-gray-3); pointer-events: none; }
+  .dh-kbd { position: absolute; right: 1.2rem; top: 50%; transform: translateY(-50%); font: inherit; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 0.4rem; color: var(--sl-color-gray-3); border: 1px solid var(--sl-color-gray-5); }
+
+  .dh-quick { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; list-style: none; margin: 1rem auto 0; padding: 0; max-width: 640px; }
+  .dh-quick button { font: inherit; font-size: 0.85rem; padding: 0.35rem 0.85rem; color: var(--sl-color-gray-2); background: transparent; border: 1px solid var(--dh-line); border-radius: 999px; cursor: pointer; }
+  .dh-quick button:hover, .dh-quick button:focus-visible { color: var(--sl-color-white); border-color: var(--sl-color-gray-3); }
+
+  .dh-cover { width: 100vw; margin: -0.5rem 0 0 calc(50% - 50vw); aspect-ratio: 1600 / 450; min-height: 200px; max-height: 460px; overflow: hidden; pointer-events: none; }
+  .dh-cover img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+  .dh-section { margin-top: clamp(1rem, 3vw, 2rem); }
+  .dh-section + .dh-section { margin-top: clamp(3rem, 7vw, 4.5rem); }
+  .dh-h { margin: 0 0 1.25rem; font-size: 1.35rem; font-weight: 700; color: var(--sl-color-white); }
+
+  .dh-popular { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; border-top: 1px solid var(--dh-line); }
+  .dh-popular li { border-bottom: 1px solid var(--dh-line); }
+  .dh-popular a { display: flex; gap: 1.1rem; align-items: baseline; padding: 1.05rem 0; text-decoration: none; color: inherit; }
+  .dh-num { font-variant-numeric: tabular-nums; font-size: 0.8rem; font-weight: 600; color: var(--sl-color-gray-4); min-width: 1.5rem; }
+  .dh-text { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
+  .dh-ptitle { font-weight: 600; color: var(--sl-color-white); }
+  .dh-pdesc { font-size: 0.9rem; line-height: 1.45; color: var(--sl-color-gray-3); }
+  .dh-popular a:hover .dh-ptitle, .dh-popular a:focus-visible .dh-ptitle { text-decoration: underline; text-underline-offset: 0.2em; }
+
+  .dh-topics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.25rem 3rem; }
+  .dh-topic h3 { margin: 0 0 0.75rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sl-color-gray-3); }
+  .dh-topic ul { list-style: none; margin: 0; padding: 0; }
+  .dh-topic li + li { margin-top: 0.55rem; }
+  .dh-topic a { color: var(--sl-color-gray-1); text-decoration: none; }
+  .dh-topic a:hover, .dh-topic a:focus-visible { color: var(--sl-color-white); text-decoration: underline; text-underline-offset: 0.2em; }
+
+  .dh-help { margin: clamp(3rem, 7vw, 4.5rem) 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--dh-line); color: var(--sl-color-gray-3); }
+  .dh-help a { color: var(--sl-color-white); }
+
+  @media (max-width: 50rem) {
+    .dh-popular { grid-template-columns: 1fr; }
+    .dh-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 32rem) {
+    .dh-topics { grid-template-columns: 1fr; }
+    .dh-kbd { display: none; }
+  }
+</style>

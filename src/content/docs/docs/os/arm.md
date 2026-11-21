@@ -9,24 +9,12 @@ rollback, the same encrypted data space, recovery and installer. One image
 serves every supported board.
 
 :::caution[Early]
-The ARM image is built and tested in emulation. Real boards are being brought
-up one family at a time, so expect rough edges and check the release notes of
-each build.
+Boards are brought up one family at a time, so expect rough edges and check
+the release notes of each build.
 :::
 
-## Supported hardware
-
-| Family | Boards | Firmware | Kernel |
-|--------|--------|----------|--------|
-| NVIDIA Jetson Orin | Orin Nano, Orin NX, AGX Orin | UEFI from NVIDIA (JetPack 6) | L4T r36 |
-| NVIDIA Jetson | Nano, TX1, TX2 | U-Boot with UEFI, from the board firmware bundle | mainline |
-| Rockchip RK3588 | Radxa Rock 5B, Rock 5B+ | EDK2 UEFI, from the board firmware bundle | mainline |
-| Raspberry Pi | Pi 4, Pi 5 | Raspberry Pi UEFI, from the board firmware bundle | mainline |
-| Snapdragon laptops | ThinkPad X13s | UEFI from the vendor | mainline |
-| Virtual machines | QEMU `virt`, UTM | AAVMF / EDK2 | mainline |
-
-The machine must boot through UEFI. Boards that do not ship UEFI firmware get it
-from the **boards** download of each build.
+Every board, laptop and virtual machine the image supports is listed in
+[Supported devices](/docs/os/devices/#arm-boards-and-laptops).
 
 ## How the kernel is chosen
 
@@ -47,9 +35,8 @@ same way, and updates replace both together.
 
 ## Without a TPM
 
-Most boards have no TPM. There Sinty OS asks for a passphrase at boot and derives
-the disk key from it with Argon2id. With a TPM the key is sealed to the machine as
-on a PC. See [Hardware security and the TPM](/docs/os/hardware-security/).
+Most boards have no TPM: the disk is unlocked with a passphrase, as described in
+[Hardware security and the TPM](/docs/os/hardware-security/).
 
 ## Installing
 

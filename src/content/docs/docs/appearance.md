@@ -38,6 +38,29 @@ rows, and the borders around your windows. There are three ways to set it:
 A live preview shows the accent in context before you commit to it, and the
 choice is applied everywhere at once.
 
+## Transparency and blur
+
+**Settings, Desktop, Colors and Effects, Background Effect** chooses the material
+behind transparent windows, the top bar, the dock, menus, notifications and the
+overview:
+
+- **Glass**: a frosted material with a tint of the accent colour;
+- **Liquid Glass**: glass whose edges bend the backdrop and catch the light;
+- **Classic Blur**: a plain blur;
+- **Disabled**: solid surfaces.
+
+Then tune it:
+
+- **Window Transparency**, and **Menu and Card Transparency** for menus,
+  notifications and dialogs: how much wallpaper shows through;
+- **Blur Strength**;
+- **Tint**, how much accent colour the material takes, and **Tint the Top Bar
+  and Dock**;
+- **Vibrancy**, the colour saturation of what shows through;
+- for Liquid Glass, **Refraction** and **Edge Light**.
+
+Apps can ask for the material for their own windows, and web apps can too.
+
 ## Themes
 
 Beyond the accent, you can change the look more deeply:
