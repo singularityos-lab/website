@@ -9,21 +9,21 @@ Singularity is built to be driven from the keyboard. These are the defaults.
 
 | Shortcut | Action |
 | --- | --- |
-| Super + Space | Open the overview |
-| Super + W | Workspace overview |
-| Super + Tab | Spotlight |
-| Super + A | Ask [Sinty AI](/docs/sinty-ai/) |
-| Super + Shift + A | Talk to [Sinty AI](/docs/sinty-ai/) by voice |
-| Shift + Alt + F2 | Spotlight |
-| Super + Return | Open a terminal |
-| Super + D | Reveal or restore the desktop |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Space</kbd></span> | Open the overview |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>W</kbd></span> | Workspace overview |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Tab</kbd></span> | Spotlight |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>A</kbd></span> | Ask [Sinty AI](/docs/sinty-ai/) |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd></span> | Talk to [Sinty AI](/docs/sinty-ai/) by voice |
+| <span class="kbd-keys"><kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>F2</kbd></span> | Spotlight |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Return</kbd></span> | Open a terminal |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>D</kbd></span> | Reveal or restore the desktop |
 
 ## System
 
 | Shortcut | Action |
 | --- | --- |
-| Super + M | Mute audio |
-| Super + L | Lock the screen |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>M</kbd></span> | Mute audio |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>L</kbd></span> | Lock the screen |
 
 Volume and brightness changes show an on-screen indicator as you adjust them.
 
@@ -31,12 +31,12 @@ Volume and brightness changes show an on-screen indicator as you adjust them.
 
 | Shortcut | Action |
 | --- | --- |
-| Super + Left / Right | Move one slot in scrolling tiling, otherwise snap left or right |
-| Super + Up / Down | Snap the focused window to the top or bottom half |
-| Super + R | Arrange tiled windows again |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Left</kbd> / <kbd>Right</kbd></span> | Move one slot in scrolling tiling, otherwise snap left or right |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Up</kbd> / <kbd>Down</kbd></span> | Snap the focused window to the top or bottom half |
+| <span class="kbd-keys"><kbd>Super</kbd>+<kbd>R</kbd></span> | Arrange tiled windows again |
 | Print | Screenshot |
-| Shift + Print | Screenshot a region |
-| Alt + Print | Screenshot the current window |
+| <span class="kbd-keys"><kbd>Shift</kbd>+<kbd>Print</kbd></span> | Screenshot a region |
+| <span class="kbd-keys"><kbd>Alt</kbd>+<kbd>Print</kbd></span> | Screenshot the current window |
 
 ## Custom shortcuts
 

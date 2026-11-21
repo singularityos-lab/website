@@ -10,7 +10,7 @@ Translate translates text as you type.
 - **Translate Clipboard** translates what you copied, and **Translate File**
   translates a text or Markdown file in one go.
 - **Listen** reads the translation aloud.
-- Star a translation with Ctrl+D to keep it in the **phrasebook**, which you can
+- Star a translation with <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>D</kbd></span> to keep it in the **phrasebook**, which you can
   search and export as CSV. Recent translations are kept in the history, which
   can be turned off.
 

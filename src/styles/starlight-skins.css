@@ -46,3 +46,6 @@
 .site-title img { height: 20px; width: auto; }
 
 starlight-theme-select { display: none; }
+
+.sl-markdown-content kbd, .kbd-keys kbd { display: inline-block; font-family: inherit; font-size: 0.8em; font-weight: 600; line-height: 1; padding: 0.32em 0.55em; margin: 0 0.12em; border-radius: 0.4em; color: var(--sl-color-white); background: color-mix(in srgb, var(--sl-color-white) 9%, transparent); border: 1px solid color-mix(in srgb, var(--sl-color-white) 18%, transparent); border-bottom-width: 2px; vertical-align: 0.08em; }
+.kbd-keys { white-space: nowrap; }

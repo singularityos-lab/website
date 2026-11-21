@@ -40,5 +40,5 @@ rougher and its file export is incomplete.
 
 ## Finding text
 
-Find and replace is available in both Markdown and document modes with `Ctrl+F`
-and `Ctrl+H`, with a match count and wrap-around.
+Find and replace is available in both Markdown and document modes with <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>F</kbd></span>
+and <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>H</kbd></span>, with a match count and wrap-around.

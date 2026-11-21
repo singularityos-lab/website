@@ -228,7 +228,7 @@ make compile
 make install
 ```
 
-If the shell is already running, reload it in place: press `Super+Tab`, type
+If the shell is already running, reload it in place: press <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Tab</kbd></span>, type
 `r`, and submit, then wait a moment for the shell to come back. For larger
 changes (compositor, libraries, session) skip the in-place reload and reboot
 instead.

@@ -35,7 +35,7 @@ where it started; a committed gesture finishes the remaining motion.
 
 The desktop reveal moves the current workspace windows toward the screen edges
 and leaves a small part of each one visible. Spread four fingers to expose the
-desktop, then pinch them to restore the saved positions. **Super + D** toggles
+desktop, then pinch them to restore the saved positions. <span class="kbd-keys"><kbd>Super</kbd>+<kbd>D</kbd></span> toggles
 the same action from the keyboard.
 
 The three-finger gestures are claimed by the desktop only while scrolling tiling

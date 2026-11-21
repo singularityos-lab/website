@@ -1,14 +1,7 @@
 ---
 title: Rooting Sinty OS
-description: Why Sinty OS has no root by default, what "rooting" would mean here, and why it is strongly discouraged.
+description: Why Sinty OS has no root by default, how the bootloader unlock works, and what it costs.
 ---
-
-:::caution[Work in progress: not available in this Alpha]
-Bootloader unlock is designed but **not yet implemented** in the current Alpha.
-No device can be rooted today: there is no unlock switch in Settings, and the
-recovery unlock stops before it changes anything. The flow below describes the
-intended design, not a procedure that works on this release yet.
-:::
 
 :::danger[Rooting is strongly discouraged and voids support stability]
 Sinty OS is designed to run as a sealed, verified system. Rooting it, gaining
@@ -59,32 +52,26 @@ That is a different machine from the one Sinty ships. Once you do it:
 
 ## How to unlock the device
 
-When it ships, rooting will be a deliberate, physically present act, closer to
-unlocking an Android bootloader than to typing a password. The exact keys and
-prompts depend on your device, but the intended flow is:
+Unlocking is a deliberate, physically present act, closer to unlocking an Android
+bootloader than to typing a password. Recovery does the work and erases your data
+before verified boot goes off.
 
-1. **Arm the unlock in settings.** In the system settings, under the developer or
-   advanced section, turn on "Allow bootloader unlock". This asks for your PIN,
-   so a locked device that is lost or stolen cannot be unlocked without you.
-2. **Reboot into recovery.** Choose "Reboot into recovery" from settings, or hold
-   the device's recovery key combination as it powers on.
-3. **Choose to unlock.** Recovery shows a screen explaining exactly what unlocking
-   does, verification off, a full wipe, the effect on support. Select "Unlock
-   bootloader".
-4. **Confirm deliberately.** A second screen requires an explicit, non-accidental
-   action, such as holding a button for a few seconds or typing `UNLOCK`, so it
-   cannot happen with a single stray tap.
-5. **The device wipes and unlocks.** On confirmation the device erases all your
-   data, flips a hardware-anchored lock bit to "unlocked", and disables dm-verity
-   enforcement. The wipe is immediate, done by discarding the encryption keys.
-6. **Reboot unlocked.** The device restarts and, from now on, shows a persistent
-   notice at every boot that it is unlocked. It is now root-capable: the read-only
-   system can be remounted read-write and a root shell is available. Updates still
-   work; being unlocked does not cut you off from them.
+1. **Allow the unlock.** In Settings, open the Developer page and turn on "Allow
+   bootloader unlock". It asks for your PIN and only works from the device itself:
+   a host paired over the debug bridge cannot turn it on. Turning it off needs no
+   PIN.
+2. **Reboot into recovery.**
+3. **Choose "Unlock bootloader".** The option says that it erases all data.
+4. **Enter your PIN and type `UNLOCK`.** Anything else cancels the unlock and takes
+   the permission away, so you would have to allow it again from the running system.
+5. **The device wipes and unlocks.** Recovery checks the PIN, turns off dm-verity
+   enforcement in the TPM, erases your data, and then sets the TPM lock bit to
+   unlocked. If it is interrupted after verity goes off, running the unlock again
+   finishes the job without asking for the PIN.
+6. **Reboot.** The device warns at every boot that it is unlocked. The TPM keeps a
+   count of unlocks that never goes down, so relocking does not hide that it happened.
 
-After that you have a modifiable system with root, and you own the consequences:
-the verification and immutability guarantees are gone, your data was wiped, and the
-device is no longer in the sealed state Sinty ships and supports.
+Unlocking turns off verification. It does not add a root login, `sudo` or `pkexec`.
 
 ## Reach for the supported paths first
 

@@ -48,22 +48,22 @@ The shell keeps a history of your commands across sessions, stored in
 
 | Keys | Action |
 |---|---|
-| Up, Down, Ctrl+P, Ctrl+N | previous and next command |
-| Ctrl+R, Ctrl+S | search the history backwards and forwards |
+| Up, Down, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>P</kbd></span>, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>N</kbd></span> | previous and next command |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>R</kbd></span>, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>S</kbd></span> | search the history backwards and forwards |
 | Alt+< and Alt+> | first and last command in the history |
-| Ctrl+A, Ctrl+E, Home, End | start and end of the line |
-| Ctrl+B, Ctrl+F, Alt+B, Alt+F, Ctrl+Left, Ctrl+Right | move by character or by word |
-| Ctrl+K, Ctrl+U, Ctrl+W, Alt+D, Alt+Backspace | cut to the end, to the start, or a word |
-| Ctrl+Y | paste back what you cut |
-| Ctrl+T | swap two characters |
-| Alt+. | insert the last argument of the previous command |
-| Ctrl+L | clear the screen |
-| Ctrl+C, Ctrl+D | interrupt, or end the input |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>A</kbd></span>, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>E</kbd></span>, Home, End | start and end of the line |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>B</kbd></span>, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>F</kbd></span>, <span class="kbd-keys"><kbd>Alt</kbd>+<kbd>B</kbd></span>, <span class="kbd-keys"><kbd>Alt</kbd>+<kbd>F</kbd></span>, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Left</kbd></span>, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Right</kbd></span> | move by character or by word |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>K</kbd></span>, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>U</kbd></span>, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>W</kbd></span>, <span class="kbd-keys"><kbd>Alt</kbd>+<kbd>D</kbd></span>, <span class="kbd-keys"><kbd>Alt</kbd>+<kbd>Backspace</kbd></span> | cut to the end, to the start, or a word |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Y</kbd></span> | paste back what you cut |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>T</kbd></span> | swap two characters |
+| <span class="kbd-keys"><kbd>Alt</kbd>+<kbd>.</kbd></span> | insert the last argument of the previous command |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>L</kbd></span> | clear the screen |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>C</kbd></span>, <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>D</kbd></span> | interrupt, or end the input |
 
 ## Jobs
 
 Commands can run in the background like in any shell. End a command with `&` to
-start it in the background, press Ctrl+Z to suspend the one in front, and manage
+start it in the background, press <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Z</kbd></span> to suspend the one in front, and manage
 them with `jobs`, `fg` and `bg`.
 
 ## Running an app in its own sandbox

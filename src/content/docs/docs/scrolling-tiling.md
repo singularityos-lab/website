@@ -27,7 +27,7 @@ Swipe horizontally with three fingers. The strip follows the touchpad movement
 one to one, then settles on the nearest column when you release. You do not need
 to place the next window exactly in the center before letting go.
 
-Press **Super + Left** or **Super + Right** to move the focused column by one
+Press <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Left</kbd></span> or <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Right</kbd></span> to move the focused column by one
 slot without using the touchpad.
 
 A position pill appears in the panel while scrolling tiling is active. Its inner
@@ -65,5 +65,5 @@ See [Touchpad gestures](/docs/touchpad-gestures/) for the complete gesture map.
 
 ## Grid tiling
 
-Set **Tiling Layout** back to **Grid** for the fixed layout. **Super + R** asks
+Set **Tiling Layout** back to **Grid** for the fixed layout. <span class="kbd-keys"><kbd>Super</kbd>+<kbd>R</kbd></span> asks
 the desktop to arrange the tiled windows again in either mode.

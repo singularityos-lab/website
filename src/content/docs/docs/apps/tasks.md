@@ -21,7 +21,7 @@ in the background to deliver them.
 
 ## Focus timer
 
-**Start Focus Timer** (Ctrl+T) on a task runs a focus session followed by a break.
+**Start Focus Timer** (<span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>T</kbd></span>) on a task runs a focus session followed by a break.
 Tasks keeps the time you focused on each task.
 
 ## Accounts and sharing

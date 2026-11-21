@@ -27,6 +27,6 @@ text inside the image and copy it.
 
 ## Saving
 
-Copy the result with Ctrl+C, share it, save it over the original or as a new
+Copy the result with <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>C</kbd></span>, share it, save it over the original or as a new
 image, or open it in Draw to keep working on it. Undo and redo work as everywhere
 else.

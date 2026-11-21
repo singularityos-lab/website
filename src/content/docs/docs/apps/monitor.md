@@ -50,6 +50,6 @@ can keep an eye on the machine without bringing the window forward.
 | Shortcut | Action |
 | --- | --- |
 | Type a letter | Start searching the process list |
-| `Ctrl+A` | Select all processes |
-| `Ctrl+K` | Force kill the selected processes |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>A</kbd></span> | Select all processes |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>K</kbd></span> | Force kill the selected processes |
 | `Escape` | Close the search |

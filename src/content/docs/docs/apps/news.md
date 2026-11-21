@@ -9,7 +9,7 @@ News follows websites and feeds, all in one place.
 - Group feeds in folders, and read new articles or all of them.
 - **Load Full Article** fetches the whole article when a feed only carries a
   summary.
-- Save an article with Ctrl+D to keep it; saved articles can be read offline.
+- Save an article with <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>D</kbd></span> to keep it; saved articles can be read offline.
 - Filters hide articles that match words or a pattern.
 - **Import OPML** brings your subscriptions from another reader, and **Export
   OPML** takes them elsewhere.

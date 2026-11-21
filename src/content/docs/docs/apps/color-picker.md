@@ -6,9 +6,9 @@ description: Pick colors from the screen, convert them, build palettes and check
 Color Picker takes a color from anywhere on the screen and gives it to you in the
 format you need.
 
-- **Pick a Color** (Ctrl+P), then click anywhere on the screen. A button in the
+- **Pick a Color** (<span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>P</kbd></span>), then click anywhere on the screen. A button in the
   top bar picks a color without opening the window.
-- **Enter a Color** (Ctrl+L) accepts a hex code, a CSS color such as `rgb()`,
+- **Enter a Color** (<span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>L</kbd></span>) accepts a hex code, a CSS color such as `rgb()`,
   `hsl()`, `lab()` or `oklch()`, or a color name.
 - Click any value, Hex, RGB, HSL, OKLCH and more, to copy it.
 
@@ -22,7 +22,7 @@ Swatch Exchange.
 ## Contrast and color vision
 
 **Contrast** shows how readable the color is as text on a background, following
-WCAG 2, for normal and large text. When it fails, **Contrast Fix** (Ctrl+J)
+WCAG 2, for normal and large text. When it fails, **Contrast Fix** (<span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>J</kbd></span>)
 suggests the closest color that passes.
 
 **Color Vision** shows the color, its palette and its contrast as seen with

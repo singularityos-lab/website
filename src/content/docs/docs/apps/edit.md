@@ -52,14 +52,14 @@ came to look at, and keeping the controls to small pills at the margins.
 ## Reading and moving around
 
 Line numbers and current-line highlighting are on by default. An optional minimap
-(`Alt+M`) gives you a bird's-eye view of long files, the outline panel lists the
-file's structure for the Tree-sitter languages, and the command palette (`Ctrl+P`)
+(<span class="kbd-keys"><kbd>Alt</kbd>+<kbd>M</kbd></span>) gives you a bird's-eye view of long files, the outline panel lists the
+file's structure for the Tree-sitter languages, and the command palette (<span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>P</kbd></span>)
 lists every action with its shortcut and doubles as a quick way to switch files.
-Markdown files get a preview pane with `Ctrl+Shift+M`.
+Markdown files get a preview pane with <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd></span>.
 
 ## Finding and editing
 
-Find and replace (`Ctrl+F`, or `Ctrl+H` for replace) supports case sensitivity,
+Find and replace (<span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>F</kbd></span>, or <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>H</kbd></span> for replace) supports case sensitivity,
 whole words, and regular expressions, with a live match count. Editing has the
 comforts you expect: auto-indent, smart backspace, bracket matching, and a
 configurable tab width. Edit reads your desktop dark mode and accent color and
@@ -129,15 +129,15 @@ changes them.
 
 | Shortcut | Action |
 | --- | --- |
-| `Ctrl+N` / `Ctrl+O` / `Ctrl+S` | New, open, save |
-| `Ctrl+W` | Close tab |
-| `Ctrl+F` / `Ctrl+H` | Find, find and replace |
-| `Ctrl+G` | Go to line |
-| `Ctrl+D` | Duplicate line |
-| `Ctrl+/` | Toggle comment |
-| `Alt+Up` / `Alt+Down` | Move line up or down |
-| `Ctrl+P` | Command palette |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>N</kbd></span> / <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>O</kbd></span> / <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>S</kbd></span> | New, open, save |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>W</kbd></span> | Close tab |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>F</kbd></span> / <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>H</kbd></span> | Find, find and replace |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>G</kbd></span> | Go to line |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>D</kbd></span> | Duplicate line |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>/</kbd></span> | Toggle comment |
+| <span class="kbd-keys"><kbd>Alt</kbd>+<kbd>Up</kbd></span> / <span class="kbd-keys"><kbd>Alt</kbd>+<kbd>Down</kbd></span> | Move line up or down |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>P</kbd></span> | Command palette |
 | `F9` | Toggle the file browser |
-| `Alt+M` | Toggle the minimap |
-| `Ctrl+Shift+M` | Toggle Markdown preview |
-| `Ctrl+-` / `Ctrl+=` | Fold, unfold (Tree-sitter languages) |
+| <span class="kbd-keys"><kbd>Alt</kbd>+<kbd>M</kbd></span> | Toggle the minimap |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd></span> | Toggle Markdown preview |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>-</kbd></span> / <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>=</kbd></span> | Fold, unfold (Tree-sitter languages) |

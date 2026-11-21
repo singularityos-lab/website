@@ -23,7 +23,7 @@ are kept in the keyring, never in a settings file.
 
 ## Asking
 
-Press **Super + A**, type what you need and press Enter: "open my notes from
+Press <span class="kbd-keys"><kbd>Super</kbd>+<kbd>A</kbd></span>, type what you need and press Enter: "open my notes from
 yesterday", "put the browser on the right screen", "turn on dark style". The
 answer appears below the field, with a card for each action it ran.
 
@@ -45,7 +45,7 @@ to stop. A stopped agent refuses every request until you resume it with
 
 ## Talking
 
-The microphone next to the field, or **Super + Shift + A**, offers two ways to
+The microphone next to the field, or <span class="kbd-keys"><kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd></span>, offers two ways to
 talk:
 
 - **Voice Message**: say your request; it is sent when you stop talking, or

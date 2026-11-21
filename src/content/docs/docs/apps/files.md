@@ -10,7 +10,7 @@ elsewhere on your network too.
 ## Three ways to look at a folder
 
 Files gives you three views, and you switch between them from the toolbar or by
-cycling with `Ctrl+Shift+V`:
+cycling with <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd></span>:
 
 - **List** shows a detailed table with name, size, type, and modified date. You
   can right-click the column headers to choose which columns appear.
@@ -38,7 +38,7 @@ bar, and the Network entry is where you reach shared and remote locations.
 
 The everyday operations are all here, with keyboard shortcuts for the ones you
 reach for most: copy, cut, and paste, rename in place with `F2`, move to Trash
-with `Delete`, and make a new folder with `Ctrl+Shift+N`. Long operations show a
+with `Delete`, and make a new folder with <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></span>. Long operations show a
 progress banner you can cancel, and you can drag files between windows. The
 Properties dialog shows type, size, location, modified date, and permissions.
 
@@ -61,17 +61,17 @@ it works best with simple shares that do not need interactive sign-in.
 
 | Shortcut | Action |
 | --- | --- |
-| `Ctrl+Shift+V` | Cycle list, grid, and column views |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd></span> | Cycle list, grid, and column views |
 | `/` | Type a path |
 | `~` | Type a path from home |
-| `Ctrl+H` | Show or hide hidden files |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>H</kbd></span> | Show or hide hidden files |
 | `F2` | Rename |
 | `Delete` | Move to Trash |
-| `Ctrl+Shift+N` | New folder |
-| `Ctrl+C` / `Ctrl+X` / `Ctrl+V` | Copy, cut, paste |
-| `Ctrl+A` | Select all |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></span> | New folder |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>C</kbd></span> / <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>X</kbd></span> / <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>V</kbd></span> | Copy, cut, paste |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>A</kbd></span> | Select all |
 | `Space` | Quick preview |
-| `Ctrl+N` | New window |
+| <span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>N</kbd></span> | New window |
 
 Files also backs the system file picker, so when another app asks you to open or
 save something, the dialog you see is Files doing the work.
