@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540">
+<rect width="1200" height="540" fill="#000"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#888"/></marker></defs>
+<g font-family="Montserrat, Inter, sans-serif" fill="#e0e0e0" font-size="17">
+<text x="60" y="52" font-weight="600" font-size="22">Contracts on the session bus</text>
+<text x="60" y="80" fill="#888" font-size="15">Each one is a class in libsingularity; the application implements it, the system discovers it.</text>
+<rect x="450" y="250" width="300" height="110" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#e0e0e0" stroke-width="2"/>
+<text x="600.0" y="299.0" text-anchor="middle" font-weight="600" font-size="17">Application</text>
+<text x="600.0" y="323.0" text-anchor="middle" font-size="14" fill="#888">Singularity.Application</text>
+<rect x="60" y="110" width="300" height="100" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+<text x="210.0" y="154.0" text-anchor="middle" font-weight="600" font-size="17">Shell</text>
+<text x="210.0" y="178.0" text-anchor="middle" font-size="14" fill="#888">search providers, quick tiles,</text>
+<text x="210.0" y="198.0" text-anchor="middle" font-size="14" fill="#888">dock menu, overview widgets</text>
+<line x1="210" y1="210" x2="600" y2="250" stroke="#555" stroke-width="2"/>
+<rect x="450" y="110" width="300" height="100" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+<text x="600.0" y="154.0" text-anchor="middle" font-weight="600" font-size="17">Settings</text>
+<text x="600.0" y="178.0" text-anchor="middle" font-size="14" fill="#888">app settings from gschema</text>
+<text x="600.0" y="198.0" text-anchor="middle" font-size="14" fill="#888">and a JSON descriptor</text>
+<line x1="600" y1="210" x2="600" y2="250" stroke="#555" stroke-width="2"/>
+<rect x="840" y="110" width="300" height="100" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+<text x="990.0" y="154.0" text-anchor="middle" font-weight="600" font-size="17">System agent</text>
+<text x="990.0" y="178.0" text-anchor="middle" font-size="14" fill="#888">dev.sinty.AppAgent1: intents</text>
+<text x="990.0" y="198.0" text-anchor="middle" font-size="14" fill="#888">with a declared risk level</text>
+<line x1="990" y1="210" x2="600" y2="250" stroke="#555" stroke-width="2"/>
+<rect x="60" y="400" width="300" height="100" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+<text x="210.0" y="444.0" text-anchor="middle" font-weight="600" font-size="17">Capabilities</text>
+<text x="210.0" y="468.0" text-anchor="middle" font-size="14" fill="#888">dev.sinty.Notes1, Tasks1,</text>
+<text x="210.0" y="488.0" text-anchor="middle" font-size="14" fill="#888">Calendar1, Translate1</text>
+<line x1="210" y1="400" x2="600" y2="360" stroke="#555" stroke-width="2"/>
+<rect x="450" y="400" width="300" height="100" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+<text x="600.0" y="444.0" text-anchor="middle" font-weight="600" font-size="17">Focus</text>
+<text x="600.0" y="468.0" text-anchor="middle" font-size="14" fill="#888">dev.sinty.Focus1: adapt while</text>
+<text x="600.0" y="488.0" text-anchor="middle" font-size="14" fill="#888">the user is focusing</text>
+<line x1="600" y1="400" x2="600" y2="360" stroke="#555" stroke-width="2"/>
+<rect x="840" y="400" width="300" height="100" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+<text x="990.0" y="444.0" text-anchor="middle" font-weight="600" font-size="17">One-time codes</text>
+<text x="990.0" y="468.0" text-anchor="middle" font-size="14" fill="#888">codes offered to text fields</text>
+<text x="990.0" y="488.0" text-anchor="middle" font-size="14" fill="#888">from Messages and Nearby</text>
+<line x1="990" y1="400" x2="600" y2="360" stroke="#555" stroke-width="2"/>
+
+</g>
+</svg>

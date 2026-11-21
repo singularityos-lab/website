@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 570" width="1200" height="570">
+<rect width="1200" height="570" fill="#000"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#888"/></marker></defs>
+<g font-family="Montserrat, Inter, sans-serif" fill="#e0e0e0" font-size="17">
+<text x="60" y="52" font-weight="600" font-size="22">Compute.call (region, key, producer)</text>
+<text x="60" y="80" fill="#888" font-size="15">Thumbnails, scaled images, cover art, previews and accent samples go through the same call.</text>
+<rect x="60" y="120" width="300" height="90" rx="14" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+<text x="210.0" y="159.0" text-anchor="middle" font-weight="600" font-size="17">Application</text>
+<text x="210.0" y="183.0" text-anchor="middle" font-size="14" fill="#888">Compute.load_scaled (path, w, h)</text>
+<line x1="360" y1="165" x2="436" y2="165" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<rect x="440" y="120" width="320" height="90" rx="14" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+<text x="600.0" y="159.0" text-anchor="middle" font-weight="600" font-size="17">Key</text>
+<text x="600.0" y="183.0" text-anchor="middle" font-size="14" fill="#888">path, mtime, size, w x h</text>
+<line x1="760" y1="165" x2="836" y2="165" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<rect x="840" y="120" width="300" height="90" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#e0e0e0" stroke-width="2"/>
+<text x="990.0" y="159.0" text-anchor="middle" font-weight="600" font-size="17">Sinty Compute</text>
+<text x="990.0" y="183.0" text-anchor="middle" font-size="14" fill="#888">stored result still valid?</text>
+<line x1="940" y1="210" x2="940" y2="276" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<line x1="1040" y1="210" x2="1040" y2="276" stroke="#888" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#a)"/>
+<text x="930" y="250" text-anchor="end" font-size="13" fill="#888">yes</text><text x="1050" y="250" font-size="13" fill="#888">no</text>
+<rect x="640" y="280" width="350" height="90" rx="14" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+<text x="815.0" y="319.0" text-anchor="middle" font-weight="600" font-size="17">Reuse</text>
+<text x="815.0" y="343.0" text-anchor="middle" font-size="14" fill="#888">packed pixels returned, no decode</text>
+<rect x="1010" y="280" width="130" height="90" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+<text x="1075.0" y="319.0" text-anchor="middle" font-weight="600" font-size="17">Run</text>
+<text x="1075.0" y="343.0" text-anchor="middle" font-size="14" fill="#888">producer</text>
+<line x1="1075" y1="370" x2="1075" y2="436" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<rect x="640" y="440" width="500" height="90" rx="14" fill="none" stroke="#888" stroke-width="2"/>
+<text x="890.0" y="479.0" text-anchor="middle" font-weight="600" font-size="17">Store and watch</text>
+<text x="890.0" y="503.0" text-anchor="middle" font-size="14" fill="#888">the kernel reports when memory read by the</text>
+<text x="890.0" y="523.0" text-anchor="middle" font-size="14" fill="#888">producer may have changed; the entry is dropped</text>
+<rect x="60" y="280" width="520" height="250" rx="14" fill="none" stroke="#555" stroke-width="2"/>
+<text x="90" y="322" font-weight="600" font-size="17">Without Sinty Compute</text>
+<text x="90" y="356" font-size="14" fill="#888">Compute.available () is false and the producer</text>
+<text x="90" y="378" font-size="14" fill="#888">runs directly. Results are identical; only the</text>
+<text x="90" y="400" font-size="14" fill="#888">reuse is missing.</text>
+<text x="90" y="444" font-size="14" fill="#888">One context per process, shared by all threads</text>
+<text x="90" y="466" font-size="14" fill="#888">behind a lock.</text>
+</g>
+</svg>
