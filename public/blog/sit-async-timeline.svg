@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <rect width="1200" height="600" fill="#000"/>
+  <g font-family="Montserrat, Inter, sans-serif" fill="#e0e0e0" font-size="17">
+    <text x="60" y="56" font-weight="600" font-size="22">Opening a 2000 x 1500 PNG, one frame every 16.7 ms</text>
+    <text x="60" y="84" fill="#888" font-size="15">Same application and file; only the thread that runs the decode differs.</text>
+
+    <g fill="#888" font-size="13" text-anchor="middle">
+      <text x="260" y="128">0 ms</text>
+      <text x="480" y="128">25</text>
+      <text x="700" y="128">50</text>
+      <text x="920" y="128">75</text>
+      <text x="1140" y="128">100 ms</text>
+    </g>
+
+    <text x="60" y="176" font-weight="600">Stock GTK</text>
+    <text x="60" y="226" fill="#888" font-size="15">main thread</text>
+    <rect x="260" y="200" width="880" height="44" rx="8" fill="none" stroke="#333" stroke-width="2"/>
+    <rect x="278" y="206" width="10" height="32" rx="3" fill="#888"/>
+    <rect x="292" y="206" width="157" height="32" rx="4" fill="#e0e0e0"/>
+    <text x="370" y="227" text-anchor="middle" fill="#000" font-size="14" font-weight="600">decode 17.8 ms</text>
+    <rect x="460" y="206" width="12" height="32" rx="3" fill="#888"/>
+    <g stroke="#555" stroke-width="2">
+      <line x1="260" y1="252" x2="260" y2="268"/>
+      <line x1="407" y1="252" x2="407" y2="268" stroke="#e0e0e0" stroke-dasharray="3 3"/>
+      <line x1="554" y1="252" x2="554" y2="268"/>
+      <line x1="701" y1="252" x2="701" y2="268"/>
+      <line x1="848" y1="252" x2="848" y2="268"/>
+      <line x1="995" y1="252" x2="995" y2="268"/>
+    </g>
+    <text x="407" y="290" text-anchor="middle" font-size="14">missed frame</text>
+
+    <text x="60" y="366" font-weight="600">SIT</text>
+    <text x="60" y="416" fill="#888" font-size="15">main thread</text>
+    <rect x="260" y="390" width="880" height="44" rx="8" fill="none" stroke="#333" stroke-width="2"/>
+    <rect x="278" y="396" width="10" height="32" rx="3" fill="#888"/>
+    <rect x="560" y="396" width="8" height="32" rx="3" fill="#e0e0e0"/>
+    <text x="580" y="452" font-size="14">texture delivered after the next paint</text>
+    <text x="60" y="510" fill="#888" font-size="15">worker</text>
+    <rect x="260" y="484" width="880" height="44" rx="8" fill="none" stroke="#333" stroke-width="2"/>
+    <rect x="292" y="490" width="157" height="32" rx="4" fill="#888"/>
+    <text x="370" y="511" text-anchor="middle" fill="#000" font-size="14" font-weight="600">decode 17.8 ms</text>
+    <path d="M449 490 C 449 462, 564 462, 564 432" fill="none" stroke="#888" stroke-width="2" stroke-dasharray="4 4"/>
+    <g stroke="#555" stroke-width="2">
+      <line x1="260" y1="540" x2="260" y2="556"/>
+      <line x1="407" y1="540" x2="407" y2="556"/>
+      <line x1="554" y1="540" x2="554" y2="556"/>
+      <line x1="701" y1="540" x2="701" y2="556"/>
+      <line x1="848" y1="540" x2="848" y2="556"/>
+      <line x1="995" y1="540" x2="995" y2="556"/>
+    </g>
+    <text x="700" y="582" text-anchor="middle" fill="#888" font-size="14">no missed frames; until decoding completes the texture is drawn empty at its final size</text>
+
+    <line x1="260" y1="140" x2="260" y2="560" stroke="#e0e0e0" stroke-width="2" opacity="0.6">
+      <animate attributeName="x1" values="260;1140" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="260;1140" dur="6s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>

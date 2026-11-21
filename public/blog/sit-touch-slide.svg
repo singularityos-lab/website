@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620">
+  <rect width="1200" height="620" fill="#000"/>
+  <g font-family="Montserrat, Inter, sans-serif" fill="#e0e0e0" font-size="17">
+    <rect x="120" y="40" width="320" height="540" rx="44" fill="none" stroke="#888" stroke-width="2"/>
+    <g fill="#ffffff" fill-opacity="0.06">
+      <rect x="148" y="110" width="264" height="54" rx="10"/>
+      <rect x="148" y="174" width="264" height="54" rx="10"/>
+      <rect x="148" y="238" width="264" height="54" rx="10"/>
+      <rect x="148" y="302" width="264" height="54" rx="10"/>
+      <rect x="148" y="366" width="264" height="54" rx="10"/>
+      <rect x="148" y="430" width="264" height="54" rx="10"/>
+    </g>
+    <g fill="#888" font-size="15">
+      <text x="168" y="143">Holiday photos</text>
+      <text x="168" y="207">Invoice March.pdf</text>
+      <text x="168" y="271">Notes</text>
+      <text x="168" y="335">Recipes.txt</text>
+      <text x="168" y="399">Music</text>
+      <text x="168" y="463">Backup.tar</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.2;0.68;0.74;1" dur="5s" repeatCount="indefinite"/>
+      <rect x="230" y="200" width="190" height="196" rx="16" fill="#1a1a1a" stroke="#888" stroke-width="2"/>
+      <rect x="240" y="210" width="170" height="52" rx="10" fill="#e0e0e0" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.22;0.22;0;0" keyTimes="0;0.4;0.41;0.47;0.48;1" dur="5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="240" y="272" width="170" height="52" rx="10" fill="#e0e0e0" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.22;0.22;0;0" keyTimes="0;0.48;0.49;0.55;0.56;1" dur="5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="240" y="334" width="170" height="52" rx="10" fill="#e0e0e0" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.22;0.22;0.6;0;0" keyTimes="0;0.56;0.57;0.62;0.64;0.7;1" dur="5s" repeatCount="indefinite"/>
+      </rect>
+      <text x="260" y="242">Open</text>
+      <text x="260" y="304">Rename</text>
+      <text x="260" y="366">Share</text>
+    </g>
+
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 0;0 236;0 236;0 236" keyTimes="0;0.2;0.28;0.6;0.66;1" dur="5s" repeatCount="indefinite"/>
+      <circle cx="320" cy="134" r="22" fill="#e0e0e0" opacity="0">
+        <animate attributeName="opacity" values="0;0.55;0.55;0.55;0;0" keyTimes="0;0.04;0.6;0.64;0.66;1" dur="5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="320" cy="134" r="30" fill="none" stroke="#e0e0e0" stroke-width="3" opacity="0" stroke-dasharray="189" stroke-dashoffset="189">
+        <animate attributeName="opacity" values="0;0.9;0.9;0;0" keyTimes="0;0.04;0.16;0.2;1" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="189;189;0;0" keyTimes="0;0.04;0.16;1" dur="5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <g font-size="19">
+      <text x="540" y="170" font-weight="600">1  Long press</text>
+      <text x="540" y="198" font-size="15" fill="#888">the secondary-click menu opens after the long press time;</text>
+      <text x="540" y="220" font-size="15" fill="#888">movement below 1.5 times the drag threshold is tolerated</text>
+      <text x="540" y="290" font-weight="600">2  Slide</text>
+      <text x="540" y="318" font-size="15" fill="#888">the popover highlights the item under the touch point</text>
+      <text x="540" y="388" font-weight="600">3  Release</text>
+      <text x="540" y="416" font-size="15" fill="#888">the highlighted item is activated; releasing without</text>
+      <text x="540" y="438" font-size="15" fill="#888">moving leaves the menu open</text>
+    </g>
+  </g>
+</svg>
