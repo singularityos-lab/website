@@ -85,6 +85,29 @@ root shell, a write outside the transfer sandbox, or binding a low port each goe
 through the broker for a confirmation on the device, and the daemon grants nothing
 on its own.
 
+## When a device stops answering
+
+A device that is thrashing or stuck can still be reached. Two requests skip the
+session entirely and are served on the control connection alone, so they need
+nothing but `sdbd` and the kernel: no login, no broker, no shell.
+
+```sh
+sdb diagnose                    memory, swap, pressure and blocked processes
+sdb reboot [--force]            restart through init, or with --force through the kernel
+```
+
+`sdb diagnose` prints the uptime and load, available memory and swap in use, the
+kernel's memory, I/O and CPU pressure figures, every process stuck in
+uninterruptible sleep, and the five processes holding the most memory. It is a
+quick way to tell a hung device from a slow one.
+
+`sdb reboot` asks init for a clean restart. When init itself is stuck, add
+`--force`: the kernel syncs the disks, remounts them read-only and restarts,
+without waiting on any service. Only a paired host can send either request.
+
+`sdbd` keeps itself out of the out-of-memory killer's reach and locked in memory,
+so it can still take these requests while the rest of the system is struggling.
+
 ## Remote assistance
 
 `sdb assist` is a bounded, non-root session for remote support that needs no
