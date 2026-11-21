@@ -35,6 +35,7 @@ export default defineConfig({
             { label: 'Keyboard shortcuts', slug: 'docs/keyboard-shortcuts' },
             { label: 'Screens and form factors', slug: 'docs/screens' },
             { label: 'Singularity on a TV', slug: 'docs/tv' },
+            { label: 'Singularity on a watch', slug: 'docs/watch' },
             { label: 'Web apps', slug: 'docs/web-apps' },
             { label: 'Typing and input methods', slug: 'docs/typing' },
             { label: 'Profiles and focus', slug: 'docs/profiles' },

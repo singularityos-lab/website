@@ -15,6 +15,7 @@ by a remote, and each screen connected to the computer can behave in its own way
 | **Tablet** | Apps full screen, a home with the dock, a swipe up to go home, the top bar pulled down with a finger, and a divider to put two apps side by side. |
 | **Phone** | A paged home screen, the home pill, the notification shade and a stacked layout. See [Sinty OS on phones](/docs/os/mobile/). |
 | **TV** | A home built for a remote and a sofa, apps full screen, focus you move with the arrow keys. See [Singularity on a TV](/docs/tv/). |
+| **Watch** | A watch face, an apps grid and a quick settings shade. Developer preview. See [Singularity on a watch](/docs/watch/). |
 
 Apps follow the screen they are on: a window moved from the monitor to the TV
 takes the TV layout as soon as it arrives.
@@ -24,7 +25,8 @@ takes the TV layout as soon as it arrives.
 By default every screen is **Automatic**. Singularity measures the diagonal of
 the screen:
 
-- below 7.5 inches it behaves as a **phone**;
+- below 2.2 inches it behaves as a **watch**;
+- below 7.5 inches as a **phone**;
 - the built-in screen of a laptop or a computer is a **desktop**;
 - another screen below 13.5 inches is a **tablet**;
 - an HDMI screen of 32 inches or more is a **TV**;
