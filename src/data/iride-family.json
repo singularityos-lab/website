@@ -1,0 +1,1442 @@
+{
+  "groups": [
+    {
+      "title": "Apps",
+      "icons": [
+        {
+          "id": "atelier",
+          "name": "Atelier"
+        },
+        {
+          "id": "authenticator",
+          "name": "Authenticator"
+        },
+        {
+          "id": "backups",
+          "name": "Backups"
+        },
+        {
+          "id": "barcode",
+          "name": "Barcode"
+        },
+        {
+          "id": "browser",
+          "name": "Browser"
+        },
+        {
+          "id": "calculator",
+          "name": "Calculator"
+        },
+        {
+          "id": "calendar",
+          "name": "Calendar"
+        },
+        {
+          "id": "camera-tracciati",
+          "name": "Camera"
+        },
+        {
+          "id": "characters",
+          "name": "Characters"
+        },
+        {
+          "id": "clock",
+          "name": "Clock"
+        },
+        {
+          "id": "colorpicker",
+          "name": "Color Picker"
+        },
+        {
+          "id": "connections",
+          "name": "Connections"
+        },
+        {
+          "id": "contacts",
+          "name": "Contacts"
+        },
+        {
+          "id": "database",
+          "name": "Database"
+        },
+        {
+          "id": "accessories-dictionary",
+          "name": "Dictionary"
+        },
+        {
+          "id": "disks",
+          "name": "Disks"
+        },
+        {
+          "id": "draw",
+          "name": "Draw"
+        },
+        {
+          "id": "drivewriter",
+          "name": "Drive Writer"
+        },
+        {
+          "id": "edit",
+          "name": "Edit"
+        },
+        {
+          "id": "applications-engineering",
+          "name": "Engineering"
+        },
+        {
+          "id": "fediverse",
+          "name": "Fediverse"
+        },
+        {
+          "id": "files",
+          "name": "Files"
+        },
+        {
+          "id": "fonts",
+          "name": "Fonts"
+        },
+        {
+          "id": "formula",
+          "name": "Formula"
+        },
+        {
+          "id": "git",
+          "name": "Git"
+        },
+        {
+          "id": "help",
+          "name": "Help"
+        },
+        {
+          "id": "installer",
+          "name": "Installer"
+        },
+        {
+          "id": "leafs",
+          "name": "Leafs"
+        },
+        {
+          "id": "ledstudio",
+          "name": "LED Studio"
+        },
+        {
+          "id": "lettere",
+          "name": "Lettere"
+        },
+        {
+          "id": "logs",
+          "name": "Logs"
+        },
+        {
+          "id": "machines",
+          "name": "Machines"
+        },
+        {
+          "id": "maps-tracciati",
+          "name": "Maps"
+        },
+        {
+          "id": "messages",
+          "name": "Messages"
+        },
+        {
+          "id": "monitor",
+          "name": "Monitor"
+        },
+        {
+          "id": "montage",
+          "name": "Montage"
+        },
+        {
+          "id": "music",
+          "name": "Music"
+        },
+        {
+          "id": "nearby",
+          "name": "Nearby"
+        },
+        {
+          "id": "news",
+          "name": "News"
+        },
+        {
+          "id": "notes",
+          "name": "Notes"
+        },
+        {
+          "id": "passwords",
+          "name": "Passwords"
+        },
+        {
+          "id": "phone",
+          "name": "Phone"
+        },
+        {
+          "id": "photos",
+          "name": "Photos"
+        },
+        {
+          "id": "podcasts",
+          "name": "Podcasts"
+        },
+        {
+          "id": "printers",
+          "name": "Printers"
+        },
+        {
+          "id": "publish",
+          "name": "Publish"
+        },
+        {
+          "id": "qrcodes",
+          "name": "QR Codes"
+        },
+        {
+          "id": "radio",
+          "name": "Radio"
+        },
+        {
+          "id": "reader",
+          "name": "Reader"
+        },
+        {
+          "id": "scanner",
+          "name": "Scanner"
+        },
+        {
+          "id": "settings",
+          "name": "Settings"
+        },
+        {
+          "id": "sinty",
+          "name": "Sinty"
+        },
+        {
+          "id": "slides",
+          "name": "Slides"
+        },
+        {
+          "id": "spreadsheet",
+          "name": "Spreadsheet"
+        },
+        {
+          "id": "store",
+          "name": "Store"
+        },
+        {
+          "id": "tablet",
+          "name": "Tablet"
+        },
+        {
+          "id": "tasks",
+          "name": "Tasks"
+        },
+        {
+          "id": "tour",
+          "name": "Tour"
+        },
+        {
+          "id": "translate",
+          "name": "Translate"
+        },
+        {
+          "id": "usage",
+          "name": "Usage"
+        },
+        {
+          "id": "ush-penguin",
+          "name": "ush"
+        },
+        {
+          "id": "vector",
+          "name": "Vector"
+        },
+        {
+          "id": "videos",
+          "name": "Videos"
+        },
+        {
+          "id": "voice",
+          "name": "Voice"
+        },
+        {
+          "id": "watch",
+          "name": "Watch"
+        },
+        {
+          "id": "wave",
+          "name": "Wave"
+        },
+        {
+          "id": "weather",
+          "name": "Weather"
+        },
+        {
+          "id": "web-browser",
+          "name": "Web Browser"
+        },
+        {
+          "id": "workspaces",
+          "name": "Workspaces"
+        },
+        {
+          "id": "write",
+          "name": "Write"
+        }
+      ]
+    },
+    {
+      "title": "Folders and places",
+      "icons": [
+        {
+          "id": "folder",
+          "name": "Folder"
+        },
+        {
+          "id": "folder-cloud",
+          "name": "Folder cloud"
+        },
+        {
+          "id": "folder-development",
+          "name": "Folder development"
+        },
+        {
+          "id": "folder-documents",
+          "name": "Folder documents"
+        },
+        {
+          "id": "folder-download",
+          "name": "Folder download"
+        },
+        {
+          "id": "folder-education",
+          "name": "Folder education"
+        },
+        {
+          "id": "folder-invoices",
+          "name": "Folder invoices"
+        },
+        {
+          "id": "folder-music",
+          "name": "Folder music"
+        },
+        {
+          "id": "folder-open",
+          "name": "Folder open"
+        },
+        {
+          "id": "folder-pictures",
+          "name": "Folder pictures"
+        },
+        {
+          "id": "folder-publicshare",
+          "name": "Folder publicshare"
+        },
+        {
+          "id": "folder-remote",
+          "name": "Folder remote"
+        },
+        {
+          "id": "folder-templates",
+          "name": "Folder templates"
+        },
+        {
+          "id": "folder-videos",
+          "name": "Folder videos"
+        },
+        {
+          "id": "folder-website",
+          "name": "Folder website"
+        },
+        {
+          "id": "inode-symlink",
+          "name": "Link"
+        },
+        {
+          "id": "user-bookmarks",
+          "name": "User bookmarks"
+        },
+        {
+          "id": "user-desktop",
+          "name": "User desktop"
+        },
+        {
+          "id": "user-home",
+          "name": "User home"
+        },
+        {
+          "id": "user-trash",
+          "name": "User trash"
+        },
+        {
+          "id": "user-trash-full",
+          "name": "User trash full"
+        }
+      ]
+    },
+    {
+      "title": "Files",
+      "icons": [
+        {
+          "id": "application-x-addon",
+          "name": "Addon"
+        },
+        {
+          "id": "x-office-addressbook",
+          "name": "Addressbook"
+        },
+        {
+          "id": "audio-x-generic",
+          "name": "Audio file"
+        },
+        {
+          "id": "x-office-calendar",
+          "name": "Calendar"
+        },
+        {
+          "id": "application-x-desktop",
+          "name": "Desktop"
+        },
+        {
+          "id": "x-office-document",
+          "name": "Document"
+        },
+        {
+          "id": "x-office-drawing",
+          "name": "Drawing"
+        },
+        {
+          "id": "application-x-executable",
+          "name": "Executable"
+        },
+        {
+          "id": "font-x-generic",
+          "name": "Font file"
+        },
+        {
+          "id": "application-x-generic",
+          "name": "Generic"
+        },
+        {
+          "id": "image-x-generic",
+          "name": "Image file"
+        },
+        {
+          "id": "x-office-inventory",
+          "name": "Inventory"
+        },
+        {
+          "id": "x-office-invoice",
+          "name": "Invoice"
+        },
+        {
+          "id": "application-mathml-xml",
+          "name": "MathML XML"
+        },
+        {
+          "id": "package-x-generic",
+          "name": "Package file"
+        },
+        {
+          "id": "application-pdf",
+          "name": "PDF"
+        },
+        {
+          "id": "x-office-presentation",
+          "name": "Presentation"
+        },
+        {
+          "id": "application-x-sharedlib",
+          "name": "Sharedlib"
+        },
+        {
+          "id": "x-office-spreadsheet",
+          "name": "Spreadsheet"
+        },
+        {
+          "id": "application-vnd-sqlite3",
+          "name": "SQLite"
+        },
+        {
+          "id": "text-x-generic",
+          "name": "Text file"
+        },
+        {
+          "id": "text-x-generic-template",
+          "name": "Text file template"
+        },
+        {
+          "id": "text-html",
+          "name": "Text HTML"
+        },
+        {
+          "id": "text-x-preview",
+          "name": "Text preview"
+        },
+        {
+          "id": "text-x-script",
+          "name": "Text script"
+        },
+        {
+          "id": "video-x-generic",
+          "name": "Video file"
+        }
+      ]
+    },
+    {
+      "title": "Weather and alerts",
+      "icons": [
+        {
+          "id": "aegis-cold",
+          "name": "Aegis cold"
+        },
+        {
+          "id": "aegis-earthquake",
+          "name": "Aegis earthquake"
+        },
+        {
+          "id": "aegis-fire",
+          "name": "Aegis fire"
+        },
+        {
+          "id": "aegis-flood",
+          "name": "Aegis flood"
+        },
+        {
+          "id": "aegis-health",
+          "name": "Aegis health"
+        },
+        {
+          "id": "aegis-heat",
+          "name": "Aegis heat"
+        },
+        {
+          "id": "aegis-landslide",
+          "name": "Aegis landslide"
+        },
+        {
+          "id": "aegis-national",
+          "name": "Aegis national"
+        },
+        {
+          "id": "aegis-other",
+          "name": "Aegis other"
+        },
+        {
+          "id": "aegis-security",
+          "name": "Aegis security"
+        },
+        {
+          "id": "aegis-snow",
+          "name": "Aegis snow"
+        },
+        {
+          "id": "aegis-storm",
+          "name": "Aegis storm"
+        },
+        {
+          "id": "aegis-tsunami",
+          "name": "Aegis tsunami"
+        },
+        {
+          "id": "aegis-volcano",
+          "name": "Aegis volcano"
+        },
+        {
+          "id": "aegis-wind",
+          "name": "Aegis wind"
+        },
+        {
+          "id": "weather-clear",
+          "name": "Weather clear"
+        },
+        {
+          "id": "weather-clear-night",
+          "name": "Weather clear night"
+        },
+        {
+          "id": "weather-few-clouds",
+          "name": "Weather few clouds"
+        },
+        {
+          "id": "weather-few-clouds-night",
+          "name": "Weather few clouds night"
+        },
+        {
+          "id": "weather-fog",
+          "name": "Weather fog"
+        },
+        {
+          "id": "weather-overcast",
+          "name": "Weather overcast"
+        },
+        {
+          "id": "weather-severe-alert",
+          "name": "Weather severe alert"
+        },
+        {
+          "id": "weather-showers",
+          "name": "Weather showers"
+        },
+        {
+          "id": "weather-showers-scattered",
+          "name": "Weather showers scattered"
+        },
+        {
+          "id": "weather-snow",
+          "name": "Weather snow"
+        },
+        {
+          "id": "weather-storm",
+          "name": "Weather storm"
+        },
+        {
+          "id": "weather-windy",
+          "name": "Weather windy"
+        }
+      ]
+    },
+    {
+      "title": "Accounts and sharing",
+      "icons": [
+        {
+          "id": "singularity-account-caldav",
+          "name": "Account CalDAV"
+        },
+        {
+          "id": "singularity-account-exchange",
+          "name": "Account exchange"
+        },
+        {
+          "id": "singularity-account-generic",
+          "name": "Account generic"
+        },
+        {
+          "id": "singularity-account-google",
+          "name": "Account google"
+        },
+        {
+          "id": "singularity-account-listening",
+          "name": "Account listening"
+        },
+        {
+          "id": "singularity-account-mail",
+          "name": "Account mail"
+        },
+        {
+          "id": "singularity-account-media-server",
+          "name": "Account media server"
+        },
+        {
+          "id": "singularity-account-microsoft",
+          "name": "Account microsoft"
+        },
+        {
+          "id": "singularity-account-music-service",
+          "name": "Account music service"
+        },
+        {
+          "id": "singularity-account-nextcloud",
+          "name": "Account nextcloud"
+        },
+        {
+          "id": "singularity-account-owncloud",
+          "name": "Account ownCloud"
+        },
+        {
+          "id": "singularity-account-secure-mail",
+          "name": "Account secure mail"
+        },
+        {
+          "id": "singularity-account-webdav",
+          "name": "Account WebDAV"
+        },
+        {
+          "id": "accounts-listening",
+          "name": "Accounts listening"
+        },
+        {
+          "id": "accounts-media-server",
+          "name": "Accounts media server"
+        },
+        {
+          "id": "accounts-music-service",
+          "name": "Accounts music service"
+        },
+        {
+          "id": "avatar-default",
+          "name": "Avatar default"
+        },
+        {
+          "id": "mail-archive",
+          "name": "Mail archive"
+        },
+        {
+          "id": "mail-attachment",
+          "name": "Mail attachment"
+        },
+        {
+          "id": "mail-mark-read",
+          "name": "Mail mark read"
+        },
+        {
+          "id": "mail-send",
+          "name": "Mail send"
+        },
+        {
+          "id": "singularity-share-clipboard",
+          "name": "Share clipboard"
+        },
+        {
+          "id": "singularity-share-link",
+          "name": "Share link"
+        },
+        {
+          "id": "singularity-share-message",
+          "name": "Share message"
+        },
+        {
+          "id": "singularity-share-open-with",
+          "name": "Share open with"
+        },
+        {
+          "id": "singularity-share-send-files",
+          "name": "Share send files"
+        },
+        {
+          "id": "singularity-share-upload",
+          "name": "Share upload"
+        }
+      ]
+    },
+    {
+      "title": "Devices",
+      "icons": [
+        {
+          "id": "audio-headphones",
+          "name": "Audio headphones"
+        },
+        {
+          "id": "audio-headset",
+          "name": "Audio headset"
+        },
+        {
+          "id": "audio-input-microphone",
+          "name": "Audio input microphone"
+        },
+        {
+          "id": "audio-speakers",
+          "name": "Audio speakers"
+        },
+        {
+          "id": "battery-missing",
+          "name": "Battery missing"
+        },
+        {
+          "id": "camera-photo",
+          "name": "Camera photo"
+        },
+        {
+          "id": "camera-video",
+          "name": "Camera video"
+        },
+        {
+          "id": "camera-web",
+          "name": "Camera web"
+        },
+        {
+          "id": "computer",
+          "name": "Computer"
+        },
+        {
+          "id": "computer-embedded",
+          "name": "Computer embedded"
+        },
+        {
+          "id": "computer-laptop",
+          "name": "Computer laptop"
+        },
+        {
+          "id": "device-phone",
+          "name": "Device phone"
+        },
+        {
+          "id": "drive-harddisk",
+          "name": "Drive harddisk"
+        },
+        {
+          "id": "drive-multidisk",
+          "name": "Drive multidisk"
+        },
+        {
+          "id": "drive-removable-media",
+          "name": "Drive removable media"
+        },
+        {
+          "id": "input-gaming",
+          "name": "Input gaming"
+        },
+        {
+          "id": "input-keyboard",
+          "name": "Input keyboard"
+        },
+        {
+          "id": "input-mouse",
+          "name": "Input mouse"
+        },
+        {
+          "id": "input-tablet",
+          "name": "Input tablet"
+        },
+        {
+          "id": "media-flash",
+          "name": "Media flash"
+        },
+        {
+          "id": "media-optical",
+          "name": "Media optical"
+        },
+        {
+          "id": "network-error",
+          "name": "Network error"
+        },
+        {
+          "id": "network-server",
+          "name": "Network server"
+        },
+        {
+          "id": "network-wireless",
+          "name": "Network wireless"
+        },
+        {
+          "id": "network-wireless-hotspot",
+          "name": "Network wireless hotspot"
+        },
+        {
+          "id": "network-workgroup",
+          "name": "Network workgroup"
+        },
+        {
+          "id": "printer",
+          "name": "Printer"
+        },
+        {
+          "id": "printer-3d",
+          "name": "Printer 3D"
+        },
+        {
+          "id": "printer-inkjet",
+          "name": "Printer inkjet"
+        },
+        {
+          "id": "printer-label",
+          "name": "Printer label"
+        },
+        {
+          "id": "printer-laser",
+          "name": "Printer laser"
+        },
+        {
+          "id": "printer-network",
+          "name": "Printer network"
+        },
+        {
+          "id": "printer-pdf",
+          "name": "Printer PDF"
+        },
+        {
+          "id": "printer-scanner",
+          "name": "Printer scanner"
+        },
+        {
+          "id": "video-display",
+          "name": "Video display"
+        },
+        {
+          "id": "video-television",
+          "name": "Video television"
+        }
+      ]
+    },
+    {
+      "title": "System",
+      "icons": [
+        {
+          "id": "auth-fingerprint",
+          "name": "Auth fingerprint"
+        },
+        {
+          "id": "singularity-autostart",
+          "name": "Autostart"
+        },
+        {
+          "id": "singularity-bluetooth",
+          "name": "Bluetooth"
+        },
+        {
+          "id": "dialog-error",
+          "name": "Dialog error"
+        },
+        {
+          "id": "dialog-information",
+          "name": "Dialog information"
+        },
+        {
+          "id": "dialog-password",
+          "name": "Dialog password"
+        },
+        {
+          "id": "dialog-question",
+          "name": "Dialog question"
+        },
+        {
+          "id": "dialog-warning",
+          "name": "Dialog warning"
+        },
+        {
+          "id": "singularity-dictation",
+          "name": "Dictation"
+        },
+        {
+          "id": "singularity-dynamic-wallpaper",
+          "name": "Dynamic wallpaper"
+        },
+        {
+          "id": "emblem-ok",
+          "name": "Emblem ok"
+        },
+        {
+          "id": "emblem-shared",
+          "name": "Emblem shared"
+        },
+        {
+          "id": "emblem-synchronizing",
+          "name": "Emblem synchronizing"
+        },
+        {
+          "id": "singularity-emoji",
+          "name": "Emoji"
+        },
+        {
+          "id": "singularity-equalizer",
+          "name": "Equalizer"
+        },
+        {
+          "id": "singularity-firmware",
+          "name": "Firmware"
+        },
+        {
+          "id": "singularity-gestures",
+          "name": "Gestures"
+        },
+        {
+          "id": "singularity-hot-corners",
+          "name": "Hot corners"
+        },
+        {
+          "id": "singularity-input-methods",
+          "name": "Input methods"
+        },
+        {
+          "id": "singularity-lyrics",
+          "name": "Lyrics"
+        },
+        {
+          "id": "singularity-music-album",
+          "name": "Music album"
+        },
+        {
+          "id": "singularity-music-artist",
+          "name": "Music artist"
+        },
+        {
+          "id": "singularity-music-liked",
+          "name": "Music liked"
+        },
+        {
+          "id": "singularity-music-playlist",
+          "name": "Music playlist"
+        },
+        {
+          "id": "singularity-music-queue",
+          "name": "Music queue"
+        },
+        {
+          "id": "singularity-music-recent",
+          "name": "Music recent"
+        },
+        {
+          "id": "singularity-music-songs",
+          "name": "Music songs"
+        },
+        {
+          "id": "preferences-system-notifications",
+          "name": "Notifications"
+        },
+        {
+          "id": "singularity-parental-controls",
+          "name": "Parental controls"
+        },
+        {
+          "id": "preferences-system-privacy",
+          "name": "Privacy"
+        },
+        {
+          "id": "preferences-desktop-remote-desktop",
+          "name": "Remote desktop"
+        },
+        {
+          "id": "singularity-screen-reader",
+          "name": "Screen reader"
+        },
+        {
+          "id": "singularity-screen-time",
+          "name": "Screen time"
+        },
+        {
+          "id": "security-high",
+          "name": "Security high"
+        },
+        {
+          "id": "singularity-shortcuts",
+          "name": "Shortcuts"
+        },
+        {
+          "id": "sinty-key",
+          "name": "Sinty key"
+        },
+        {
+          "id": "sinty-key-copy",
+          "name": "Sinty key copy"
+        },
+        {
+          "id": "sinty-key-guest",
+          "name": "Sinty key guest"
+        },
+        {
+          "id": "sinty-key-locked",
+          "name": "Sinty key locked"
+        },
+        {
+          "id": "sinty-key-new",
+          "name": "Sinty key new"
+        },
+        {
+          "id": "sinty-key-open",
+          "name": "Sinty key open"
+        },
+        {
+          "id": "sinty-key-restore",
+          "name": "Sinty key restore"
+        },
+        {
+          "id": "sinty-key-startup",
+          "name": "Sinty key startup"
+        },
+        {
+          "id": "singularity-snap-layouts",
+          "name": "Snap layouts"
+        },
+        {
+          "id": "system-lock-screen",
+          "name": "System lock screen"
+        },
+        {
+          "id": "system-log-out",
+          "name": "System log out"
+        },
+        {
+          "id": "system-reboot",
+          "name": "System reboot"
+        },
+        {
+          "id": "system-run",
+          "name": "System run"
+        },
+        {
+          "id": "system-search",
+          "name": "System search"
+        },
+        {
+          "id": "system-shutdown",
+          "name": "System shutdown"
+        },
+        {
+          "id": "system-users",
+          "name": "System users"
+        },
+        {
+          "id": "singularity-text-recognition",
+          "name": "Text recognition"
+        },
+        {
+          "id": "singularity-updates",
+          "name": "Updates"
+        },
+        {
+          "id": "singularity-vpn",
+          "name": "VPN"
+        }
+      ]
+    },
+    {
+      "title": "Inside the apps",
+      "icons": [
+        {
+          "id": "atelier-new-automotive",
+          "name": "Atelier new automotive"
+        },
+        {
+          "id": "atelier-new-garment",
+          "name": "Atelier new garment"
+        },
+        {
+          "id": "atelier-new-leather",
+          "name": "Atelier new leather"
+        },
+        {
+          "id": "atelier-new-product",
+          "name": "Atelier new product"
+        },
+        {
+          "id": "browser-private",
+          "name": "Browser private"
+        },
+        {
+          "id": "call-start",
+          "name": "Call start"
+        },
+        {
+          "id": "changes-prevent",
+          "name": "Changes prevent"
+        },
+        {
+          "id": "checkbox-checked",
+          "name": "Checkbox checked"
+        },
+        {
+          "id": "content-loading",
+          "name": "Content loading"
+        },
+        {
+          "id": "db-connection",
+          "name": "Database connection"
+        },
+        {
+          "id": "db-run",
+          "name": "Database run"
+        },
+        {
+          "id": "db-table",
+          "name": "Database table"
+        },
+        {
+          "id": "document-edit",
+          "name": "Document edit"
+        },
+        {
+          "id": "document-new",
+          "name": "Document new"
+        },
+        {
+          "id": "document-open-recent",
+          "name": "Document open recent"
+        },
+        {
+          "id": "draw-paint",
+          "name": "Draw paint"
+        },
+        {
+          "id": "edit-clear-all",
+          "name": "Edit clear all"
+        },
+        {
+          "id": "edit-paste",
+          "name": "Edit paste"
+        },
+        {
+          "id": "find-location",
+          "name": "Find location"
+        },
+        {
+          "id": "image-loading",
+          "name": "Image loading"
+        },
+        {
+          "id": "image-missing",
+          "name": "Image missing"
+        },
+        {
+          "id": "insert-image",
+          "name": "Insert image"
+        },
+        {
+          "id": "insert-link",
+          "name": "Insert link"
+        },
+        {
+          "id": "keyframe",
+          "name": "Keyframe"
+        },
+        {
+          "id": "leafs-devel",
+          "name": "Leafs devel"
+        },
+        {
+          "id": "list-add",
+          "name": "List add"
+        },
+        {
+          "id": "machines-snapshot",
+          "name": "Machines snapshot"
+        },
+        {
+          "id": "media-playlist-repeat",
+          "name": "Media playlist repeat"
+        },
+        {
+          "id": "media-record",
+          "name": "Media record"
+        },
+        {
+          "id": "notes-checklist",
+          "name": "Notes checklist"
+        },
+        {
+          "id": "notes-tag",
+          "name": "Notes tag"
+        },
+        {
+          "id": "object-select",
+          "name": "Object select"
+        },
+        {
+          "id": "applets-screenshooter",
+          "name": "Screenshooter"
+        },
+        {
+          "id": "sheet-comment",
+          "name": "Sheet comment"
+        },
+        {
+          "id": "tab-new",
+          "name": "Tab new"
+        },
+        {
+          "id": "video-trim",
+          "name": "Video trim"
+        },
+        {
+          "id": "view-app-grid",
+          "name": "View app grid"
+        },
+        {
+          "id": "view-grid",
+          "name": "View grid"
+        },
+        {
+          "id": "view-restore",
+          "name": "View restore"
+        },
+        {
+          "id": "view-reveal",
+          "name": "View reveal"
+        },
+        {
+          "id": "write-comments",
+          "name": "Write comments"
+        },
+        {
+          "id": "write-outline",
+          "name": "Write outline"
+        },
+        {
+          "id": "write-track-changes",
+          "name": "Write track changes"
+        }
+      ]
+    }
+  ],
+  "cursors": [
+    {
+      "id": "X_cursor",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "alias",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "all-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "all-scroll",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "cell",
+      "press": true,
+      "loop": false
+    },
+    {
+      "id": "col-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "context-menu",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "copy",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "crosshair",
+      "press": true,
+      "loop": false
+    },
+    {
+      "id": "default",
+      "press": true,
+      "loop": false
+    },
+    {
+      "id": "e-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "ew-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "grab",
+      "press": true,
+      "loop": false
+    },
+    {
+      "id": "grabbing",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "help",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "move",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "n-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "ne-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "nesw-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "no-drop",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "not-allowed",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "ns-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "nw-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "nwse-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "pointer",
+      "press": true,
+      "loop": false
+    },
+    {
+      "id": "progress",
+      "press": false,
+      "loop": true
+    },
+    {
+      "id": "row-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "s-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "se-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "sw-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "text",
+      "press": true,
+      "loop": false
+    },
+    {
+      "id": "vertical-text",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "w-resize",
+      "press": false,
+      "loop": false
+    },
+    {
+      "id": "wait",
+      "press": false,
+      "loop": true
+    },
+    {
+      "id": "zoom-in",
+      "press": true,
+      "loop": false
+    },
+    {
+      "id": "zoom-out",
+      "press": true,
+      "loop": false
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+---
+import Base from '../../layouts/Base.astro';
+import family from '../../data/iride-family.json';
+import neon from '../../data/iride-title.json';
+
+const title = 'Iride, an icon format that knows how to move';
+const description = 'I made an icon format for Sinty OS and redrew the whole family with it. Here is every icon, moved by the real library, and every animated cursor.';
+const total = family.groups.reduce((n, g) => n + g.icons.length, 0);
+const hero = ['files', 'store', 'calendar', 'music', 'camera-tracciati', 'weather', 'photos', 'maps-tracciati', 'settings', 'lettere', 'clock', 'phone'];
+const picks = [['files', 'Files'], ['calendar', 'Calendar'], ['store', 'Store'], ['camera-tracciati', 'Camera'], ['music', 'Music'], ['weather', 'Weather']];
+const sizes = [16, 24, 32, 48, 64, 96, 128];
+const names = Object.fromEntries(family.groups.flatMap((g) => g.icons.map((i) => [i.id, i.name])));
+---
+
+<Base title={`${title} - Singularity OS`} description={description}>
+  <article class="ir">
+    <header class="ir-hero">
+      <a class="ir-back" href="/news">Back to news</a>
+      <h1>
+        <span class="ir-word">Iride</span>
+        <button type="button" class="ir-play ir-neon" data-neon aria-label="Play the title" style={`aspect-ratio: ${neon.width} / ${neon.side}; width: min(${Math.round((neon.width * 256) / neon.side)}px, 100%)`}>
+          {neon.letters.map((l) => (
+            <canvas data-letter={l.id} data-at={l.at} style={`left: ${(100 * l.x) / neon.width}%; width: ${(100 * neon.side) / neon.width}%`}></canvas>
+          ))}
+        </button>
+      </h1>
+      <p class="ir-sub">An icon format that knows how to move.</p>
+      <div class="ir-sky">
+        {hero.map((id) => (
+          <button type="button" class="ir-play" aria-label={`Play ${names[id]}`}><canvas data-iride={id}></canvas></button>
+        ))}
+      </div>
+    </header>
+
+    <section class="ir-text">
+      <p class="ir-big">I wanted an icon to do what its object does. A calendar turns its page. A camera works its shutter. Then it stops, and it is just an icon again.</p>
+      <p>I could not get that from an SVG, and I did not want a video for every icon. So I wrote Iride, then redrew the family of Sinty OS with it. This page runs libiride, the library of the system, compiled to WebAssembly. It opens real <code>.iride</code> files and draws every icon frame you see. In the gallery the files carry only the sizes this page shows.</p>
+    </section>
+
+    <section class="ir-lab" data-lab>
+      <h2>Take one apart.</h2>
+      <p class="ir-lede">A file holds the pieces of the icon and the path each one takes. The library puts them together frame by frame. Drag the time and stop it anywhere.</p>
+      <div class="ir-picks">
+        {picks.map(([id, name]) => <button type="button" data-pick={id} aria-pressed="false">{name}</button>)}
+      </div>
+      <canvas class="ir-stage" data-stage></canvas>
+      <div class="ir-time">
+        <button type="button" class="btn" data-replay>Play</button>
+        <input type="range" min="0" max="1000" step="1" value="0" aria-label="Time of the motion" />
+        <output>0 ms</output>
+      </div>
+      <h2 class="ir-next">Sharp at the size you use.</h2>
+      <p class="ir-lede">I draw flat SVG layers. The compiler turns them into 36 bitmaps, from 16 to 512 pixels, aligns the body to whole pixels from 32 up and simplifies the smallest sizes. These are the bitmaps inside the file, at one image pixel for each pixel of your screen.</p>
+      <div class="ir-sizes">
+        {sizes.map((s) => <figure><canvas data-size={s}></canvas><figcaption>{s}</figcaption></figure>)}
+      </div>
+    </section>
+
+    <section class="ir-text">
+      <h2>It never gets in your way.</h2>
+      <p>A motion lasts a second at most and half a second in the dock. It plays once, it never delays what you are opening, and it always lands on the still icon. With reduced motion or power saving it does not play at all. Symbolic icons stay still and stay SVG.</p>
+    </section>
+
+    <section class="ir-family" data-family>
+      <h2>The whole family.</h2>
+      <p class="ir-lede">All {total} color icons. Point at one or tap it to play it again.</p>
+      <button type="button" class="btn" data-play-visible>Play what is on screen</button>
+      {family.groups.map((group) => (
+        <div class="ir-group">
+          <h3>{group.title} <span>{group.icons.length}</span></h3>
+          <div class="ir-grid">
+            {group.icons.map((icon) => (
+              <button type="button" class="ir-play ir-item"><canvas data-iride={icon.id}></canvas><span>{icon.name}</span></button>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section class="ir-cursors">
+      <h2>And the pointer joins in.</h2>
+      <p class="ir-lede">I gave all {family.cursors.length} cursors a gesture for when they appear, and the ones you click with a second one for the press. Cursors are not Iride files: Wayland already has an animated format, XCursor, so I used it. These are the frames and timings of the theme.</p>
+      <div class="ir-pointers">
+        {family.cursors.map((c) => (
+          <button type="button" class="ir-play ir-item" data-cursor={c.id} data-press={c.press ? '' : undefined} data-loop={c.loop ? '' : undefined}>
+            <canvas></canvas><span>{c.id}</span>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <footer class="ir-text ir-end">
+      <h2>It is open.</h2>
+      <p>The compiler, the library and the gdk-pixbuf loader are GPL-3.0. The format is young and can still change.</p>
+      <a class="btn btn-solid" href="https://github.com/singularityos-lab/iride">Read the source</a>
+    </footer>
+  </article>
+</Base>
+
+<script>
+  import '../../scripts/iride-article.js';
+</script>
+
+<style>
+  .ir { --wide: min(1180px, calc(100vw - 40px)); overflow-x: clip; }
+  .ir h2 { font-size: clamp(2rem, 5.4vw, 4rem); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 22px; color: var(--hi); text-transform: none; }
+  .ir section, .ir-end { margin: 0 auto; padding: clamp(64px, 11vw, 140px) 20px 0; }
+  .ir button { font: inherit; color: inherit; }
+  .ir-play { padding: 0; border: 0; background: none; cursor: pointer; }
+  .ir button:focus-visible, .ir input:focus-visible { outline: 2px solid var(--hi); outline-offset: 4px; }
+  .ir canvas { display: block; }
+
+  .ir-hero { text-align: center; padding: clamp(40px, 7vw, 90px) 20px 0; }
+  .ir-back { color: var(--text-muted); font-size: 0.8rem; }
+  .ir-hero h1 { margin: 12px 0 0; color: var(--hi); font-size: clamp(4rem, 14vw, 10rem); font-weight: 600; line-height: 1; letter-spacing: -0.02em; text-transform: none; }
+  .ir-word { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .ir-hero h1:has([data-failed]) .ir-word { position: static; width: auto; height: auto; overflow: visible; clip-path: none; font-style: italic; }
+  .ir-neon { position: relative; display: block; margin: 0 auto; }
+  .ir-neon[data-failed] { display: none; }
+  .ir-neon canvas { position: absolute; top: 0; height: 100%; pointer-events: none; }
+  .ir-sub { color: var(--text-main); font-size: clamp(1.1rem, 2.4vw, 1.7rem); font-weight: 300; }
+  .ir-sky { max-width: 1040px; margin: clamp(36px, 6vw, 72px) auto 0; display: grid; grid-template-columns: repeat(6, 128px); justify-content: center; gap: 36px; }
+  .ir-sky canvas { width: 128px; height: 128px; }
+
+  .ir-text { max-width: 840px; }
+  .ir-text p { color: var(--text-muted); font-size: 1.08rem; line-height: 1.75; margin-bottom: 22px; }
+  .ir-text .ir-big { color: var(--text-main); font-size: clamp(1.4rem, 3vw, 2.1rem); font-weight: 300; line-height: 1.4; }
+  .ir-lede { max-width: 720px; color: var(--text-muted); font-size: 1.08rem; line-height: 1.7; margin-bottom: 28px; }
+
+  .ir-lab, .ir-family, .ir-cursors { width: var(--wide); padding-left: 0 !important; padding-right: 0 !important; }
+  .ir-picks { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ir-picks button { min-height: 44px; padding: 0 18px; border: 1px solid var(--border-color); background: none; cursor: pointer; color: var(--text-muted); }
+  .ir-picks button[aria-pressed='true'] { color: var(--hi); border-color: var(--hi); }
+  .ir-stage { width: 256px; height: 256px; margin: 64px auto 44px; }
+  .ir-time { display: flex; align-items: center; gap: 18px; max-width: 720px; margin: 0 auto; }
+  .ir-time input { flex: 1; min-width: 0; height: 44px; accent-color: var(--hi); }
+  .ir-time output { width: 5.5em; color: var(--text-muted); font-family: var(--font-mono); text-align: right; }
+  .ir .ir-next { margin-top: clamp(64px, 11vw, 140px); }
+  .ir-sizes { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 30px; min-height: 150px; }
+  .ir-sizes figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .ir-sizes figcaption { color: var(--text-muted); font-family: var(--font-mono); font-size: 0.78rem; }
+
+  .ir-group h3 { margin: 64px 0 24px; color: var(--hi); font-size: 1.2rem; font-weight: 500; text-transform: none; }
+  .ir-group h3 span { color: var(--text-muted); margin-left: 8px; font-weight: 300; }
+  .ir-grid, .ir-pointers { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 26px 10px; }
+  .ir-item { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 10px; min-width: 0; }
+  .ir-item canvas { width: 64px; height: 64px; }
+  .ir-item span { max-width: 100%; color: var(--text-muted); font-size: 0.74rem; line-height: 1.3; overflow-wrap: anywhere; }
+  .ir-pointers canvas { width: 48px; height: 48px; }
+
+  .ir-end { padding-bottom: 100px; }
+
+  @media (max-width: 1040px) {
+    .ir-sky { grid-template-columns: repeat(4, 96px); gap: 28px; }
+    .ir-sky canvas { width: 96px; height: 96px; }
+  }
+  @media (max-width: 520px) {
+    .ir-sky { grid-template-columns: repeat(3, 80px); gap: 22px; }
+    .ir-sky canvas { width: 80px; height: 80px; }
+    .ir-grid, .ir-pointers { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 4px; }
+    .ir-sizes { gap: 18px; }
+  }
+</style>
