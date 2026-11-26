@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470">
+<rect width="1200" height="470" fill="#000"/>
+<g font-family="Montserrat, Inter, sans-serif" fill="#e0e0e0" font-size="17">
+<text x="60" y="52" font-weight="600" font-size="22">Calculator, median of six cold starts each</text>
+<text x="60" y="80" fill="#888" font-size="15">Same machine, alternated runs, bars to scale.</text>
+<text x="60" y="150" font-weight="600">First paint</text>
+<text x="60" y="176" fill="#888" font-size="15">before</text>
+<rect x="200" y="158" width="454" height="24" rx="6" fill="#666"/>
+<text x="668" y="177" font-size="15">227 ms</text>
+<text x="60" y="212" fill="#888" font-size="15">after</text>
+<rect x="200" y="194" width="388" height="24" rx="6" fill="#3c7fe8"/>
+<text x="602" y="213" font-size="15">194 ms</text>
+<text x="60" y="290" font-weight="600">Library start-up</text>
+<text x="60" y="316" fill="#888" font-size="15">before</text>
+<rect x="200" y="298" width="234" height="24" rx="6" fill="#666"/>
+<text x="448" y="317" font-size="15">117 ms</text>
+<text x="60" y="352" fill="#888" font-size="15">after</text>
+<rect x="200" y="334" width="170" height="24" rx="6" fill="#3c7fe8"/>
+<text x="384" y="353" font-size="15">85 ms</text>
+<text x="60" y="420" fill="#888" font-size="15">The change: the 221 KB stylesheet is parsed once, with the right mode and accent, instead of two or three times.</text>
+</g>
+</svg>

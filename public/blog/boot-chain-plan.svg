@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640">
+<rect width="1200" height="640" fill="#000"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#888"/></marker></defs>
+<g font-family="Montserrat, Inter, sans-serif" fill="#e0e0e0" font-size="17">
+<text x="60" y="52" font-weight="600" font-size="22">The start-up plan of Photos</text>
+<text x="60" y="80" fill="#888" font-size="15">Arrows are dependencies. Each column ends at the milestone its tasks reach.</text>
+<line x1="330" y1="110" x2="330" y2="495" stroke="#333" stroke-width="2" stroke-dasharray="6 6"/>
+<line x1="620" y1="110" x2="620" y2="495" stroke="#333" stroke-width="2" stroke-dasharray="6 6"/>
+<line x1="910" y1="110" x2="910" y2="495" stroke="#333" stroke-width="2" stroke-dasharray="6 6"/>
+<text x="195" y="132" text-anchor="middle" fill="#888" font-size="15">prepare</text>
+<text x="475" y="132" text-anchor="middle" fill="#888" font-size="15">shell</text>
+<text x="765" y="132" text-anchor="middle" fill="#888" font-size="15">content</text>
+<text x="1055" y="132" text-anchor="middle" fill="#888" font-size="15">deferred</text>
+<rect x="80" y="170" width="230" height="64" rx="14" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+<text x="195" y="198" text-anchor="middle" font-weight="600">library</text>
+<text x="195" y="221" text-anchor="middle" font-size="14" fill="#888">main thread</text>
+<rect x="80" y="300" width="230" height="64" rx="14" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+<text x="195" y="328" text-anchor="middle" font-weight="600">catalog-open</text>
+<text x="195" y="351" text-anchor="middle" font-size="14" fill="#888">main thread</text>
+<rect x="360" y="170" width="230" height="64" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#e0e0e0" stroke-width="2"/>
+<text x="475" y="198" text-anchor="middle" font-weight="600">window</text>
+<text x="475" y="221" text-anchor="middle" font-size="14" fill="#888">main thread</text>
+<rect x="650" y="300" width="230" height="64" rx="14" fill="none" stroke="#e0e0e0" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="765" y="328" text-anchor="middle" font-weight="600">catalog-read</text>
+<text x="765" y="351" text-anchor="middle" font-size="14" fill="#888">worker, heavy I/O</text>
+<rect x="650" y="170" width="230" height="64" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#e0e0e0" stroke-width="2"/>
+<text x="765" y="198" text-anchor="middle" font-weight="600">content</text>
+<text x="765" y="221" text-anchor="middle" font-size="14" fill="#888">main thread</text>
+<rect x="940" y="170" width="230" height="64" rx="14" fill="none" stroke="#666" stroke-width="2"/>
+<text x="1055" y="198" text-anchor="middle" font-weight="600" fill="#aaa">library-monitor</text>
+<text x="1055" y="221" text-anchor="middle" font-size="14" fill="#777">background</text>
+<rect x="940" y="300" width="230" height="64" rx="14" fill="none" stroke="#666" stroke-width="2"/>
+<text x="1055" y="328" text-anchor="middle" font-weight="600" fill="#aaa">index</text>
+<text x="1055" y="351" text-anchor="middle" font-size="14" fill="#777">background</text>
+<line x1="310" y1="202" x2="356" y2="202" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<line x1="310" y1="320" x2="356" y2="226" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<line x1="310" y1="332" x2="646" y2="332" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<path d="M195 234 C 195 270, 600 270, 646 318" fill="none" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<line x1="590" y1="202" x2="646" y2="202" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<line x1="765" y1="300" x2="765" y2="238" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<line x1="880" y1="202" x2="936" y2="202" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<path d="M880 214 C 905 240, 905 300, 936 322" fill="none" stroke="#888" stroke-width="2" marker-end="url(#a)"/>
+<rect x="360" y="430" width="230" height="44" rx="22" fill="#3c7fe8" fill-opacity="0.18" stroke="#3c7fe8" stroke-width="2"/>
+<text x="475" y="458" text-anchor="middle" font-size="15" font-weight="600">shell-ready</text>
+<rect x="650" y="430" width="230" height="44" rx="22" fill="#3c7fe8" fill-opacity="0.18" stroke="#3c7fe8" stroke-width="2"/>
+<text x="765" y="458" text-anchor="middle" font-size="15" font-weight="600">content-ready, interactive</text>
+<rect x="940" y="430" width="230" height="44" rx="22" fill="#ffffff" fill-opacity="0.04" stroke="#666" stroke-width="2"/>
+<text x="1055" y="458" text-anchor="middle" font-size="15" font-weight="600" fill="#aaa">settled</text>
+<text x="60" y="530" fill="#888" font-size="15">Opening a photo adds an open-file task after content, and interactive moves onto it.</text>
+<text x="60" y="556" fill="#888" font-size="15">Started as a background service, the plan keeps only library, catalog-open, catalog-read and a ready task.</text>
+</g>
+</svg>
