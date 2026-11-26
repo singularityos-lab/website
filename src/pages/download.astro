@@ -1,27 +1,28 @@
 ---
 import Base from '../layouts/Base.astro';
-import DownloadModal from '../components/DownloadModal.astro';
+
+const RELEASES = 'https://github.com/singularityos-lab/os/releases';
 ---
 
 <Base title="Download - Singularity OS">
   <section class="hero">
     <h1>Try it on your machine.</h1>
-    <p class="lede">Singularity ships as part of Singularity OS. Grab the image, or build the desktop from source.</p>
+    <p class="lede">Singularity ships as part of Sinty OS. Pick the image for your computer, write it to a USB stick, and install.</p>
     <div class="cta">
-      <button class="btn btn-solid is-disabled" type="button" data-modal-open="dlModal">Download the image</button>
-      <a class="btn" href="/docs/getting-started">Build from source</a>
+      <a class="btn btn-solid" href={`${RELEASES}/tag/nightly`}>Download for PC</a>
+      <a class="btn" href={`${RELEASES}/tag/nightly-arm64`}>Download for ARM</a>
     </div>
   </section>
 
   <section class="section" id="image">
-    <h2 class="section-title">Ways to run it</h2>
+    <h2 class="section-title">Pick your image</h2>
     <div class="grid">
-      <div class="cell"><span class="k">Requirements</span><h3>What you need</h3><p>A 64-bit machine, a Wayland-capable GPU, and a few GB of free space.</p></div>
-      <a class="cell" href="/os"><span class="k">Coming soon</span><h3>The OS image</h3><p>The image is the recommended way to run Singularity end to end. Read about Singularity OS.</p></a>
-      <div class="cell"><span class="k">Developers</span><h3>From source</h3><p>Build the desktop with meson. See the documentation to get started.</p></div>
-      <div class="cell"><span class="k">Status</span><h3>Pre-release</h3><p>Singularity is under active development. Expect rapid change.</p></div>
+      <a class="cell" href={`${RELEASES}/tag/nightly`}><span class="k">x86_64</span><h3>PC</h3><p>Desktops and laptops with a 64-bit Intel or AMD processor. Intel, AMD and NVIDIA graphics.</p></a>
+      <a class="cell" href={`${RELEASES}/tag/nightly-arm64`}><span class="k">aarch64</span><h3>ARM</h3><p>Jetson, Rockchip RK3588, Raspberry Pi 4 and 5, Snapdragon laptops and virtual machines. Boards without a TPM unlock with a passphrase.</p></a>
+      <a class="cell" href="/docs/os/install/"><span class="k">Guide</span><h3>Installing</h3><p>Write the image with Drive Writer or dd, start from the stick, and follow the installer.</p></a>
+      <a class="cell" href="/docs/os/arm/"><span class="k">ARM</span><h3>Boards and firmware</h3><p>Which boards are supported, which firmware they need, and how the kernel is chosen.</p></a>
+      <a class="cell" href="/docs/os/requirements/"><span class="k">Requirements</span><h3>What you need</h3><p>UEFI firmware, a TPM 2.0 on PC, a few GB of memory and an SSD.</p></a>
+      <a class="cell" href="/docs/getting-started"><span class="k">Developers</span><h3>From source</h3><p>Build the desktop with meson on the system you already have.</p></a>
     </div>
   </section>
-
-  <DownloadModal />
 </Base>
