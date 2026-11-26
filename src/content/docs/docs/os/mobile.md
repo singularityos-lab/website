@@ -53,8 +53,39 @@ quarters, up to 3. A Pixel 7 Pro (1440 x 3120 on 6.7 inches) runs at 3.
 | Firmware | Wi-Fi, Bluetooth, audio and haptics firmware is copied from the Android vendor partition already on the phone, on the phone itself, and nothing is redistributed. It is copied again only when that partition changes. |
 | Boot partitions | Android phones load the kernel from boot partitions instead of a filesystem. Each update rebuilds those boot images from the kernel it carries, and every boot puts back the running release's kernel if a failed update left another one there. |
 | Charging | The charger and battery gauge are driven by mainline drivers with conservative limits. |
-| Mobile network | The modem is driven by `sinty-modemd`, which presents itself on the system bus as ModemManager. Calls, SMS and mobile data are in development. |
+| Mobile network | The modem is driven by `sinty-modemd`, which presents itself on the system bus as ModemManager. Calls, texts, mobile data and the eSIM are described below. |
 | Debug access | With the [debug bridge](/docs/sdb/) on, the USB cable becomes a private network link between the phone and the computer. |
+
+## Mobile network
+
+Open **Settings**, **Network**, **Mobile Network**.
+
+- **Mobile Network** turns the modem on and off. **Carrier**, **Signal** and
+  **Calls over 4G (VoLTE)** show the state of the line.
+- **Mobile Data** uses the line for the internet away from Wi-Fi. **Data
+  Roaming** allows it abroad, where your carrier may charge for it. Set the
+  **Access Point Name** only when your carrier asks you to.
+- **Carrier Selection** leaves the choice to the modem with **Choose
+  Automatically**, or lists the networks around you with **Search Networks**.
+- **SIM Lock** unlocks the SIM with its PIN, changes the PIN, and unblocks the SIM
+  with the PUK from your carrier. Too many wrong PUKs disable the SIM for good.
+
+Calls are made in [Phone](/docs/apps/phone/), and texts in
+[Messages](/docs/apps/messages/).
+
+### eSIM
+
+On a phone with a built-in eSIM chip, **eSIM** adds, switches, renames and
+deletes the eSIMs on it.
+
+1. Scan the QR code of your carrier with Camera and paste it in **Activation
+   Code**, or type the code.
+2. Choose **Download eSIM**. It needs Wi-Fi and can take a few minutes.
+3. Turn on **Use This eSIM**.
+
+**Use the eSIM** and **Use the SIM Card** move the line between the chip and the
+card tray; the modem restarts. Deleting an eSIM cannot be undone and may need a
+new code from the carrier.
 
 ## Debug bridge over USB
 

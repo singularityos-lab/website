@@ -8,7 +8,8 @@ Messages brings the conversations of your accounts together in one window.
 - Chat accounts added in Settings, Online Accounts bring their conversations here
   by themselves.
 - **Phone (SMS)** reads and sends the text messages of a phone paired with
-  [Nearby](/docs/apps/nearby/).
+  [Nearby](/docs/apps/nearby/), and on a device with a modem, those of its own
+  SIM or eSIM.
 
 Start a **New Conversation** (<span class="kbd-keys"><kbd>Ctrl</kbd>+<kbd>N</kbd></span>) by name, address or phone number, or create
 a group with people you already write to. Reply to a message, react to it, edit

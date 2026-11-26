@@ -14,6 +14,9 @@ how long it lasts.
 - **Allow Tearing** lowers input lag for full screen games that ask for it.
 - **MangoHud** shows frame rate and load over games; **Auto MangoHud** adds it to
   games started from the shell.
+
+The game overlay, the faster graphics card and Wine are described in
+[Games](/docs/os/games/).
 - **Variable Refresh Rate** is set per screen in **Settings, Displays**.
 
 ## Graphics
@@ -50,6 +53,14 @@ left alone. See [Pausing apps](/docs/os/pausing-apps/).
 work, such as builds, virtual machines and large copies, uses the whole disk when
 nobody needs it and steps aside when you do. The page shows the disk response of
 the app in use.
+
+## Memory
+
+Part of the memory works as compressed swap: pages that have not been used for a
+while are compressed and kept in RAM instead of going to disk. It is as large as
+the memory of the computer, up to 8 GiB, compressed with zstd where the kernel
+offers it, and is always used before any swap on disk. When memory runs short the
+computer slows down a little instead of freezing.
 
 ## Sinty Compute
 

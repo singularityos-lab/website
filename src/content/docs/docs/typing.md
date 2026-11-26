@@ -12,6 +12,9 @@ Keyboard**: it then has Ctrl, Alt, Super and Shift keys as well.
 - **Swipe typing**: slide a finger across the letters of a word without lifting
   it. A trail follows the finger and the word is typed when you lift.
 - **Word completion**: suggestions appear above the keys; tap one to use it.
+  Swipe typing and completion know English, Italian, German, French, Spanish and
+  Brazilian Portuguese. They follow the first of your spell-check languages, or the
+  system language when none is set.
 - **Languages**: the keyboard follows the system language and the keyboard
   layouts you added. On a phone the language key switches to the next one.
 - **Feedback**: on phones every key press vibrates.

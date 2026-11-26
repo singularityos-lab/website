@@ -71,6 +71,17 @@ Beyond the accent, you can change the look more deeply:
   so apps from across the toolkits can be brought into line. The Qt option
   appears when a Kvantum-based setup is available.
 
+## Icons and cursors
+
+The icons of Singularity are called Iride. Many of them have a short motion of
+their own: it plays when you point at an app in the dock, the app grid or search,
+when an app opens from the dock, and when a dialog or a page with a large icon
+appears. Turn this off with **Animated Icons** in **Settings**, **Desktop**. With
+reduced motion on, icons stay still.
+
+**Icon Theme** and **Cursor Theme** in the same page switch to other installed
+themes.
+
 ## Window buttons
 
 You can also choose which side the window buttons sit on, and whether the close,
